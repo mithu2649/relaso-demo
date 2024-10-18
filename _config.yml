@@ -1,0 +1,7 @@
+title: Relaso CRM
+description: Official Site of the Relaso CRM
+url: https://relaso.com
+baseurl: ""
+
+sass:
+  style: compressed

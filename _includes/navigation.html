@@ -1,0 +1,77 @@
+<nav class="main-navbar">
+  <div class="logo-container"><a href="/">
+    <h4 class="gradient-text">Relaso</h4>
+      <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
+    </a></div>
+<!-- Navigation links for Desktop -->
+  <div class="navigation-links"> 
+    <ul class="nav-links-container">
+
+      {% for item in site.data.navigation %}
+      <li>
+        <a href="{{ item.link }}" {% if page.url==item.link %}class="current-tab" {% endif %}>
+          {{ item.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="try-free-btn">
+    <a href="#try-free" class="filled-btn">Try for free</a>
+  </div>
+</nav>
+
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <div class="logo-container"><a href="/">
+          <h4 class="gradient-text">Relaso</h4>
+        </a></div>
+      </a>
+    </div>
+    
+    <div class="menu-button">
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        &#9776; <!-- Hamburger icon -->
+      </button>
+    </div>
+    
+    <div class="navigation-links-mobile" id="mobile-menu">
+      <ul class="nav-links-container">
+        {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.link }}" {% if page.url==item.link %}class="current-tab" {% endif %}>
+            {{ item.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script defer>
+  // Function to change navbar style on scroll
+  window.onscroll = function() {
+      const nav = document.querySelector('nav.main-navbar');
+      if (window.scrollY > 80) { // Change '100' to any pixel value you prefer
+          nav.classList.add('scrolled');
+      } else {
+          nav.classList.remove('scrolled');
+      }
+  };
+</script>
+
+<script defer>
+
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+</script>

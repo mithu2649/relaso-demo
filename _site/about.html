@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../../assets/css/styles.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  </head>
+  <body>
+    <nav class="main-navbar">
+  <div class="logo-container"><a href="/">
+    <h4 class="gradient-text">Relaso</h4>
+      <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
+    </a></div>
+<!-- Navigation links for Desktop -->
+  <div class="navigation-links"> 
+    <ul class="nav-links-container">
+
+      
+      <li>
+        <a href="/about" >
+          About
+        </a>
+      </li>
+      
+      <li>
+        <a href="/blog" >
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/pricing" >
+          Pricing
+        </a>
+      </li>
+      
+      <li>
+        <a href="/why-relaso" >
+          Why Relaso?
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact" >
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="try-free-btn">
+    <a href="#try-free" class="filled-btn">Try for free</a>
+  </div>
+</nav>
+
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <div class="logo-container"><a href="/">
+          <h4 class="gradient-text">Relaso</h4>
+        </a></div>
+      </a>
+    </div>
+    
+    <div class="menu-button">
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        &#9776; <!-- Hamburger icon -->
+      </button>
+    </div>
+    
+    <div class="navigation-links-mobile" id="mobile-menu">
+      <ul class="nav-links-container">
+        
+        <li>
+          <a href="/about" >
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/blog" >
+            Blog
+          </a>
+        </li>
+        
+        <li>
+          <a href="/pricing" >
+            Pricing
+          </a>
+        </li>
+        
+        <li>
+          <a href="/why-relaso" >
+            Why Relaso?
+          </a>
+        </li>
+        
+        <li>
+          <a href="/contact" >
+            Contact
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script defer>
+  // Function to change navbar style on scroll
+  window.onscroll = function() {
+      const nav = document.querySelector('nav.main-navbar');
+      if (window.scrollY > 80) { // Change '100' to any pixel value you prefer
+          nav.classList.add('scrolled');
+      } else {
+          nav.classList.remove('scrolled');
+      }
+  };
+</script>
+
+<script defer>
+
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+</script> <h1 id="about-page">About page</h1>
+
+<p>This page tells you a little bit about me.</p>
+ <footer>
+  <div class="footer-container">
+    <div class="footer-column fc-1">
+      <h3>Head Office:</h3>
+      <i class="fa fa-map-marker-alt"></i>
+      <div class="address">
+        87E/1, Selimpur Rd, <br />
+        Dhakuria, Naskar Para, <br />
+        Garfa, Kolkata, <br />
+        West Bengal 700031
+      </div>
+      <p><i class="fa fa-phone-alt"></i><a href="tel:+918274897500">+91 82748 97500</a></p>
+      <p><i class="fa fa-envelope"></i><a href="mailto:marketing@relaso.com">marketing@relaso.com</a>
+      </p>
+    </div>
+
+    <div class="footer-column fc-2"></div>
+    <div class="footer-column fc-3"></div>
+  </div>
+</footer>   
+
+
+  </body>
+</html>

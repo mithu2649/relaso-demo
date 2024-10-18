@@ -1,0 +1,43 @@
+html {
+  background: rgb(178, 166, 255);
+  background: linear-gradient(
+    30deg,
+    rgba(100, 128, 255, 0.62) 4%,
+    rgba(250, 253, 255, 0.671) 35%,
+    rgba(181, 165, 255, 0.562) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  // animation: gradientAnimation 5s ease infinite; /* Infinite animation */
+}
+
+body {
+  font-family: "Afacad Flux", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  @include for-phone-only {
+    padding: 2rem;
+  }
+}
+
+section {
+  padding: 3rem 0rem;
+  border-bottom: 1px solid rgba(216, 171, 255, 0.61);
+  @include for-tablet-landscape-down {
+    padding: 2rem 0rem;
+    gap: 1rem !important;
+  }
+}
+
+.section-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 50%;
+  @include for-tablet-landscape-down {
+    width: 100%;
+  }
+}

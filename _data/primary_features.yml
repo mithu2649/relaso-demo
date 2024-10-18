@@ -1,0 +1,19 @@
+- title: Easy Integration
+  icon_path: 
+  fa_icon_class: fa-solid fa-link
+  description: Seamlessly connect Relaso with your existing tools and platforms, ensuring a smooth workflow without disruption to your current processes.
+
+- title: Automated Workflows
+  icon_path: 
+  fa_icon_class: fa-solid fa-screwdriver-wrench
+  description: Automate repetitive tasks to save valuable time, boosting efficiency and allowing you to focus on more important aspects of your business.
+
+- title: Customizable Dashboard
+  icon_path: 
+  fa_icon_class: fa-solid fa-sliders  
+  description: Personalize your dashboard to align with your specific workflow and business needs, allowing you to manage key insights and tasks more efficiently.
+
+- title: Advanced Analytics
+  icon_path: 
+  fa_icon_class: fa-regular fa-bar-chart
+  description: Access in-depth reporting and analytics tools that offer powerful insights into your business performance, helping you make informed decisions.

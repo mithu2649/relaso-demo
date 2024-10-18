@@ -1,0 +1,30 @@
+- title: Relaso CRM
+  fa_icon_class: fas fa-users
+  description: A comprehensive platform for managing customer relationships, streamlining communication, and enhancing business growth through advanced tools designed to improve efficiency, and customer satisfaction.
+  site_link: /relaso
+
+- title: Relaso for Hospitech
+  fa_icon_class: fas fa-hospital
+  description: A tailored solution for healthcare technology providers, enabling efficient patient management, streamlined workflows, and optimized operational performance within the healthcare sector.
+  site_link: /hospitech
+  
+- title: Relaso for Clinics
+  fa_icon_class: fas fa-stethoscope
+  description: Designed for clinics to manage patient appointments, streamline interactions, and improve overall service delivery, ensuring a seamless and efficient healthcare experience.
+  site_link: /clinics
+  
+- title: Relaso Sales
+  fa_icon_class: fas fa-chart-line
+  description: A powerful tool to enhance sales performance by tracking leads, managing customer interactions, and helping teams close deals faster and more effectively.
+  site_link: /sales
+  
+- title: Relaso HelpDesk
+  fa_icon_class: fas fa-headset
+  description: A robust support system that simplifies customer inquiries, ticket management, and issue resolution, ensuring prompt and effective customer service.
+  site_link: helpdesk
+  
+# - title: Relaso for Law Firms
+#   fa_icon_class: fas fa-gavel
+#   description: A specialized solution for legal professionals, offering tools to manage cases, streamline billing, and organize documentation for improved productivity and client service.
+#   site_link: /law-firms
+  

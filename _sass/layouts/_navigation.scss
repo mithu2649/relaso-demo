@@ -1,0 +1,191 @@
+.scrolled {
+  background: rgba(255, 255, 255, 0.651);
+  backdrop-filter: blur(20px);
+  height: 5rem !important;
+  z-index: 999;
+  border-bottom: 2px solid $accent-color-lightest;
+  box-shadow: 0px 0px 10px $accent-color-lightest;
+}
+nav.main-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 7rem;
+  transition: 0.3s ease;
+
+  @include for-desktop-up {
+  }
+
+  @include for-tablet-landscape-down {
+    display:none;
+  }
+
+ 
+
+
+  .logo-container {
+    font-family: "Grenze Gotisch", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.5rem;
+
+    span.logo-start {
+      color: $accent-color;
+    }
+
+    span.logo-end {
+      color: $secondary-color;
+    }
+  }
+
+  ul.nav-links-container {
+    list-style: none;
+    display: flex;
+    gap: 0.1rem;
+
+    li a {
+      color: black;
+      padding: 2rem;
+      transition: 0.2s ease;
+      display: inline-block;
+
+      &:hover {
+        color: $accent-color-dark;
+        position: relative;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .try-free-btn{
+    display:none;
+    @include for-desktop-up {
+      display: inline-block;
+    }
+  }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////    Navigation bar for Mobile     ////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.navbar {
+  display:none;
+  z-index: 999;
+  margin: 0;
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9faa2;
+
+  @include for-desktop-up{
+    display: none;
+  }
+
+  @include for-tablet-landscape-down{
+    display: flex;
+  }
+  
+
+  .logo-container {
+    font-family: "Grenze Gotisch", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2.4rem;
+
+    span.logo-start {
+      color: #6851ff;
+    }
+
+    span.logo-end {
+      color: $secondary-color;
+    }
+  }
+
+  .menu-button {
+    display: none; // Hidden by default (desktop)
+
+    button {
+      background: none;
+      border: none;
+      font-size: 30px; // Hamburger icon size
+      cursor: pointer;
+    }
+  }
+
+  .navigation-links-mobile {
+    background: transparent;
+    display: none;
+
+    @include for-tablet-landscape-up{
+      display: none;
+    }
+    
+    .nav-links-container {
+      flex-direction: column;
+      list-style-type: none;
+      display: flex;
+      gap: 20px; // Spacing between links
+      padding: 0;
+      margin: 0;
+      padding: 2rem;
+      box-shadow: 0px 0px 10px gray;
+      li {
+        padding:0;
+        a {
+          display: block;
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          &:hover{
+            color: $accent-color;
+          }
+          &.current-tab {
+            font-weight: bold;
+            color: #ff5733;
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile-specific styles
+  @include for-tablet-landscape-down {
+    .navigation-links-mobile {
+      display: none; // Initially hidden on mobile
+      flex-direction: column;
+      position: absolute;
+      top: 60px; // Position below navbar
+      left: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    .menu-button {
+      display: block; // Show hamburger menu button on mobile
+    }
+
+    .nav-links-container {
+      display: block; // Make links stack vertically on mobile
+      border-radius: 1rem;
+      background: $background-light-alpha;
+      backdrop-filter: blur(50px);
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+}

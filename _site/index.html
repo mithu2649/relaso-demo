@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relaso CRM - Homepage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../../assets/css/styles.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  </head>
+  <body>
+    <nav class="main-navbar">
+  <div class="logo-container"><a href="/">
+    <h4 class="gradient-text">Relaso</h4>
+      <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
+    </a></div>
+<!-- Navigation links for Desktop -->
+  <div class="navigation-links"> 
+    <ul class="nav-links-container">
+
+      
+      <li>
+        <a href="/about" >
+          About
+        </a>
+      </li>
+      
+      <li>
+        <a href="/blog" >
+          Blog
+        </a>
+      </li>
+      
+      <li>
+        <a href="/pricing" >
+          Pricing
+        </a>
+      </li>
+      
+      <li>
+        <a href="/why-relaso" >
+          Why Relaso?
+        </a>
+      </li>
+      
+      <li>
+        <a href="/contact" >
+          Contact
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="try-free-btn">
+    <a href="#try-free" class="filled-btn">Try for free</a>
+  </div>
+</nav>
+
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">
+        <div class="logo-container"><a href="/">
+          <h4 class="gradient-text">Relaso</h4>
+        </a></div>
+      </a>
+    </div>
+    
+    <div class="menu-button">
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        &#9776; <!-- Hamburger icon -->
+      </button>
+    </div>
+    
+    <div class="navigation-links-mobile" id="mobile-menu">
+      <ul class="nav-links-container">
+        
+        <li>
+          <a href="/about" >
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/blog" >
+            Blog
+          </a>
+        </li>
+        
+        <li>
+          <a href="/pricing" >
+            Pricing
+          </a>
+        </li>
+        
+        <li>
+          <a href="/why-relaso" >
+            Why Relaso?
+          </a>
+        </li>
+        
+        <li>
+          <a href="/contact" >
+            Contact
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script defer>
+  // Function to change navbar style on scroll
+  window.onscroll = function() {
+      const nav = document.querySelector('nav.main-navbar');
+      if (window.scrollY > 80) { // Change '100' to any pixel value you prefer
+          nav.classList.add('scrolled');
+      } else {
+          nav.classList.remove('scrolled');
+      }
+  };
+</script>
+
+<script defer>
+
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'block') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'block';
+    }
+  });
+</script> <section class="main-hero-section">
+  <div class="column1 left">
+    <div class="chip-container">
+      <div class="chip"></div>
+    </div>
+    <div class="hero-text">
+      CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate"
+        >flexible,&nbsp;</span
+      >not frustrating.
+    </div>
+    <div>
+      <p class="header-sub-para">Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity.</p>
+    </div>
+    <div>
+      <div class="action-buttons-container">
+        <a href="#try-free" class="filled-btn">Try for free</a>
+        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
+          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="column2 right">
+    <div class="illustrations-container">
+      <img
+        class="hero-illustration"
+        src="assets/images/undraw_add_information_j2wg.svg"
+        alt="Illustration"
+      />
+      <div class="video-container plyr__video-embed" id="player">
+        <iframe
+          src="https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
+          title="Introduction to Relaso"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          allow="autoplay"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<section class="client-companies">
+  <div class="happy-customers-heading">
+    <h3>Used daily by 500&plus; brilliant companies</h3>
+  </div>
+  <div class="companiy-logos">
+     <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/keya_seth-logo.jpg"
+      alt="Keya Seth Aromatherapy"
+      title="Keya Seth Aromatherapy"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/shakshi-logo.png"
+      alt="Sakshi Jewelry"
+      title="Sakshi Jewelry"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/sharekhan_logo.svg"
+      alt="ShareKhan"
+      title="ShareKhan"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/simba-group-logo.jpg"
+      alt="Simba Group"
+      title="Simba Group"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/tirumala_logo.png"
+      alt="Tirumala Seven Hills Pvt. Ltd."
+      title="Tirumala Seven Hills Pvt. Ltd."
+    />
+  </div>
+   <div class="logo-container" style="filter: invert(1);" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/ssmedicorp-logo.webp"
+      alt="SS Medicorp"
+      title="SS Medicorp"
+    />
+  </div>
+   <div class="logo-container" style="filter: invert(1);" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/lalani-logo.png"
+      alt="Lalani Group"
+      title="Lalani Group"
+    />
+  </div>
+  
+</section>
+
+<section class="features-section">
+  <div class="features-header section-header">
+    <div class="chip"></div>
+    <div class="heading">
+      <h3 class="heading-text">
+        Accelerate your path to closed deals with Relaso CRM.
+      </h3>
+    </div>
+    <div class="feature-summary">
+      <p class="header-sub-para">
+        Relaso offers a seamless all-in-one solution, enabling effortless
+        customer data organization, efficient communication management, and
+        relationship nurturing—all from an intuitive platform. Key features
+        include:
+      </p>
+    </div>
+  </div>
+  <div class="feature-cards cards-container">
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+      <div class="card-title"><h4>Easy Integration</h4></div>
+      <div class="card-description"><p>Seamlessly connect Relaso with your existing tools and platforms, ensuring a smooth workflow without disruption to your current processes.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <div class="card-title"><h4>Automated Workflows</h4></div>
+      <div class="card-description"><p>Automate repetitive tasks to save valuable time, boosting efficiency and allowing you to focus on more important aspects of your business.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+      <div class="card-title"><h4>Customizable Dashboard</h4></div>
+      <div class="card-description"><p>Personalize your dashboard to align with your specific workflow and business needs, allowing you to manage key insights and tasks more efficiently.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-regular fa-bar-chart"></i></div>
+      <div class="card-title"><h4>Advanced Analytics</h4></div>
+      <div class="card-description"><p>Access in-depth reporting and analytics tools that offer powerful insights into your business performance, helping you make informed decisions.</p></div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="areasWeServe">
+  <div class="section-header">
+    <div class="heading">
+      <h3 class="heading-text">
+        Enhance your business efficiency with Relaso suite of products.
+      </h3>
+    </div>
+    <div class="areasWeServeParagraph">
+      <p class="header-sub-para">
+        Whether you're looking to optimize customer relationship management
+        (CRM), streamline operations, or enhance sales and support workflows,
+        our products are designed for seamless integration and maximum
+        efficiency.
+      </p>
+    </div>
+  </div>
+
+  <div class="product-cards cards-container">
+    
+    <a href="/relaso">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-users"></i></div>
+        <div class="card-title"><h4>Relaso CRM</h4></div>
+        <div class="card-description"><p>A comprehensive platform for managing customer relationships, streamlining communication, and enhancing business growth through advanced tools designed to improve efficiency, and customer satisfaction.</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+
+    
+    <a href="/hospitech">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-hospital"></i></div>
+        <div class="card-title"><h4>Relaso for Hospitech</h4></div>
+        <div class="card-description"><p>A tailored solution for healthcare technology providers, enabling efficient patient management, streamlined workflows, and optimized operational performance within the healthcare sector.</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+
+    
+    <a href="/clinics">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+        <div class="card-title"><h4>Relaso for Clinics</h4></div>
+        <div class="card-description"><p>Designed for clinics to manage patient appointments, streamline interactions, and improve overall service delivery, ensuring a seamless and efficient healthcare experience.</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+
+    
+    <a href="/sales">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="card-title"><h4>Relaso Sales</h4></div>
+        <div class="card-description"><p>A powerful tool to enhance sales performance by tracking leads, managing customer interactions, and helping teams close deals faster and more effectively.</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+
+    
+    <a href="helpdesk">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-headset"></i></div>
+        <div class="card-title"><h4>Relaso HelpDesk</h4></div>
+        <div class="card-description"><p>A robust support system that simplifies customer inquiries, ticket management, and issue resolution, ensuring prompt and effective customer service.</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+
+    
+  </div>
+</section>
+
+<script defer>
+  const isSmallScreen = window.innerWidth < 768;
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.defaults({
+      ease: "power4.in",
+      duration: 1,
+    });
+    gsap.timeline({ defaults: { ease: "power4.in" } });
+
+    if (!isSmallScreen) {
+      gsap.to(".flexible-text-animate", {
+        scaleX: 1.1, // Stretch horizontally (150%)
+        scaleY: 0.9,
+        opacity: 1,
+        duration: 0.3, // Duration of the stretch
+        ease: "power1.out", // Easing for smoother transition
+        yoyo: true, // Animate back to original size
+        repeat: 1, // Infinite loop
+        // delay: 3,
+      });
+
+      gsap.from(".hero-illustration", {
+        duration: 0.9,
+        opacity: 0,
+      });
+
+      const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+      const illustrationVideoAnimate = gsap.timeline({
+        repeat: 1,
+        repeatDelay: 4,
+        onComplete: () => {
+          document.querySelector(".video-container").style.display = "flex";
+          document.querySelector(".hero-illustration").style.display = "none";
+          const player = new Plyr("#player", {enabled: true, autoplay: true});
+          window.player = player;
+        },
+      });
+
+      shakeTimeline.to(".action-buttons-container .filled-btn", {
+        y: -16, // Move the button 10px horizontally
+        scale: 1.02,
+        rotate: -3,
+        duration: 0.1, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 5, // Shake back and forth 5 times
+      });
+
+      illustrationVideoAnimate.to(".hero-illustration", {
+        y: -13, // Move the button 10px horizontally
+        scale: 1.02,
+        rotate: -4,
+        duration: 0.1, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 4, // Shake back and forth 5 times
+      });
+    }
+  });
+  // Get elements
+  const modal = document.getElementById("videoModal");
+  const btn = document.getElementById("openVideoBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function () {
+    modal.style.display = "flex"; // Change to flex to center it
+  };
+
+  span.onclick = function () {
+    modal.style.display = "none"; // Hide the modal again
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+ <footer>
+  <div class="footer-container">
+    <div class="footer-column fc-1">
+      <h3>Head Office:</h3>
+      <i class="fa fa-map-marker-alt"></i>
+      <div class="address">
+        87E/1, Selimpur Rd, <br />
+        Dhakuria, Naskar Para, <br />
+        Garfa, Kolkata, <br />
+        West Bengal 700031
+      </div>
+      <p><i class="fa fa-phone-alt"></i><a href="tel:+918274897500">+91 82748 97500</a></p>
+      <p><i class="fa fa-envelope"></i><a href="mailto:marketing@relaso.com">marketing@relaso.com</a>
+      </p>
+    </div>
+
+    <div class="footer-column fc-2"></div>
+    <div class="footer-column fc-3"></div>
+  </div>
+</footer>   
+
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+@mixin gradientText {
+  display: inline-block;
+  background: linear-gradient(to right, #{$accent-color}, #{$secondary-color});
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 150% 190%;
+}
+
+@keyframes gradientTextAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  display: inline-block;
+  background: linear-gradient(to right, #{$accent-color}, #{$secondary-color});
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 150% 190%;
+  animation: gradientTextAnimation 4s ease forwards;
+}
+
+.header-sub-para {
+  text-align: center;
+  @include for-tablet-landscape-down {
+    text-align: left !important;
+  }
+}
+
+.heading-text {
+  @include gradientText;
+  font-size: clamp(1.3rem, 0.6182rem + 2.9091vw, 2.8rem);
+  font-family: "Varela Round", sans-serif;
+  font-weight: 900;
+  @include for-tablet-landscape-down {
+    text-align: left !important;
+  }
+}

@@ -1,0 +1,13 @@
+.chip {
+    .chip-container {
+        font-weight: bold;
+        border-radius: 50px;
+        .chip-icon{
+            height: 2rem;
+            width: 2rem;
+        }
+        .chip-title{
+            line-height: 2rem;
+        }
+    }
+}

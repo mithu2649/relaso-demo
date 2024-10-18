@@ -1,0 +1,14 @@
+- name: About
+  link: /about
+
+- name: Blog
+  link: /blog
+
+- name: Pricing
+  link: /pricing
+
+- name: Why Relaso?
+  link: /why-relaso
+
+- name: Contact
+  link: /contact
