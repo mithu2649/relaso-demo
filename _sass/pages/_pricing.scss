@@ -1,0 +1,23 @@
+.pricing-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7rem;
+
+    h1{
+        padding: 2rem 0rem;
+    }
+    .pricing-cards{
+        flex-wrap: wrap;
+        justify-content: center;
+        .card{
+            width: 20rem;
+            min-height: 22rem;
+            .card-description{
+                height: 10rem;
+                padding: 1.5rem 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.nav-links-container {
+  li {
+    position: relative; /* Ensure the parent <li> is positioned */
+    display: inline-block;
+
+    a {
+      padding: 0.3rem;
+      display: block;
+      text-decoration: none;
+      color: #333;
+    }
+
+    a[data-toggle="dropdown"]::after{
+        content: '';
+        height: 8px;
+        width: 8px;
+        border: 2px solid gray;
+        border-right: none;
+        border-top: none;
+        position: absolute;
+        top: calc(50% - 0.4rem);
+        right: 0.8rem;
+        transform: rotate(-45deg);
+
+    }
+
+    // Dropdown menu styles
+    .dropdown-menu {
+      display: none; /* Hidden by default */
+      position: absolute;
+      top: 90%; /* Align dropdown below the parent */
+      left: 0;
+      background-color: $background-light-alpha;
+      backdrop-filter: blur(20px);
+      border-radius: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 16rem;
+      box-shadow: 0 4px 8px $accent-color-lightest; /* Add slight shadow */
+
+      opacity: 0; // Start with an opacity of 0
+      transform: translateY(-10px); // Start slightly above
+      transition: opacity 0.3s ease, transform 0.3s ease; // Smooth transition
+
+      li {
+        display: flex;
+        flex-direction: column;
+
+        a {
+          white-space: nowrap;
+          padding: 1.5rem !important;
+          display: block;
+          color: #333;
+        }
+      }
+    }
+
+    // Show dropdown when it has the active class
+    .dropdown-menu.active {
+      display: block; /* Show the dropdown when active */
+
+      opacity: 1; // Fade in
+      transform: translateY(0); // Move to its original position
+    }
+  }
+
+  // Current tab styles
+  .current-tab {
+    font-weight: bold;
+    color: #2980b9; /* Highlight for the active tab */
+  }
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apples</title>
+    <title>Pricing for Hospitech</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -223,19 +223,235 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-</script> <div class="document-container">
-  <h1>Apples</h1>
-  <p>21 Aug 2018 - jill</p>
-  <h3 id="an-apple-is-a-sweet-edible-fruit-produced-by-an-apple-tree">An apple is a sweet, edible fruit produced by an apple tree.</h3>
+</script> <section class="main-hero-section">
+  <div class="column1 left">
+    <div class="chip-container">
+      <div class="chip"></div>
+    </div>
+    <div class="hero-text">
+      Hospital equipment distribution with <span class="gradient-text flexible-text-animate"> Relaso Hospitech</span>
+    </div>
+    <div>
+      <p class="header-sub-para"> Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. </p>
+    </div>
+    <div>
+      <div class="action-buttons-container">
+        <a href="/pricing" class="filled-btn">Try for free</a>
+        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
+          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
+        >
+      </div>
+    </div>
+  </div>
 
-<p>Apple trees are cultivated worldwide, and are the most widely grown
-species in the genus Malus. The tree originated in Central Asia, where
-its wild ancestor, Malus sieversii, is still found today. Apples have
-been grown for thousands of years in Asia and Europe, and were brought
-to North America by European colonists.</p>
+  <div class="column2 right">
+    <div class="illustrations-container">
+      <img
+        class="hero-illustration"
+        src="/assets/images/hospitech_illustration.svg"
+        alt="Illustration"
+      />
+      <div class="video-container plyr__video-embed" id="player">
+        <iframe
+          src="https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
+          title="Introduction to Relaso"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          allow="autoplay"
+          style="aspect-ratio: 16 / 9"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
 </div>
- <footer>
+
+<section class="client-companies">
+  <div class="happy-customers-heading">
+    <h3>Used daily by 500&plus; brilliant users</h3>
+  </div>
+  <div class="companiy-logos">
+     <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/keya_seth-logo.jpg"
+      alt="Keya Seth Aromatherapy"
+      title="Keya Seth Aromatherapy"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/shakshi-logo.png"
+      alt="Sakshi Jewelry"
+      title="Sakshi Jewelry"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/sharekhan_logo.svg"
+      alt="ShareKhan"
+      title="ShareKhan"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/simba-group-logo.jpg"
+      alt="Simba Group"
+      title="Simba Group"
+    />
+  </div>
+   <div class="logo-container" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/tirumala_logo.png"
+      alt="Tirumala Seven Hills Pvt. Ltd."
+      title="Tirumala Seven Hills Pvt. Ltd."
+    />
+  </div>
+   <div class="logo-container" style="filter: invert(1);" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/ssmedicorp-logo.webp"
+      alt="SS Medicorp"
+      title="SS Medicorp"
+    />
+  </div>
+   <div class="logo-container" style="filter: invert(1);" >
+    <img
+      class="happy-clients-logo"
+      src="assets/images/lalani-logo.png"
+      alt="Lalani Group"
+      title="Lalani Group"
+    />
+  </div>
+  
+</section>
+
+
+
+<script defer>
+  const isSmallScreen = window.innerWidth < 768;
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.defaults({
+      ease: "power4.in",
+      duration: 1,
+    });
+    gsap.timeline({ defaults: { ease: "power4.in" } });
+
+    if (!isSmallScreen) {
+      gsap.to(".flexible-text-animate", {
+        scaleX: 1.1, // Stretch horizontally (150%)
+        scaleY: 0.9,
+        opacity: 1,
+        duration: 0.3, // Duration of the stretch
+        ease: "power1.out", // Easing for smoother transition
+        yoyo: true, // Animate back to original size
+        repeat: 1, // Infinite loop
+        // delay: 3,
+      });
+
+      gsap.from(".hero-illustration", {
+        duration: 0.9,
+        opacity: 0,
+      });
+
+      const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+      const illustrationVideoAnimate = gsap.timeline({
+        repeat: 1,
+        repeatDelay: 10,
+        onComplete: () => {
+          document.querySelector(".video-container").style.display = "flex";
+          document.querySelector(".hero-illustration").style.display = "none";
+          const player = new Plyr("#player", { enabled: true, autoplay: true });
+          window.player = player;
+
+          gsap.delayedCall(3, revertIllustrationAnimation);
+        },
+      });
+
+      function revertIllustrationAnimation(){
+        document.querySelector(".video-container").style.display = "none";
+        document.querySelector(".hero-illustration").style.display = "flex";
+      }
+
+      shakeTimeline.to(".action-buttons-container .filled-btn", {
+        y: -16, // Move the button 10px horizontally
+        scale: 1.07,
+        rotate: -3,
+        duration: 0.3, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 5, // Shake back and forth 5 times
+      });
+
+      illustrationVideoAnimate.to(".hero-illustration", {
+        y: -13, // Move the button 10px horizontally
+        scale: 1.02,
+        rotate: -4,
+        duration: 0.1, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 4, // Shake back and forth 5 times
+      });
+    }
+  });
+
+  // Get elements
+  const modal = document.getElementById("videoModal");
+  const btn = document.getElementById("openVideoBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function () {
+    // modal.style.display = "flex"; // Change to flex to center it
+
+    if (window.getComputedStyle(modal).display === "none") {
+      // Set display to block (or flex/inline-block depending on your layout)
+      gsap.set(modal, { display: "flex" });
+      gsap.fromTo('.modal-content', 
+        { 
+          scale: 0.5, 
+          transformOrigin: "0% 100%" // Bottom-left corner
+        }, 
+        { 
+          scale: 1, 
+          duration: 0.2, 
+          ease: "power2.out" // Smooth ease-out effect
+        }
+      );
+    }
+  };
+
+  span.onclick = function () {
+    modal.style.display = "none"; // Hide the modal again
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+  ` <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
       <h3>Head Office:</h3>

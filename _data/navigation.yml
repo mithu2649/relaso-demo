@@ -5,10 +5,12 @@
   link: /blog
 
 - name: Pricing
-  link: /pricing
+  link: /pricing   
 
-- name: Why Relaso?
-  link: /why-relaso
+- name: Products
+  link: /products
+  dropdown: 'true'
+  data: products
 
 - name: Contact
   link: /contact

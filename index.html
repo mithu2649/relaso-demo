@@ -16,33 +16,35 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       >not frustrating.
     </div>
     <div>
-      <p class="header-sub-para">{{ page.hero-paragraph }}</p>
+      <p class="main-header-sub-para header-sub-para">{{ page.hero-paragraph }}</p>
     </div>
     <div>
       <div class="action-buttons-container">
-        <a href="#try-free" class="filled-btn">Try for free</a>
+        <a href="/pricing" class="filled-btn">Try for free</a>
         <a href="#watch-video" id="openVideoBtn" class="outline-btn"
           ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
         >
       </div>
     </div>
   </div>
+
   <div class="column2 right">
     <div class="illustrations-container">
       <img
         class="hero-illustration"
-        src="assets/images/undraw_add_information_j2wg.svg"
+        src="{{ site.data.hero_slides[0].illustration_img }}"
         alt="Illustration"
       />
       <div class="video-container plyr__video-embed" id="player">
         <iframe
-          src="https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
+          src="{{ site.data.hero_slides[0].video_url }}"
           title="Introduction to Relaso"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
           allow="autoplay"
+          style="aspect-ratio: 16 / 9"
         ></iframe>
       </div>
     </div>
@@ -67,7 +69,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
 
 <section class="client-companies">
   <div class="happy-customers-heading">
-    <h3>Used daily by 500&plus; brilliant companies</h3>
+    <h3>Used daily by 500&plus; brilliant users</h3>
   </div>
   <div class="companiy-logos">
     {% for client in site.data.happy_clients %} <div class="logo-container" {%
@@ -87,15 +89,14 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
     <div class="chip"></div>
     <div class="heading">
       <h3 class="heading-text">
-        Accelerate your path to closed deals with Relaso CRM.
+        Accelerate your path and close more deals with Relaso CRM
       </h3>
     </div>
     <div class="feature-summary">
       <p class="header-sub-para">
         Relaso offers a seamless all-in-one solution, enabling effortless
-        customer data organization, efficient communication management, and
-        relationship nurturing—all from an intuitive platform. Key features
-        include:
+        pipeline management, efficient deal management, and relationship
+        nurturing—all from an intuitive platform. <br />Key features include:
       </p>
     </div>
   </div>
@@ -104,7 +105,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
     <div class="card">
       <div class="card-icon"><i class="{{feature.fa_icon_class}}"></i></div>
       <div class="card-title"><h4>{{feature.title}}</h4></div>
-      <div class="card-description"><p>{{feature.description}}</p></div>
+      <div class="card-description"><p>{{ feature.description}}</p></div>
     </div>
     {% endfor %}
   </div>
@@ -133,89 +134,172 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       <div class="card">
         <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
         <div class="card-title"><h4>{{product.title}}</h4></div>
-        <div class="card-description"><p>{{product.description}}</p></div>
+        <div class="card-description"><p>{{product.description | truncate:200 }}</p></div>
         <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
       </div>
     </a>
-
     {% endfor %}
   </div>
 </section>
 
 <script defer>
-  const isSmallScreen = window.innerWidth < 768;
-  document.addEventListener("DOMContentLoaded", function () {
-    gsap.defaults({
-      ease: "power4.in",
-      duration: 1,
+    const isSmallScreen = window.innerWidth < 768;
+    document.addEventListener("DOMContentLoaded", function () {
+      gsap.defaults({
+        ease: "power4.in",
+        duration: 1,
+      });
+      gsap.timeline({ defaults: { ease: "power4.in" } });
+
+      if (!isSmallScreen) {
+        gsap.to(".flexible-text-animate", {
+          scaleX: 1.1, // Stretch horizontally (150%)
+          scaleY: 0.9,
+          opacity: 1,
+          duration: 0.3, // Duration of the stretch
+          ease: "power1.out", // Easing for smoother transition
+          yoyo: true, // Animate back to original size
+          repeat: 1, // Infinite loop
+          // delay: 3,
+        });
+
+        gsap.from(".hero-illustration", {
+          duration: 0.9,
+          opacity: 0,
+        });
+
+        const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+        const illustrationVideoAnimate = gsap.timeline({
+          repeat: 1,
+          repeatDelay: 4,
+          onComplete: () => {
+            document.querySelector(".video-container").style.display = "flex";
+            document.querySelector(".hero-illustration").style.display = "none";
+            const player = new Plyr("#player", { enabled: true, autoplay: true });
+            window.player = player;
+
+            gsap.delayedCall(3, revertIllustrationAnimation);
+          },
+        });
+
+        function revertIllustrationAnimation(){
+          document.querySelector(".video-container").style.display = "none";
+          document.querySelector(".hero-illustration").style.display = "flex";
+        }
+
+        shakeTimeline.to(".action-buttons-container .filled-btn", {
+          y: -16, // Move the button 10px horizontally
+          scale: 1.07,
+          rotate: -3,
+          duration: 0.3, // Short duration for each shake movement
+          ease: "power1.inOut", // Smooth transition
+          yoyo: true, // Move back to original position
+          repeat: 5, // Shake back and forth 5 times
+        });
+
+        illustrationVideoAnimate.to(".hero-illustration", {
+          y: -13, // Move the button 10px horizontally
+          scale: 1.02,
+          rotate: -4,
+          duration: 0.1, // Short duration for each shake movement
+          ease: "power1.inOut", // Smooth transition
+          yoyo: true, // Move back to original position
+          repeat: 4, // Shake back and forth 5 times
+        });
+      }
     });
-    gsap.timeline({ defaults: { ease: "power4.in" } });
 
-    if (!isSmallScreen) {
-      gsap.to(".flexible-text-animate", {
-        scaleX: 1.1, // Stretch horizontally (150%)
-        scaleY: 0.9,
-        opacity: 1,
-        duration: 0.3, // Duration of the stretch
-        ease: "power1.out", // Easing for smoother transition
-        yoyo: true, // Animate back to original size
-        repeat: 1, // Infinite loop
-        // delay: 3,
-      });
+    // Get elements
+    const modal = document.getElementById("videoModal");
+    const btn = document.getElementById("openVideoBtn");
+    const span = document.getElementsByClassName("close")[0];
 
-      gsap.from(".hero-illustration", {
-        duration: 0.9,
+    btn.onclick = function () {
+      // modal.style.display = "flex"; // Change to flex to center it
+
+      if (window.getComputedStyle(modal).display === "none") {
+        // Set display to block (or flex/inline-block depending on your layout)
+        gsap.set(modal, { display: "flex" });
+        gsap.fromTo('.modal-content', 
+          { 
+            scale: 0.5, 
+            transformOrigin: "0% 100%" // Bottom-left corner
+          }, 
+          { 
+            scale: 1, 
+            duration: 0.2, 
+            ease: "power2.out" // Smooth ease-out effect
+          }
+        );
+      }
+    };
+
+    span.onclick = function () {
+      modal.style.display = "none"; // Hide the modal again
+    };
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+
+    ////// slideshow //////
+
+     // Access slides data and convert it to a JavaScript object
+     const slides = {{ site.data.hero_slides | jsonify }};
+
+     // Debugging output to make sure slides data is loaded correctly
+     console.log("Slides data:", slides);
+
+  if (slides && slides.length > 0) {
+    // Selecting the relevant elements
+    // const heroIllustration = document.querySelector('.hero-illustration');
+    const videoIframe = document.querySelector('#relaso-crm-video');
+    const heroText = document.querySelector('.hero-text');
+    const headerSubPara = document.querySelector('.main-header-sub-para');
+
+    let currentIndex = 0;
+
+    function updateSlide() {
+      // Move to the next slide in the array
+      currentIndex = (currentIndex + 1) % slides.length;
+      const nextSlide = slides[currentIndex];
+
+      if (nextSlide) {
+        // GSAP animation: fade out the content, change it, then fade back in
+        gsap.to('.hero-text, .main-header-sub-para', {
+    x: -200, // Slide content out to the left
+    opacity: 0,
+    duration: 0.5,
+    onComplete: () => {
+      // Update the content
+      // heroIllustration.src = nextSlide.illustration_img;
+      // videoIframe.src = nextSlide.video_url;
+      heroText.innerHTML = nextSlide.title;
+      headerSubPara.textContent = nextSlide.subtitle;
+
+      // Slide new content in from the right
+      gsap.fromTo(' .hero-text, .main-header-sub-para', {
+        x: 200, // Start position (off-screen to the right)
         opacity: 0,
+      }, {
+        x: 0, // End position
+        opacity: 1,
+        duration: 0.5,
       });
-
-      const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
-      const illustrationVideoAnimate = gsap.timeline({
-        repeat: 1,
-        repeatDelay: 4,
-        onComplete: () => {
-          document.querySelector(".video-container").style.display = "flex";
-          document.querySelector(".hero-illustration").style.display = "none";
-          const player = new Plyr("#player", {enabled: true, autoplay: true});
-          window.player = player;
-        },
-      });
-
-      shakeTimeline.to(".action-buttons-container .filled-btn", {
-        y: -16, // Move the button 10px horizontally
-        scale: 1.02,
-        rotate: -3,
-        duration: 0.1, // Short duration for each shake movement
-        ease: "power1.inOut", // Smooth transition
-        yoyo: true, // Move back to original position
-        repeat: 5, // Shake back and forth 5 times
-      });
-
-      illustrationVideoAnimate.to(".hero-illustration", {
-        y: -13, // Move the button 10px horizontally
-        scale: 1.02,
-        rotate: -4,
-        duration: 0.1, // Short duration for each shake movement
-        ease: "power1.inOut", // Smooth transition
-        yoyo: true, // Move back to original position
-        repeat: 4, // Shake back and forth 5 times
-      });
-    }
+    },
   });
-  // Get elements
-  const modal = document.getElementById("videoModal");
-  const btn = document.getElementById("openVideoBtn");
-  const span = document.getElementsByClassName("close")[0];
 
-  btn.onclick = function () {
-    modal.style.display = "flex"; // Change to flex to center it
-  };
-
-  span.onclick = function () {
-    modal.style.display = "none"; // Hide the modal again
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+      } else {
+        console.error("Next slide is undefined.");
+      }
     }
-  };
+
+    // Set interval to change slides every 5 seconds
+    setInterval(updateSlide, 10000);
+  } else {
+    console.error("Slides data is not available or empty.");
+  }
 </script>
+

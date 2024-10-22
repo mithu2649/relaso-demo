@@ -1,40 +1,59 @@
 <nav class="main-navbar">
   <div class="logo-container"><a href="/">
-    <h4 class="gradient-text">Relaso</h4>
+    <img src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
+    <!-- <h4 class="gradien-text">elaso</h4> -->
       <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
     </a></div>
 <!-- Navigation links for Desktop -->
-  <div class="navigation-links"> 
-    <ul class="nav-links-container">
-
-      {% for item in site.data.navigation %}
+<div class="navigation-links">
+  <ul class="nav-links-container">
+    {% for item in site.data.navigation %}
       <li>
-        <a href="{{ item.link }}" {% if page.url==item.link %}class="current-tab" {% endif %}>
-          {{ item.name }}
-        </a>
+        {% if item.dropdown == 'true' %}
+          <!-- Parent link for dropdown -->
+          <a href="{{ item.link }}" class="has-dropdown {% if page.url == item.link %}current-tab{% endif %}" data-toggle="dropdown">
+            {{ item.name }}
+          </a>
+
+          <!-- Dropdown items -->
+          <ul class="dropdown-menu">
+            {% for subitem in site.data[item.data] %}
+              <li>
+                <a href="{{ subitem.site_link }}" {% if page.url == subitem.site_link %}class="current-tab"{% endif %}>
+                  {{ subitem.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        {% else %}
+          <!-- Regular link without dropdown -->
+          <a href="{{ item.link }}" {% if page.url == item.link %}class="current-tab"{% endif %}>
+            {{ item.name }}
+          </a>
+        {% endif %}
       </li>
-      {% endfor %}
-    </ul>
-  </div>
+    {% endfor %}
+  </ul>
+</div>
+
 
   <div class="try-free-btn">
-    <a href="#try-free" class="filled-btn">Try for free</a>
+    <a href="/pricing" class="filled-btn">Try for free</a>
   </div>
 </nav>
 
 <nav>
   <div class="navbar">
-    <div class="logo">
+    <div class="logo-container">
       <a href="/">
-        <div class="logo-container"><a href="/">
-          <h4 class="gradient-text">Relaso</h4>
-        </a></div>
+          <img src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
       </a>
     </div>
     
     <div class="menu-button">
       <button id="menu-toggle" aria-label="Toggle Menu">
-        &#9776; <!-- Hamburger icon -->
+        <i class="fa-solid fa-bars-staggered menu-icon"></i>
       </button>
     </div>
     
@@ -74,4 +93,25 @@
       menu.style.display = 'block';
     }
   });
+</script>
+
+
+<script defer>
+
+document.addEventListener('DOMContentLoaded', function () {
+  var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+
+  dropdownToggles.forEach(function (toggle) {
+    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log("Dropdown clicked:", this); // Check if the click event is firing
+
+      var dropdownMenu = this.nextElementSibling;
+      dropdownMenu.classList.toggle('active');
+    });
+  });
+});
+
 </script>

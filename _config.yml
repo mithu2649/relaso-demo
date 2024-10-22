@@ -2,6 +2,21 @@ title: Relaso CRM
 description: Official Site of the Relaso CRM
 url: https://relaso.com
 baseurl: ""
+# relative_url: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-admin
+  - jekyll-seo-tag
+  - jekyll-get-json
+
+
+show_drafts: 'true'
+jekyll_get_json:
+  - data: pricing
+    json: 'https://relaso.com/completePlanDetails.json'
 
 sass:
   style: compressed
+  sass_options:
+    quiet: true # Suppress warnings

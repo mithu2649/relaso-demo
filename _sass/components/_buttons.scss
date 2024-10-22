@@ -1,10 +1,13 @@
 .filled-btn {
     background: linear-gradient(#{$accent-color-light}, #{$accent-color});
     background-color: $accent-color;
+    display: inline-block;
     color: white;
-    padding: 15px 25px;
+    padding: 0.9rem;
+    height: 4rem;
+    line-height: 1.8rem;
     border-radius: 100px;
-    transition: .4s ease;
+    transition: .2s ease;
     border: 2px solid $accent-color;
     text-align: center;
     font-weight: bold;
@@ -26,7 +29,9 @@
     border: 2px solid $accent-color;
     // border: 1px solid $accent-color;
     color: $accent-color;
-    padding: 15px 25px;
+    padding: 1rem;
+    height: 4rem;
+    line-height: 1.8rem;
     border-radius: 100px;
     transition: .2s ease;
     text-align: center;

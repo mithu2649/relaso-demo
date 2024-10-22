@@ -1,10 +1,11 @@
 ---
 layout: post
-title: 'Relaso CRM: The only CRM you need'
-date: 15/12/1998
 author: Relaso.com
+excerpt: We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans ensure that businesses of all sizes can access a top-notch CRM solution. Say goodbye to hidden fees and expensive contracts—Relaso provides clear and straightforward pricing.
+poster: https://www.relaso.com/assets/media/c2.webp
 ---
 
+Discover Relaso CRM: Your Ultimate Business Solution
 
 In today's fast-paced business environment, having the right tools is essential for success. That's where **Relaso CRM** comes in—a completely customizable and affordable solution designed to help you manage your customer relationships effortlessly. Whether you’re a small startup or a large enterprise, Relaso CRM offers the flexibility and functionality you need to grow your business.
 

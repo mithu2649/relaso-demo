@@ -1,0 +1,66 @@
+---
+layout: default
+title: Relaso Blogs
+---
+
+<section class="contact-page">
+  <div class="contact-info">
+    <h2>Get In Touch For Any Query</h2>
+    <div class="office-info">
+      <h3>Our Head Office</h3>
+      <address>
+        87E/1, Selimpur Rd, <br />
+        Dhakuria, Naskar Para, Garfa, <br />
+        Kolkata, West Bengal 700031
+      </address>
+    </div>
+    <br />
+    <div class="contact-details">
+      <h3>Call for Help:</h3>
+      <p>
+        <i class="fa fa-phone"></i
+        ><a href="tel:+918274897500"> +91 82748 97500</a>
+      </p>
+      <br />
+      <h3>Email for Information:</h3>
+      <p></p>
+      <p>
+        <i class="fa fa-envelope"></i
+        ><a href="mailto:marketing@relaso.com"> marketing@relaso.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>Contact Us</h3>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent actual form submission
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Prepare mailto link
+      const mailtoLink = `mailto:marketing@relaso.com?subject=Query from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+      // Open email client
+      window.location.href = mailtoLink;
+    });
+</script>

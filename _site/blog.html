@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
+    <title>Relaso Blogs</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,67 +21,124 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   </head>
   <body>
+
     <nav class="main-navbar">
   <div class="logo-container"><a href="/">
-    <h4 class="gradient-text">Relaso</h4>
+    <img src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
+    <!-- <h4 class="gradien-text">elaso</h4> -->
       <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
     </a></div>
 <!-- Navigation links for Desktop -->
-  <div class="navigation-links"> 
-    <ul class="nav-links-container">
+<div class="navigation-links">
+  <ul class="nav-links-container">
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/about" >
+            About
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/blog" >
+            Blog
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/pricing" >
+            Pricing
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Parent link for dropdown -->
+          <a href="/products" class="has-dropdown " data-toggle="dropdown">
+            Products
+          </a>
 
-      
-      <li>
-        <a href="/about" >
-          About
-        </a>
+          <!-- Dropdown items -->
+          <ul class="dropdown-menu">
+            
+              <li>
+                <a href="/about" >
+                  Relaso CRM
+                </a>
+              </li>
+            
+              <li>
+                <a href="/hospitech" >
+                  Relaso Hospitech
+                </a>
+              </li>
+            
+              <li>
+                <a href="#" >
+                  Relaso Clinics
+                </a>
+              </li>
+            
+              <li>
+                <a href="#" >
+                  Relaso Examination
+                </a>
+              </li>
+            
+              <li>
+                <a href="#" >
+                  Relaso HelpDesk
+                </a>
+              </li>
+            
+              <li>
+                <a href="#" >
+                  Relaso for Law Firms
+                </a>
+              </li>
+            
+          </ul>
+
+        
       </li>
-      
+    
       <li>
-        <a href="/blog" >
-          Blog
-        </a>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/contact" >
+            Contact
+          </a>
+        
       </li>
-      
-      <li>
-        <a href="/pricing" >
-          Pricing
-        </a>
-      </li>
-      
-      <li>
-        <a href="/why-relaso" >
-          Why Relaso?
-        </a>
-      </li>
-      
-      <li>
-        <a href="/contact" >
-          Contact
-        </a>
-      </li>
-      
-    </ul>
-  </div>
+    
+  </ul>
+</div>
+
 
   <div class="try-free-btn">
-    <a href="#try-free" class="filled-btn">Try for free</a>
+    <a href="/pricing" class="filled-btn">Try for free</a>
   </div>
 </nav>
 
 <nav>
   <div class="navbar">
-    <div class="logo">
+    <div class="logo-container">
       <a href="/">
-        <div class="logo-container"><a href="/">
-          <h4 class="gradient-text">Relaso</h4>
-        </a></div>
+          <img src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
       </a>
     </div>
     
     <div class="menu-button">
       <button id="menu-toggle" aria-label="Toggle Menu">
-        &#9776; <!-- Hamburger icon -->
+        <i class="fa-solid fa-bars-staggered menu-icon"></i>
       </button>
     </div>
     
@@ -107,8 +164,8 @@
         </li>
         
         <li>
-          <a href="/why-relaso" >
-            Why Relaso?
+          <a href="/products" >
+            Products
           </a>
         </li>
         
@@ -145,43 +202,129 @@
       menu.style.display = 'block';
     }
   });
-</script> <h1>Latest Posts</h1>
+</script>
 
-<ul>
-  
-    <li>
-      <h2><a href="/2018/08/21/apples.html">Apples</a></h2>
-      <h3 id="an-apple-is-a-sweet-edible-fruit-produced-by-an-apple-tree">An apple is a sweet, edible fruit produced by an apple tree.</h3>
 
-    </li>
-  
-    <li>
-      <h2><a href="/2018/08/20/bananas.html">Bananas</a></h2>
-      <p>A banana is an edible fruit – botanically a berry – produced by several
-kinds of large herbaceous flowering plants in the genus Musa.</p>
+<script defer>
 
-    </li>
-  
-</ul> <footer>
+document.addEventListener('DOMContentLoaded', function () {
+  var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+
+  dropdownToggles.forEach(function (toggle) {
+    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log("Dropdown clicked:", this); // Check if the click event is firing
+
+      var dropdownMenu = this.nextElementSibling;
+      dropdownMenu.classList.toggle('active');
+    });
+  });
+});
+
+</script> <div class="blogs-container cards-container">
+  <h1>Latest Posts</h1>
+  <ul>
+    
+    <a class="post-title" href="/2018/08/21/apples.html">
+      <li class="card card-container">
+        <img class="post-poster" src="https://cdn.britannica.com/22/187222-050-07B17FB6/apples-on-a-tree-branch.jpg" alt="Apples">
+        <h3>Apples</h3>
+        <div class="post-date"> 21 August 2018 </div>
+        <div class="post-excerpt">
+          Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. ...
+        </div>
+      </li>
+    </a>
+    
+    <a class="post-title" href="/2018/08/20/why-relaso.html">
+      <li class="card card-container">
+        <img class="post-poster" src="https://www.relaso.com/assets/media/c2.webp" alt="Why Relaso">
+        <h3>Why Relaso</h3>
+        <div class="post-date"> 20 August 2018 </div>
+        <div class="post-excerpt">
+          We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans ensure that businesses of all si...
+        </div>
+      </li>
+    </a>
+    
+  </ul>
+</div>
+ <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
       <h3>Head Office:</h3>
-      <i class="fa fa-map-marker-alt"></i>
-      <div class="address">
-        87E/1, Selimpur Rd, <br />
-        Dhakuria, Naskar Para, <br />
-        Garfa, Kolkata, <br />
-        West Bengal 700031
+      <div class="fc" style="display: flex;">
+        <i class="fa fa-map-marker-alt"></i>
+        <address class="address">
+          87E/1, Selimpur Rd, <br />
+          Dhakuria, Naskar Para, <br />
+          Garfa, Kolkata, <br />
+          West Bengal 700031
+        </address>
       </div>
-      <p><i class="fa fa-phone-alt"></i><a href="tel:+918274897500">+91 82748 97500</a></p>
-      <p><i class="fa fa-envelope"></i><a href="mailto:marketing@relaso.com">marketing@relaso.com</a>
+      <p>
+        <i class="fa fa-phone-alt"></i
+        ><a href="tel:+918274897500">+91 82748 97500</a>
+      </p>
+      <p>
+        <i class="fa fa-envelope"></i
+        ><a href="mailto:marketing@relaso.com">marketing@relaso.com</a>
       </p>
     </div>
 
-    <div class="footer-column fc-2"></div>
-    <div class="footer-column fc-3"></div>
+    <div class="footer-column fc-2">
+      <h3>Quick links:</h3>
+      <div class="footer-links">
+        
+        <a href="/pricing/hospitech">Relaso for Hospitech</a>
+        
+        <a href="/relaso-for-car-dealership">Relaso for Car Dealership</a>
+        
+        <a href="/relaso-for-doctors">Relaso for Doctors</a>
+        
+        <a href="/relaso-for-lawyers">Relaso for Lawyers</a>
+        
+        <a href="/relaso-for-law-firms">Relaso for Law-firms</a>
+        
+      </div>
+    </div>
+
+    <div class="footer-column fc-3">
+      <h3>Blog Posts links:</h3>
+      <div class="footer-links">
+        
+        <a href="/2018/08/21/apples.html">Apples</a>
+        
+        <a href="/2018/08/20/why-relaso.html">Why Relaso</a>
+        
+      </div>
+    </div>
   </div>
-</footer>   
+
+  <div class="footer-column fc-3">
+    <h3>Newsletter:</h3>
+    <p class="news-letter-text">
+      At Relaso, we understand the dedication and effort your sales team puts in
+      every day. That’s why we’ve developed a CRM tailored specifically for
+      sales professionals. With intuitive, powerful tools, you can effortlessly
+      track leads, nurture customer relationships, and close deals more
+      efficiently. <br /><br />Stay ahead by subscribing to our newsletter and
+      be the first to know about our latest product launches!
+    </p>
+    <br />
+
+    <form action="#">
+      <input
+        class="text-field"
+        type="email"
+        placeholder="Enter your email here"
+      />
+      <a type="submit" href="#" class="filled-btn">Subscribe</a>
+    </form>
+  </div>
+</footer>
 
 
   </body>

@@ -1,6 +1,18 @@
-
 :root {
   --plyr-color-main: #{$accent-color};
+}
+body {
+  overflow-x: hidden;
+  section {
+    @include for-big-desktop-down {
+      gap: 0.5rem;
+    }
+
+    @include for-tablet-landscape-down {
+      gap: unset;
+    }
+  }
+
 }
 
 .main-hero-section {
@@ -8,6 +20,7 @@
   align-items: center;
   justify-content: center;
   border-bottom: none;
+  transition: 1s ease;
 
   @include for-tablet-portrait-up {
     // height: calc(100vh - 10.2rem);
@@ -26,6 +39,23 @@
     padding: 0;
   }
 
+  @include for-big-desktop-down {
+    left: -10%;
+    top: -20%;
+    width: 120%;
+    transform: scale(0.8);
+    padding: 0 2rem;
+  }
+
+  @include for-tablet-landscape-down {
+    left: unset;
+    top: unset;
+    width: unset;
+    transform: unset;
+    padding: unset;
+    border: unset;
+  }
+
   .left,
   .right {
     flex: 1;
@@ -37,6 +67,8 @@
   .column1 {
     display: flex;
     gap: 4rem;
+    justify-content: space-between;
+    min-height: 30rem;
 
     @include for-phone-only {
       gap: 1rem;
@@ -44,71 +76,57 @@
     @include for-tablet-landscape-down {
       gap: 2rem;
     }
+    @include for-big-desktop-down {
+      gap: 0rem;
+    }
+    @include for-big-desktop-down{
+      gap: 2rem;
+    }
 
     .hero-text {
       font-family: "Varela Round";
       font-weight: 900;
       color: black;
-      // font-size: 3rem;
-      // font-size: clamp(2rem, 3rem, 4rem);
-      font-size: clamp(2.4rem, 1.6727rem + 3.103vw, 5.2rem);
+      font-size: clamp(2.4rem, 1.6727rem + 3.103vw, 4.8rem);
+    }
 
-      // @include for-phone-only {
-      //   font-size: 2.3rem;
-      //   line-height: 3rem;
-      //   font-weight: 900;
-      // }
-      // @include for-tablet-portrait-up {
-      //   font-size: 2.8rem;
-      //   line-height: 3.4rem;
-      //   font-weight: 900;
-      // }
-      // @include for-tablet-landscape-up {
-      //   font-size: 3rem;
-      //   line-height: 4.3rem;
-      //   font-weight: 900;
-      // }
-      // @include for-desktop-up {
-      //   font-size: 4.3rem;
-      //   line-height: 5rem;
-      //   font-weight: 900;
-      // }
-
-      // @include for-big-desktop-up {
-      //   font-size: 5rem;
-      //   line-height: 6rem;
-      //   font-weight: 900;
-      // }
+    .header-sub-para{
+      text-align: left;
+      height: 6rem;
+    }
+    .action-buttons-container {
+      position: relative;
     }
   }
 
   .column2 {
-     .illustrations-container {
-    
-      border-radius: 1rem;
+    .illustrations-container {
+      border-radius: 1.5rem;
       width: 100%;
+      display: flex;
+      aspect-ratio: 16 / 9;
+
       img {
-        width: 100%;
+        width: 90%;
       }
       #player {
+        border-radius: 1rem !important;
+        width: 100%;
         box-shadow: 0px 0px 3rem $accent-color-light !important;
-        border-radius: 1rem;
       }
-      .video-container{
+      .video-container {
         display: none !important;
-        transition: .4s ease;
-        
+        transition: 0.4s ease;
         padding: 1rem;
         background-color: $background-color;
         width: 100%;
         border-radius: 1.2rem;
-        // aspect-ratio: 16/9;
+        aspect-ratio: 16/9;
 
-        iframe{
+        iframe {
           border-radius: 1.2rem;
           aspect-ratio: 16/9;
           width: 100%;
-          
         }
       }
     }
@@ -127,12 +145,12 @@
 .client-companies {
   display: flex;
   flex-direction: column;
-  gap: clamp(0rem, 0.6182rem + 2.9091vw, 2rem);
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid rgba(216, 171, 255, 0.61);
-  margin-top: 2rem;
+  margin-top: 0rem;
   padding: 1.2rem 0rem;
+  gap: 2rem;
 
   // padding: clamp(0rem, 1rem, 3rem);
 
@@ -201,14 +219,30 @@ section.areasWeServe {
       text-align: center;
     }
   }
-  .product-cards{
-    .card{
-      &:hover{
+  .product-cards {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .card {
+      flex: 1 1 0; /* grow, shrink, and base size */
+      width: 20rem;
+      min-height: 25rem;
+      @include for-big-desktop-up {
+        width: 20rem;
+      }
+      @include for-big-desktop-down {
+        height: auto;
+      }
+      @include for-desktop-down {
+        width: 100% !important;
+      }
+
+      &:hover {
         .card-title {
-          color: $accent-color  
+          color: $accent-color;
         }
       }
-      .card-description p{
+      .card-description p {
         display: block;
         // height: 14rem;
       }
@@ -221,7 +255,7 @@ section.areasWeServe {
   display: none;
   /* Hidden by default */
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   left: 0;
   top: 0;
   width: 100%;
@@ -236,7 +270,7 @@ section.areasWeServe {
   }
 
   .modal-content {
-    position: relative;
+    position: absolute;
     display: inline-block;
     aspect-ratio: 16 / 9;
     /* Ensures the content sizes to fit */
@@ -273,7 +307,7 @@ section.areasWeServe {
     width: 40px;
     font-size: 30px;
     border-radius: 50px;
-    z-index: 9999;
+    z-index: 99;
     font-weight: bold;
     cursor: pointer;
 

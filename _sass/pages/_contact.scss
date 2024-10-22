@@ -1,0 +1,101 @@
+.contact-page {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 5rem;
+    background-color: $background-light-alpha;
+    box-shadow: 0 2px 20px $accent-color-lightest;
+    border-radius: 1.2rem;
+    margin-top: 8rem;
+    
+    .contact-info {
+      flex: 1;
+      
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+  
+      .office-info, .contact-details {
+        margin-bottom: 2rem;
+  
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        p {
+          margin: 0.5rem 0;
+        }
+  
+        a {
+          color: #007bff;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    .contact-form {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      
+  
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+  
+        label {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        input, textarea {
+          font-size: 1rem;
+          padding: 0.75rem;
+          margin-bottom: 1.5rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+  
+        button {
+          font-size: 1rem;
+          padding: 1rem 0.7rem;
+          background-color: $accent-color;
+          border-radius: 150px;
+          color: white;
+          border: none;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: $accent-color-dark;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-info, .contact-form {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }

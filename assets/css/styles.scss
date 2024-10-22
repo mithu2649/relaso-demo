@@ -21,6 +21,10 @@
 @import "components/cards";
 @import "components/chips";
 @import "components/texts";
+@import "components/fields";
+@import "components/dropdown";
+
+
 
 //layouts
 @import "layouts/navigation";
@@ -29,3 +33,10 @@
 
 //pages
 @import "pages/homepage";
+@import "pages/post";
+@import "pages/blog";
+@import "pages/contact";
+@import "pages/pricing";
+
+
+

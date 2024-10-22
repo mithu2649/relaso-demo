@@ -1,0 +1,187 @@
+---
+layout: default
+title: Pricing for Hospitech
+---
+
+<section class="main-hero-section">
+  <div class="column1 left">
+    <div class="chip-container">
+      <div class="chip"></div>
+    </div>
+    <div class="hero-text">
+      {{site.data.hero_slides[1].title}}
+    </div>
+    <div>
+      <p class="header-sub-para"> {{ site.data.hero_slides[1].subtitle }}</p>
+    </div>
+    <div>
+      <div class="action-buttons-container">
+        <a href="/pricing" class="filled-btn">Try for free</a>
+        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
+          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="column2 right">
+    <div class="illustrations-container">
+      <img
+        class="hero-illustration"
+        src="{{ site.data.hero_slides[1].illustration_img | relative_url }}"
+        alt="Illustration"
+      />
+      <div class="video-container plyr__video-embed" id="player">
+        <iframe
+          src="{{ site.data.hero_slides[1].video_url | relative_url}}"
+          title="Introduction to Relaso"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          allow="autoplay"
+          style="aspect-ratio: 16 / 9"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<section class="client-companies">
+  <div class="happy-customers-heading">
+    <h3>Used daily by 500&plus; brilliant users</h3>
+  </div>
+  <div class="companiy-logos">
+    {% for client in site.data.happy_clients %} <div class="logo-container" {%
+    if client.color=='white' %}style="filter: invert(1);" {% endif %}>
+    <img
+      class="happy-clients-logo"
+      src="{{ client.logo }}"
+      alt="{{ client.name }}"
+      title="{{ client.name }}"
+    />
+  </div>
+  {% endfor %}
+</section>
+
+
+
+<script defer>
+  const isSmallScreen = window.innerWidth < 768;
+  document.addEventListener("DOMContentLoaded", function () {
+    gsap.defaults({
+      ease: "power4.in",
+      duration: 1,
+    });
+    gsap.timeline({ defaults: { ease: "power4.in" } });
+
+    if (!isSmallScreen) {
+      gsap.to(".flexible-text-animate", {
+        scaleX: 1.1, // Stretch horizontally (150%)
+        scaleY: 0.9,
+        opacity: 1,
+        duration: 0.3, // Duration of the stretch
+        ease: "power1.out", // Easing for smoother transition
+        yoyo: true, // Animate back to original size
+        repeat: 1, // Infinite loop
+        // delay: 3,
+      });
+
+      gsap.from(".hero-illustration", {
+        duration: 0.9,
+        opacity: 0,
+      });
+
+      const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
+      const illustrationVideoAnimate = gsap.timeline({
+        repeat: 1,
+        repeatDelay: 10,
+        onComplete: () => {
+          document.querySelector(".video-container").style.display = "flex";
+          document.querySelector(".hero-illustration").style.display = "none";
+          const player = new Plyr("#player", { enabled: true, autoplay: true });
+          window.player = player;
+
+          gsap.delayedCall(3, revertIllustrationAnimation);
+        },
+      });
+
+      function revertIllustrationAnimation(){
+        document.querySelector(".video-container").style.display = "none";
+        document.querySelector(".hero-illustration").style.display = "flex";
+      }
+
+      shakeTimeline.to(".action-buttons-container .filled-btn", {
+        y: -16, // Move the button 10px horizontally
+        scale: 1.07,
+        rotate: -3,
+        duration: 0.3, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 5, // Shake back and forth 5 times
+      });
+
+      illustrationVideoAnimate.to(".hero-illustration", {
+        y: -13, // Move the button 10px horizontally
+        scale: 1.02,
+        rotate: -4,
+        duration: 0.1, // Short duration for each shake movement
+        ease: "power1.inOut", // Smooth transition
+        yoyo: true, // Move back to original position
+        repeat: 4, // Shake back and forth 5 times
+      });
+    }
+  });
+
+  // Get elements
+  const modal = document.getElementById("videoModal");
+  const btn = document.getElementById("openVideoBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function () {
+    // modal.style.display = "flex"; // Change to flex to center it
+
+    if (window.getComputedStyle(modal).display === "none") {
+      // Set display to block (or flex/inline-block depending on your layout)
+      gsap.set(modal, { display: "flex" });
+      gsap.fromTo('.modal-content', 
+        { 
+          scale: 0.5, 
+          transformOrigin: "0% 100%" // Bottom-left corner
+        }, 
+        { 
+          scale: 1, 
+          duration: 0.2, 
+          ease: "power2.out" // Smooth ease-out effect
+        }
+      );
+    }
+  };
+
+  span.onclick = function () {
+    modal.style.display = "none"; // Hide the modal again
+  };
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+  `

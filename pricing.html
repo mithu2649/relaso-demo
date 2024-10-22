@@ -1,0 +1,23 @@
+---
+layout: default
+title: Relaso Pricing Page | Choose your product
+---
+
+<div class="pricing-products">
+  <h1 class="gradient-text">Choose a product to see plans:</h1>
+  <br /><br />
+  <div class="pricing-cards cards-container">
+    {% for product in site.data.products %}
+    <a href="{{product.site_link}}">
+      <div class="card product">
+        <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
+        <div class="card-title"><h4>{{product.title}}</h4></div>
+        <div class="card-description">
+          <p>{{product.description | truncate:200 }}</p>
+        </div>
+        <a href="#" class="outline-btn bookDemoBtn">See Plans</a>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

@@ -7,11 +7,10 @@
     }
    
     gap: 1rem;
-    @include for-tablet-landscape-down{
+    @include for-desktop-down{
         flex-direction: column;
     }
     .card {
-        flex: 1;
         cursor: pointer;
         border: 1px solid $accent-color-lightest;
         padding: 1rem;
@@ -23,10 +22,15 @@
         @include for-tablet-landscape-down{
             gap: 1rem;
         }
+
         &:hover{
             box-shadow: 0px 0px 15px rgb(189, 189, 189);
             transform: translateY(-2px);
             background: $background-light-alpha;
+
+            .card-icon{
+                color: $accent-color;
+            }
         }
         .card-icon{ 
             padding: 1rem 1rem;

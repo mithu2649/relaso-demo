@@ -1,14 +1,22 @@
 ---
 layout: default
-title: Blog
+title: Relaso Blogs
 ---
-<h1>Latest Posts</h1>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+<div class="blogs-container cards-container">
+  <h1>Latest Posts</h1>
+  <ul>
+    {% for post in site.posts %}
+    <a class="post-title" href="{{ post.url }}">
+      <li class="card card-container">
+        <img class="post-poster" src="{{ post.poster }}" alt="{{post.title}}">
+        <h3>{{ post.title }}</h3>
+        <div class="post-date"> {{ post.date | date_to_long_string}} </div>
+        <div class="post-excerpt">
+          {{ post.excerpt | truncate: 200 }}
+        </div>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</div>
