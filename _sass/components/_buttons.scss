@@ -1,6 +1,8 @@
+@use "../base/colors";
+
 .filled-btn {
-    background: linear-gradient(#{$accent-color-light}, #{$accent-color});
-    background-color: $accent-color;
+    background: linear-gradient(#{colors.$accent-color-light}, #{colors.$accent-color});
+    background-color: colors.$accent-color;
     display: inline-block;
     color: white;
     padding: 0.9rem;
@@ -8,7 +10,7 @@
     line-height: 1.8rem;
     border-radius: 100px;
     transition: .2s ease;
-    border: 2px solid $accent-color;
+    border: 2px solid colors.$accent-color;
     text-align: center;
     font-weight: bold;
     font-size: clamp(0.4rem, 0.8636rem + 0.5818vw, 1.3rem);
@@ -20,15 +22,15 @@
     // }
 
     &:hover {
-        background: linear-gradient(#{$accent-color-dark}, #{$accent-color});
-        box-shadow: 0px 0px 10px $accent-color-light;
+        background: linear-gradient(#{colors.$accent-color-dark}, #{colors.$accent-color});
+        box-shadow: 0px 0px 10px colors.$accent-color-light;
     }
 }
 
 .outline-btn {
-    border: 2px solid $accent-color;
+    border: 2px solid colors.$accent-color;
     // border: 1px solid $accent-color;
-    color: $accent-color;
+    color: colors.$accent-color;
     padding: 1rem;
     height: 4rem;
     line-height: 1.8rem;
@@ -40,9 +42,9 @@
 
     
     &:hover {
-        background: linear-gradient(#{$accent-color}, #{$accent-color-light});
+        background: linear-gradient(#{colors.$accent-color}, #{colors.$accent-color-light});
         color: white;
         // transform: scale(1) translateX(-2px);
-        box-shadow: 0px 0px 10px $accent-color-light;
+        box-shadow: 0px 0px 10px colors.$accent-color-light;
     }
 }

@@ -1,14 +1,17 @@
+@use "../base/colors";
+@use "../mixins/breakpoints";
+
 :root {
-  --plyr-color-main: #{$accent-color};
+  --plyr-color-main: #{colors.$accent-color};
 }
 body {
   overflow-x: hidden;
   section {
-    @include for-big-desktop-down {
+    @include breakpoints.for-big-desktop-down {
       gap: 0.5rem;
     }
 
-    @include for-tablet-landscape-down {
+    @include breakpoints.for-tablet-landscape-down {
       gap: unset;
     }
   }
@@ -21,24 +24,24 @@ body {
   border-bottom: none;
   transition: 1s ease;
 
-  @include for-tablet-portrait-up {
+  @include breakpoints.for-tablet-portrait-up {
     // height: calc(100vh - 10.2rem);
     gap: 4rem;
     padding: 0 7rem;
   }
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     flex-direction: column-reverse;
     gap: 1rem;
   }
 
-  @include for-big-desktop-up {
+  @include breakpoints.for-big-desktop-up {
     margin-top: 8rem;
     gap: 4rem;
     padding: 0;
   }
 
-  @include for-big-desktop-down {
+  @include breakpoints.for-big-desktop-down {
     left: -10%;
     top: -20%;
     width: 120%;
@@ -46,7 +49,7 @@ body {
     padding: 0 2rem;
   }
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     left: unset;
     top: unset;
     width: unset;
@@ -69,16 +72,16 @@ body {
     justify-content: space-between;
     min-height: 30rem;
 
-    @include for-phone-only {
+    @include breakpoints.for-phone-only {
       gap: 1rem;
     }
-    @include for-tablet-landscape-down {
+    @include breakpoints.for-tablet-landscape-down {
       gap: 2rem;
     }
-    @include for-big-desktop-down {
+    @include breakpoints.for-big-desktop-down {
       gap: 0rem;
     }
-    @include for-big-desktop-down {
+    @include breakpoints.for-big-desktop-down {
       gap: 2rem;
     }
 
@@ -99,7 +102,7 @@ body {
         width: 25rem;
         gap: 0.8rem;
 
-        @include for-tablet-landscape-down {
+        @include breakpoints.for-tablet-landscape-down {
           display: none;
         }
         .next-slide,
@@ -112,12 +115,12 @@ body {
           width: 30px;
           border-radius: 50px;
           outline: none;
-          background-color: $accent-color-lightest;
+          background-color: colors.$accent-color-lightest;
           border: none;
           text-align: center;
           cursor: pointer;
           &:hover {
-            background-color: $accent-color-lighter;
+            background-color: colors.$accent-color-lighter;
           }
         }
       }
@@ -130,7 +133,7 @@ body {
       font-size: clamp(2.1rem, 1.6727rem + 3.103vw, 4.2rem);
       height: 15rem;
 
-      @include for-tablet-landscape-down {
+      @include breakpoints.for-tablet-landscape-down {
         height: auto;
       }
     }
@@ -154,13 +157,13 @@ body {
       #player {
         border-radius: 1rem !important;
         width: 100%;
-        box-shadow: 0px 0px 3rem $accent-color-light !important;
+        box-shadow: 0px 0px 3rem colors.$accent-color-light !important;
       }
       .video-container {
         display: none !important;
         transition: 0.4s ease;
         padding: 1rem;
-        background-color: $background-color;
+        background-color: colors.$background-color;
         width: 100%;
         border-radius: 1.2rem;
         aspect-ratio: 16/9;
@@ -214,7 +217,7 @@ body {
       border-radius: 1rem;
       .happy-clients-logo {
         height: 3rem;
-        @include for-tablet-portrait-down {
+        @include breakpoints.for-tablet-portrait-down {
           height: 1.7rem;
         }
       }
@@ -229,7 +232,7 @@ body {
   justify-content: center;
   gap: 7rem;
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     padding: 2rem 0;
   }
 
@@ -269,19 +272,19 @@ section.areasWeServe {
       flex: 1 1 0; /* grow, shrink, and base size */
       width: 20rem;
       min-height: 25rem;
-      @include for-big-desktop-up {
+      @include breakpoints.for-big-desktop-up {
         width: 20rem;
       }
-      @include for-big-desktop-down {
+      @include breakpoints.for-big-desktop-down {
         height: auto;
       }
-      @include for-desktop-down {
+      @include breakpoints.for-desktop-down {
         width: 100% !important;
       }
 
       &:hover {
         .card-title {
-          color: $accent-color;
+          color: colors.$accent-color;
         }
       }
       .card-description p {
@@ -307,7 +310,7 @@ section.areasWeServe {
   justify-content: center;
   align-items: center;
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     width: 100%;
   }
 
@@ -328,7 +331,7 @@ section.areasWeServe {
       width: 720px;
       aspect-ratio: 16 / 9;
     }
-    @include for-tablet-landscape-down {
+    @include breakpoints.for-tablet-landscape-down {
       width: 90%;
 
       iframe {

@@ -1,10 +1,13 @@
+@use "../base/colors";
+@use "../mixins/breakpoints";
+
 .scrolled {
   background: rgba(255, 255, 255, 0.651);
   backdrop-filter: blur(20px);
   height: 5rem !important;
   z-index: 99;
-  border-bottom: 2px solid $accent-color-lightest;
-  box-shadow: 0px 0px 10px $accent-color-lightest;
+  border-bottom: 2px solid colors.$accent-color-lightest;
+  box-shadow: 0px 0px 10px colors.$accent-color-lightest;
 }
 nav.main-navbar {
   display: flex;
@@ -19,10 +22,10 @@ nav.main-navbar {
   transition: 0.3s ease;
   z-index: 99;
 
-  @include for-desktop-up {
+  @include breakpoints.for-desktop-up {
   }
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     display: none;
   }
 
@@ -46,11 +49,11 @@ nav.main-navbar {
     }
 
     span.logo-start {
-      color: $accent-color;
+      color: colors.$accent-color;
     }
 
     span.logo-end {
-      color: $secondary-color;
+      color: colors.$secondary-color;
     }
   }
 
@@ -66,7 +69,7 @@ nav.main-navbar {
       display: inline-block;
 
       &:hover {
-        color: $accent-color-dark;
+        color: colors.$accent-color-dark;
         position: relative;
         cursor: pointer;
       }
@@ -75,7 +78,7 @@ nav.main-navbar {
 
   .try-free-btn {
     display: none;
-    @include for-desktop-up {
+    @include breakpoints.for-desktop-up {
       display: inline-block;
     }
   }
@@ -98,14 +101,14 @@ nav.main-navbar {
   padding: 10px 20px;
   background-color: #f8f9fabe;
   backdrop-filter: blur(10px);
-  box-shadow: 0px 0px 20px $accent-color-lightest;
+  box-shadow: 0px 0px 20px colors.$accent-color-lightest;
   height: 4rem;
 
-  @include for-desktop-up {
+  @include breakpoints.for-desktop-up {
     display: none;
   }
 
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     display: flex;
   }
 
@@ -126,7 +129,7 @@ nav.main-navbar {
     }
 
     span.logo-end {
-      color: $secondary-color;
+      color: colors.$secondary-color;
     }
   }
 
@@ -152,12 +155,12 @@ nav.main-navbar {
   }
 
   .navigation-links-mobile {
-    background: $background-light-alpha;
+    background: colors.$background-light-alpha;
     -webkit-backdrop-filter: blur(8px); 
     backdrop-filter: blur(50px);
     display: none;
 
-    @include for-tablet-landscape-up {
+    @include breakpoints.for-tablet-landscape-up {
       display: none;
     }
 
@@ -178,7 +181,7 @@ nav.main-navbar {
           color: black;
           font-size: 18px;
           &:hover {
-            color: $accent-color;
+            color: colors.$accent-color;
           }
           &.current-tab {
             font-weight: bold;
@@ -190,7 +193,7 @@ nav.main-navbar {
   }
 
   // Mobile-specific styles
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     .navigation-links-mobile {
       display: none; // Initially hidden on mobile
       flex-direction: column;
@@ -208,7 +211,7 @@ nav.main-navbar {
     .nav-links-container {
       display: flex;
       border-radius: 1rem;
-      background: $background-color;
+      background: colors.$background-color;
       backdrop-filter: blur(50px);
       position: relative;
       width: 100%;

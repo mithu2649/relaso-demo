@@ -1,3 +1,5 @@
+@use "../base/colors";
+
 .nav-links-container {
   li {
     position: relative; /* Ensure the parent <li> is positioned */
@@ -30,14 +32,14 @@
       position: absolute;
       top: 90%; /* Align dropdown below the parent */
       left: 0;
-      background-color: $background-light-alpha;
+      background-color: colors.$background-light-alpha;
       backdrop-filter: blur(20px);
       border-radius: 1rem;
       list-style: none;
       padding: 0;
       margin: 0;
       min-width: 16rem;
-      box-shadow: 0 4px 8px $accent-color-lightest; /* Add slight shadow */
+      box-shadow: 0 4px 8px colors.$accent-color-lightest; /* Add slight shadow */
 
       opacity: 0; // Start with an opacity of 0
       transform: translateY(-10px); // Start slightly above

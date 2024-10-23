@@ -1,8 +1,11 @@
+@use "../base/colors";
+@use "../mixins/breakpoints";
+
 .blogs-container {
   padding: 3rem 0;
   display: flex;
   flex-direction: column;
-  @include for-tablet-landscape-down {
+  @include breakpoints.for-tablet-landscape-down {
     padding: 0;
   }
 
@@ -15,16 +18,16 @@
     flex-basis: 1;
     flex-grow: 0;
     flex-wrap: wrap;
-    @include for-tablet-landscape-down {
+    @include breakpoints.for-tablet-landscape-down {
       padding-left: 0;
     }
 
     a {
-      color: $accent-color;
+      color: colors.$accent-color;
     }
 
     li {
-      background-color: $background-light-alpha;
+      background-color: colors.$background-light-alpha;
       gap: 0.6rem !important;
       padding: 2rem;
       border-radius: 1rem;
@@ -33,14 +36,14 @@
       height: 32rem;
       overflow: hidden;
 
-      @include for-tablet-landscape-down {
+      @include breakpoints.for-tablet-landscape-down {
         max-width: 100%;
         height: auto;
       }
 
       &:hover {
         .post-title {
-          color: $accent-color;
+          color: colors.$accent-color;
         }
       }
 

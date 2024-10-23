@@ -1,14 +1,17 @@
+@use "../base/colors";
+@use "../mixins/breakpoints";
+
 input[type="text"], input[type="email"] {
-    color: $accent-color;
+    color: colors.$accent-color;
     padding: 15px 25px;
     border-radius: 100px;
     transition: .2s ease;
-    border: 2px solid $accent-color;
+    border: 2px solid colors.$accent-color;
     text-align: left;
     font-size: clamp(0.4rem, 0.8636rem + 0.5818vw, 1.2rem);
     color: black;
 
-    @include for-tablet-landscape-down{
+    @include breakpoints.for-tablet-landscape-down{
         padding: 0.4rem;
     }
 }

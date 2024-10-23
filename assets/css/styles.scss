@@ -2,41 +2,41 @@
 ---
 
 // base
-@import "base/reset";
-@import "base/fonts";
-@import "base/colors"; 
+@use "base/reset";
+@use "base/fonts";
+@use "base/colors"; 
 
 
 //mixins
 
-@import "mixins/breakpoints";
+@use "mixins/breakpoints";
 
-@import "main";
+@use "main";
 
 
 
 
 // components
-@import "components/buttons";
-@import "components/cards";
-@import "components/chips";
-@import "components/texts";
-@import "components/fields";
-@import "components/dropdown";
+@use "components/buttons";
+@use "components/cards";
+@use "components/chips";
+@use "components/texts";
+@use "components/fields";
+@use "components/dropdown";
 
 
 
 //layouts
-@import "layouts/navigation";
-@import "layouts/footer";
+@use "layouts/navigation";
+@use "layouts/footer";
 
 
 //pages
-@import "pages/homepage";
-@import "pages/post";
-@import "pages/blog";
-@import "pages/contact";
-@import "pages/pricing";
+@use "pages/homepage";
+@use "pages/post";
+@use "pages/blog";
+@use "pages/contact";
+@use "pages/pricing";
 
 
 
