@@ -86,11 +86,14 @@
 <script defer>
 
   document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu.style.display === 'block') {
+    let menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'flex') {
       menu.style.display = 'none';
+      document.querySelector('.menu-button').style.border='none';
+
     } else {
-      menu.style.display = 'block';
+      menu.style.display = 'flex';
+      document.querySelector('.menu-button').style.border='1px dotted blue';
     }
   });
 </script>
@@ -102,13 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
 
   dropdownToggles.forEach(function (toggle) {
-    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
-
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log("Dropdown clicked:", this); // Check if the click event is firing
-
-      var dropdownMenu = this.nextElementSibling;
+          var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });

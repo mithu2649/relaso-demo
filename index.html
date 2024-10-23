@@ -11,19 +11,26 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       <div class="chip"></div>
     </div>
     <div class="hero-text">
-      CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate"
+      The CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate"
         >flexible,&nbsp;</span
       >not frustrating.
     </div>
     <div>
       <p class="main-header-sub-para header-sub-para">{{ page.hero-paragraph }}</p>
     </div>
+    
     <div>
       <div class="action-buttons-container">
-        <a href="/pricing" class="filled-btn">Try for free</a>
-        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
-          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
-        >
+        <div class="call-to-action-btns-container">
+          <a href="/pricing" class="filled-btn">Try for free</a>
+          <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
+        </div>
+
+        <div class="slide-change-btn-container">
+          <button class="prev-slide"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="next-slide"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -50,22 +57,6 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
     </div>
   </div>
 </section>
-
-<!-- The Modal for the video -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <iframe
-      id="relaso-crm-video"
-      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
-      title="Relaso CRM Overview"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
 
 <section class="client-companies">
   <div class="happy-customers-heading">
@@ -142,6 +133,22 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
   </div>
 </section>
 
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
 <script defer>
     const isSmallScreen = window.innerWidth < 768;
     document.addEventListener("DOMContentLoaded", function () {
@@ -209,40 +216,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       }
     });
 
-    // Get elements
-    const modal = document.getElementById("videoModal");
-    const btn = document.getElementById("openVideoBtn");
-    const span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-      // modal.style.display = "flex"; // Change to flex to center it
-
-      if (window.getComputedStyle(modal).display === "none") {
-        // Set display to block (or flex/inline-block depending on your layout)
-        gsap.set(modal, { display: "flex" });
-        gsap.fromTo('.modal-content', 
-          { 
-            scale: 0.5, 
-            transformOrigin: "0% 100%" // Bottom-left corner
-          }, 
-          { 
-            scale: 1, 
-            duration: 0.2, 
-            ease: "power2.out" // Smooth ease-out effect
-          }
-        );
-      }
-    };
-
-    span.onclick = function () {
-      modal.style.display = "none"; // Hide the modal again
-    };
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
+   
 
     ////// slideshow //////
 
@@ -251,55 +225,84 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
 
      // Debugging output to make sure slides data is loaded correctly
      console.log("Slides data:", slides);
+     
+      if (slides && slides.length > 0) {
+        // Selecting the relevant elements
+        // const heroIllustration = document.querySelector('.hero-illustration');
+        const videoIframe = document.querySelector('#relaso-crm-video');
+        const heroText = document.querySelector('.hero-text');
+        const headerSubPara = document.querySelector('.main-header-sub-para');
 
-  if (slides && slides.length > 0) {
-    // Selecting the relevant elements
-    // const heroIllustration = document.querySelector('.hero-illustration');
-    const videoIframe = document.querySelector('#relaso-crm-video');
-    const heroText = document.querySelector('.hero-text');
-    const headerSubPara = document.querySelector('.main-header-sub-para');
+        const slideAnimationDelaySeconds = 12;
+        let currentIndex = 0;
+        
 
-    let currentIndex = 0;
+        function updateSlide() {
+          if (window.innerWidth < 768) return; //if small screen
+          // Move to the next slide in the array
+          currentIndex = (currentIndex + 1) % slides.length;
+          const nextSlide = slides[currentIndex];
 
-    function updateSlide() {
-      // Move to the next slide in the array
-      currentIndex = (currentIndex + 1) % slides.length;
-      const nextSlide = slides[currentIndex];
+          if (nextSlide) {
+            // GSAP animation: fade out the content, change it, then fade back in
+            gsap.to('.hero-text, .main-header-sub-para', {
+              x: -200, // Slide content out to the left
+              opacity: 0,
+              duration: 0.5,
+              onComplete: () => {
+                // Update the content
+                // heroIllustration.src = nextSlide.illustration_img;
+                // videoIframe.src = nextSlide.video_url;
+                heroText.innerHTML = nextSlide.title;
+                headerSubPara.textContent = nextSlide.subtitle;
 
-      if (nextSlide) {
-        // GSAP animation: fade out the content, change it, then fade back in
-        gsap.to('.hero-text, .main-header-sub-para', {
-    x: -200, // Slide content out to the left
-    opacity: 0,
-    duration: 0.5,
-    onComplete: () => {
-      // Update the content
-      // heroIllustration.src = nextSlide.illustration_img;
-      // videoIframe.src = nextSlide.video_url;
-      heroText.innerHTML = nextSlide.title;
-      headerSubPara.textContent = nextSlide.subtitle;
+                // Slide new content in from the right
+                gsap.fromTo(' .hero-text, .main-header-sub-para', { x: 200, opacity: 0,}, { x: 0, opacity: 1, duration: 0.5, });
+              },
+            });
+          } else {
+            console.error("Next slide is undefined.");
+          }
+        }
 
-      // Slide new content in from the right
-      gsap.fromTo(' .hero-text, .main-header-sub-para', {
-        x: 200, // Start position (off-screen to the right)
-        opacity: 0,
-      }, {
-        x: 0, // End position
-        opacity: 1,
-        duration: 0.5,
-      });
-    },
-  });
+        function updateToPreviousSlide() {
+          if (window.innerWidth < 768) return;
+          // Move to the next slide in the array
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          const nextSlide = slides[currentIndex-1];
 
+          if (nextSlide) {
+            // GSAP animation: fade out the content, change it, then fade back in
+            gsap.to('.hero-text, .main-header-sub-para', {
+              x: 200, // Slide content out to the left
+              opacity: 0,
+              duration: 0.3,
+              onComplete: () => {
+                // Update the content
+                // heroIllustration.src = nextSlide.illustration_img;
+                // videoIframe.src = nextSlide.video_url;
+                heroText.innerHTML = nextSlide.title;
+                headerSubPara.textContent = nextSlide.subtitle;
+
+                // Slide new content in from the right
+                gsap.fromTo(' .hero-text, .main-header-sub-para', { x: -200, opacity: 0,}, { x: 0, opacity: 1, duration: 0.3, });
+              },
+            });
+          } else {
+            console.error("Next slide is undefined.");
+          }
+        }
+        setInterval(updateSlide, (slideAnimationDelaySeconds*1000));
+
+        document.querySelector('.next-slide').addEventListener('click', () => {
+            updateSlide();
+        });
+        document.querySelector('.prev-slide').addEventListener('click', () => {
+            updateToPreviousSlide();
+        });
       } else {
-        console.error("Next slide is undefined.");
+        console.error("Slides data is not available or empty.");
       }
-    }
-
-    // Set interval to change slides every 5 seconds
-    setInterval(updateSlide, 10000);
-  } else {
-    console.error("Slides data is not available or empty.");
-  }
 </script>
 
+<script src="assets/js/videoModalOpenClose.js" defer></script>

@@ -12,13 +12,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
       defer
     ></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   </head>
   <body>
 
@@ -83,7 +83,7 @@
             
               <li>
                 <a href="#" >
-                  Relaso Clinics
+                  Relaso Clinic
                 </a>
               </li>
             
@@ -195,11 +195,14 @@
 <script defer>
 
   document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu.style.display === 'block') {
+    let menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'flex') {
       menu.style.display = 'none';
+      document.querySelector('.menu-button').style.border='none';
+
     } else {
-      menu.style.display = 'block';
+      menu.style.display = 'flex';
+      document.querySelector('.menu-button').style.border='1px dotted blue';
     }
   });
 </script>
@@ -211,13 +214,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
 
   dropdownToggles.forEach(function (toggle) {
-    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
-
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log("Dropdown clicked:", this); // Check if the click event is firing
-
-      var dropdownMenu = this.nextElementSibling;
+          var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -227,25 +226,51 @@ document.addEventListener('DOMContentLoaded', function () {
   <h1>Latest Posts</h1>
   <ul>
     
-    <a class="post-title" href="/2018/08/21/apples.html">
+    <a href="/2024/10/23/what-is-relaso-hospitech.html">
       <li class="card card-container">
-        <img class="post-poster" src="https://cdn.britannica.com/22/187222-050-07B17FB6/apples-on-a-tree-branch.jpg" alt="Apples">
-        <h3>Apples</h3>
-        <div class="post-date"> 21 August 2018 </div>
-        <div class="post-excerpt">
-          Apple trees are cultivated worldwide, and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. ...
-        </div>
+        <article>
+          <img
+            class="post-poster"
+            src="https://hospitech.net/wp-content/themes/twentyeleven/img/office.jpg"
+            alt="What is Relaso for Hospitech?  | Hospitech CRM"
+          />
+          <h3 class="post-title">What is Relaso for Hospitech?  | Hospitech CRM</h3>
+          <span class="post-author-text">relaso.com</span>
+          <div><span class="post-date">23 October 2024</span></div>
+          <div class="post-excerpt">Relaso Hospitech CRM is designed specifically for companies in the healthcare technology sector, helping them manage distribution, sales, customer relationships, and m...</div>
+        </article>
       </li>
     </a>
     
-    <a class="post-title" href="/2018/08/20/why-relaso.html">
+    <a href="/2024/10/22/transforming-healthcare-management-for-clinics.html">
       <li class="card card-container">
-        <img class="post-poster" src="https://www.relaso.com/assets/media/c2.webp" alt="Why Relaso">
-        <h3>Why Relaso</h3>
-        <div class="post-date"> 20 August 2018 </div>
-        <div class="post-excerpt">
-          We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans ensure that businesses of all si...
-        </div>
+        <article>
+          <img
+            class="post-poster"
+            src="https://www.karexpert.com/wp-content/uploads/2022/01/3.png"
+            alt="Transforming Healthcare Management for Clinics"
+          />
+          <h3 class="post-title">Transforming Healthcare Management for Clinics</h3>
+          <span class="post-author-text">relaso.com</span>
+          <div><span class="post-date">22 October 2024</span></div>
+          <div class="post-excerpt">In today’s data-driven world, insights are critical for any business, and healthcare is no exception. Relaso Clinic offers powerful analytics and reporting tools that ...</div>
+        </article>
+      </li>
+    </a>
+    
+    <a href="/2018/08/20/why-choose-relaso-over-other-CRMs.html">
+      <li class="card card-container">
+        <article>
+          <img
+            class="post-poster"
+            src="https://www.relaso.com/assets/media/c2.webp"
+            alt="Why choose Relaso over other CRMs"
+          />
+          <h3 class="post-title">Why choose Relaso over other CRMs</h3>
+          <span class="post-author-text">Relaso.com</span>
+          <div><span class="post-date">20 August 2018</span></div>
+          <div class="post-excerpt">We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans en...</div>
+        </article>
       </li>
     </a>
     
@@ -278,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h3>Quick links:</h3>
       <div class="footer-links">
         
-        <a href="/pricing/hospitech">Relaso for Hospitech</a>
+        <a href="/hospitech">Relaso for Hospitech</a>
         
         <a href="/relaso-for-car-dealership">Relaso for Car Dealership</a>
         
@@ -292,18 +317,20 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <div class="footer-column fc-3">
-      <h3>Blog Posts links:</h3>
+      <h3>Blog Posts:</h3>
       <div class="footer-links">
         
-        <a href="/2018/08/21/apples.html">Apples</a>
+        <a href="/2024/10/23/what-is-relaso-hospitech.html">What is Relaso for Hospitech?  | Hospitech CRM</a>
         
-        <a href="/2018/08/20/why-relaso.html">Why Relaso</a>
+        <a href="/2024/10/22/transforming-healthcare-management-for-clinics.html">Transforming Healthcare Management for Clinics</a>
+        
+        <a href="/2018/08/20/why-choose-relaso-over-other-CRMs.html">Why choose Relaso over other CRMs</a>
         
       </div>
     </div>
   </div>
 
-  <div class="footer-column fc-3">
+  <div class="footer-column fc-4">
     <h3>Newsletter:</h3>
     <p class="news-letter-text">
       At Relaso, we understand the dedication and effort your sales team puts in

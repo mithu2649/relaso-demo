@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apples</title>
+    <title>Relaso Pricing Page | Choose your product</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,13 +12,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
       defer
     ></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   </head>
   <body>
 
@@ -83,7 +83,7 @@
             
               <li>
                 <a href="#" >
-                  Relaso Clinics
+                  Relaso Clinic
                 </a>
               </li>
             
@@ -195,11 +195,14 @@
 <script defer>
 
   document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu.style.display === 'block') {
+    let menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'flex') {
       menu.style.display = 'none';
+      document.querySelector('.menu-button').style.border='none';
+
     } else {
-      menu.style.display = 'block';
+      menu.style.display = 'flex';
+      document.querySelector('.menu-button').style.border='1px dotted blue';
     }
   });
 </script>
@@ -211,29 +214,81 @@ document.addEventListener('DOMContentLoaded', function () {
   var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
 
   dropdownToggles.forEach(function (toggle) {
-    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
-
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log("Dropdown clicked:", this); // Check if the click event is firing
-
-      var dropdownMenu = this.nextElementSibling;
+          var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
 });
 
-</script> <div class="document-container">
-  <h1>Apples</h1>
-  <p>21 Aug 2018 - jill</p>
-  <h3 id="an-apple-is-a-sweet-edible-fruit-produced-by-an-apple-tree">An apple is a sweet, edible fruit produced by an apple tree.</h3>
-
-<p>Apple trees are cultivated worldwide, and are the most widely grown
-species in the genus Malus. The tree originated in Central Asia, where
-its wild ancestor, Malus sieversii, is still found today. Apples have
-been grown for thousands of years in Asia and Europe, and were brought
-to North America by European colonists.</p>
-
+</script> <div class="pricing-products">
+  <h1 class="gradient-text">We offer multiple products that can seamlessly transform your business</h1>
+  <p class="header-sub-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, architecto repellat facere sed voluptates mollitia maiores impedit nemo cupiditate fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cum et officia voluptates dolores dicta! Corporis sit inventore enim, in aspernatur id vel expedita earum debitis rerum aperiam molestias ratione ex dolores quo qui architecto ipsa perspiciatis obcaecati fugit quasi.</p>
+  <br /><br><br>
+  <div class="pricing-cards cards-container">
+    
+    <a href="/about">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-users"></i></div>
+        <div class="card-title"><h4>Relaso CRM</h4></div>
+        <div class="card-description">
+          <p>A comprehensive platform for managing customer relationships, streamlining communication, and business growth through advanced tools designed to improve efficiency, and customer satisfaction.</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="/hospitech">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-hospital"></i></div>
+        <div class="card-title"><h4>Relaso Hospitech</h4></div>
+        <div class="card-description">
+          <p>Empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights.</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+        <div class="card-title"><h4>Relaso Clinic</h4></div>
+        <div class="card-description">
+          <p>Designed for clinics to manage patient appointments, streamline interactions, and improve overall service delivery, ensuring a seamless and efficient healthcare experience.</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-clipboard"></i></div>
+        <div class="card-title"><h4>Relaso Examination</h4></div>
+        <div class="card-description">
+          <p>Automate the entire exam process—from candidate registration to result publication. Seamless experiences for administrators, evaluators, and candidates alike.</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-headset"></i></div>
+        <div class="card-title"><h4>Relaso HelpDesk</h4></div>
+        <div class="card-description">
+          <p>Exceptional customer support with efficient ticket management. Track, prioritize, and resolve queries faster while enhancing customer satisfaction and boosting team productivity effortlessly.</p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#">
+      <div class="card product">
+        <div class="card-icon"><i class="fas fa-gavel"></i></div>
+        <div class="card-title"><h4>Relaso for Law Firms</h4></div>
+        <div class="card-description">
+          <p>A specialized solution for legal professionals, offering tools to manage cases, streamline billing, and organize documentation for improved productivity and client service.</p>
+        </div>
+      </div>
+    </a>
+    
+  </div>
 </div>
  <footer>
   <div class="footer-container">
@@ -262,7 +317,7 @@ to North America by European colonists.</p>
       <h3>Quick links:</h3>
       <div class="footer-links">
         
-        <a href="/pricing/hospitech">Relaso for Hospitech</a>
+        <a href="/hospitech">Relaso for Hospitech</a>
         
         <a href="/relaso-for-car-dealership">Relaso for Car Dealership</a>
         
@@ -276,18 +331,20 @@ to North America by European colonists.</p>
     </div>
 
     <div class="footer-column fc-3">
-      <h3>Blog Posts links:</h3>
+      <h3>Blog Posts:</h3>
       <div class="footer-links">
         
-        <a href="/2018/08/21/apples.html">Apples</a>
+        <a href="/2024/10/23/what-is-relaso-hospitech.html">What is Relaso for Hospitech?  | Hospitech CRM</a>
         
-        <a href="/2018/08/20/why-relaso.html">Why Relaso</a>
+        <a href="/2024/10/22/transforming-healthcare-management-for-clinics.html">Transforming Healthcare Management for Clinics</a>
+        
+        <a href="/2018/08/20/why-choose-relaso-over-other-CRMs.html">Why choose Relaso over other CRMs</a>
         
       </div>
     </div>
   </div>
 
-  <div class="footer-column fc-3">
+  <div class="footer-column fc-4">
     <h3>Newsletter:</h3>
     <p class="news-letter-text">
       At Relaso, we understand the dedication and effort your sales team puts in

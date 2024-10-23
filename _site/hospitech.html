@@ -12,13 +12,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
       defer
     ></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   </head>
   <body>
 
@@ -83,7 +83,7 @@
             
               <li>
                 <a href="#" >
-                  Relaso Clinics
+                  Relaso Clinic
                 </a>
               </li>
             
@@ -195,11 +195,14 @@
 <script defer>
 
   document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu.style.display === 'block') {
+    let menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'flex') {
       menu.style.display = 'none';
+      document.querySelector('.menu-button').style.border='none';
+
     } else {
-      menu.style.display = 'block';
+      menu.style.display = 'flex';
+      document.querySelector('.menu-button').style.border='1px dotted blue';
     }
   });
 </script>
@@ -211,13 +214,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
 
   dropdownToggles.forEach(function (toggle) {
-    console.log("Dropdown toggle found:", toggle); // Check if dropdowns are being detected
-
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log("Dropdown clicked:", this); // Check if the click event is firing
-
-      var dropdownMenu = this.nextElementSibling;
+          var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -236,10 +235,16 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div>
       <div class="action-buttons-container">
-        <a href="/pricing" class="filled-btn">Try for free</a>
-        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
-          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
-        >
+        <div class="call-to-action-btns-container">
+          <a href="/pricing" class="filled-btn">Try for free</a>
+          <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
+        </div>
+
+        <div class="slide-change-btn-container">
+          <button class="prev-slide"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="next-slide"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -253,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
       />
       <div class="video-container plyr__video-embed" id="player">
         <iframe
-          src="https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
+          src="https://www.youtube.com/watch?v=cyLzBbunZbo"
           title="Introduction to Relaso"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -266,22 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
   </div>
 </section>
-
-<!-- The Modal for the video -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <iframe
-      id="relaso-crm-video"
-      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
-      title="Relaso CRM Overview"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
+<!-- <br><br> -->
 
 <section class="client-companies">
   <div class="happy-customers-heading">
@@ -348,6 +338,67 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 
+<section class="features-section">
+  <div class="features-header section-header">
+    <div class="chip"></div>
+    <div class="heading">
+      <h3 class="heading-text">
+        Relaso for Hospitech offers you multiple features
+      </h3>
+    </div>
+    <div class="feature-summary">
+      <p class="header-sub-para">
+        Relaso offers a seamless all-in-one solution, enabling effortless
+        pipeline management, efficient deal management, and relationship
+        nurturing—all from an intuitive platform. <br />Key features include:
+      </p>
+    </div>
+  </div>
+  <div class="feature-cards cards-container">
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+      <div class="card-title"><h4>Easy Integration</h4></div>
+      <div class="card-description"><p>Seamlessly connect Relaso with your existing tools and platforms, ensuring a smooth workflow without disruption to your current processes.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <div class="card-title"><h4>Automated Workflows</h4></div>
+      <div class="card-description"><p>Automate repetitive tasks to save valuable time, boosting efficiency and allowing you to focus on more important aspects of your business.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+      <div class="card-title"><h4>Customizable Dashboard</h4></div>
+      <div class="card-description"><p>Personalize your dashboard to align with your specific workflow and business needs, allowing you to manage key insights and tasks more efficiently.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-regular fa-bar-chart"></i></div>
+      <div class="card-title"><h4>Advanced Analytics</h4></div>
+      <div class="card-description"><p>Access in-depth reporting and analytics tools that offer powerful insights into your business performance, helping you make informed decisions.</p></div>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
 
 <script defer>
   const isSmallScreen = window.innerWidth < 768;
@@ -384,16 +435,10 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector(".hero-illustration").style.display = "none";
           const player = new Plyr("#player", { enabled: true, autoplay: true });
           window.player = player;
-
-          gsap.delayedCall(3, revertIllustrationAnimation);
         },
       });
 
-      function revertIllustrationAnimation(){
-        document.querySelector(".video-container").style.display = "none";
-        document.querySelector(".hero-illustration").style.display = "flex";
-      }
-
+ 
       shakeTimeline.to(".action-buttons-container .filled-btn", {
         y: -16, // Move the button 10px horizontally
         scale: 1.07,
@@ -415,43 +460,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-
-  // Get elements
-  const modal = document.getElementById("videoModal");
-  const btn = document.getElementById("openVideoBtn");
-  const span = document.getElementsByClassName("close")[0];
-
-  btn.onclick = function () {
-    // modal.style.display = "flex"; // Change to flex to center it
-
-    if (window.getComputedStyle(modal).display === "none") {
-      // Set display to block (or flex/inline-block depending on your layout)
-      gsap.set(modal, { display: "flex" });
-      gsap.fromTo('.modal-content', 
-        { 
-          scale: 0.5, 
-          transformOrigin: "0% 100%" // Bottom-left corner
-        }, 
-        { 
-          scale: 1, 
-          duration: 0.2, 
-          ease: "power2.out" // Smooth ease-out effect
-        }
-      );
-    }
-  };
-
-  span.onclick = function () {
-    modal.style.display = "none"; // Hide the modal again
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
 </script>
 
-  ` <footer>
+<script src="assets/js/videoModalOpenClose.js" defer></script> <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
       <h3>Head Office:</h3>
@@ -478,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h3>Quick links:</h3>
       <div class="footer-links">
         
-        <a href="/pricing/hospitech">Relaso for Hospitech</a>
+        <a href="/hospitech">Relaso for Hospitech</a>
         
         <a href="/relaso-for-car-dealership">Relaso for Car Dealership</a>
         
@@ -492,18 +503,20 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <div class="footer-column fc-3">
-      <h3>Blog Posts links:</h3>
+      <h3>Blog Posts:</h3>
       <div class="footer-links">
         
-        <a href="/2018/08/21/apples.html">Apples</a>
+        <a href="/2024/10/23/what-is-relaso-hospitech.html">What is Relaso for Hospitech?  | Hospitech CRM</a>
         
-        <a href="/2018/08/20/why-relaso.html">Why Relaso</a>
+        <a href="/2024/10/22/transforming-healthcare-management-for-clinics.html">Transforming Healthcare Management for Clinics</a>
+        
+        <a href="/2018/08/20/why-choose-relaso-over-other-CRMs.html">Why choose Relaso over other CRMs</a>
         
       </div>
     </div>
   </div>
 
-  <div class="footer-column fc-3">
+  <div class="footer-column fc-4">
     <h3>Newsletter:</h3>
     <p class="news-letter-text">
       At Relaso, we understand the dedication and effort your sales team puts in

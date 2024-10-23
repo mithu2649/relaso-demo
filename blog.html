@@ -7,14 +7,19 @@ title: Relaso Blogs
   <h1>Latest Posts</h1>
   <ul>
     {% for post in site.posts %}
-    <a class="post-title" href="{{ post.url }}">
+    <a href="{{ post.url }}">
       <li class="card card-container">
-        <img class="post-poster" src="{{ post.poster }}" alt="{{post.title}}">
-        <h3>{{ post.title }}</h3>
-        <div class="post-date"> {{ post.date | date_to_long_string}} </div>
-        <div class="post-excerpt">
-          {{ post.excerpt | truncate: 200 }}
-        </div>
+        <article>
+          <img
+            class="post-poster"
+            src="{{ post.poster }}"
+            alt="{{post.title}}"
+          />
+          <h3 class="post-title">{{ post.title }}</h3>
+          <span class="post-author-text">{{ post.author }}</span>
+          <div><span class="post-date">{{ post.date | date_to_long_string}}</span></div>
+          <div class="post-excerpt">{{ post.excerpt | truncate: 170 }}</div>
+        </article>
       </li>
     </a>
     {% endfor %}

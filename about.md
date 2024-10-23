@@ -1,10 +1,9 @@
 ---
-layout: post
 title: 'Relaso CRM: The only CRM you need'
-date: 15/12/1998
+layout: post
+date: '2024-10-02 13:29:32'
 author: Relaso.com
 ---
-
 
 In today's fast-paced business environment, having the right tools is essential for success. That's where **Relaso CRM** comes in—a completely customizable and affordable solution designed to help you manage your customer relationships effortlessly. Whether you’re a small startup or a large enterprise, Relaso CRM offers the flexibility and functionality you need to grow your business.
 

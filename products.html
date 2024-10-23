@@ -1,0 +1,22 @@
+---
+layout: default
+title: Relaso Pricing Page | Choose your product
+---
+<div class="pricing-products">
+  <h1 class="gradient-text">We offer multiple products that can seamlessly transform your business</h1>
+  <p class="header-sub-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, architecto repellat facere sed voluptates mollitia maiores impedit nemo cupiditate fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cum et officia voluptates dolores dicta! Corporis sit inventore enim, in aspernatur id vel expedita earum debitis rerum aperiam molestias ratione ex dolores quo qui architecto ipsa perspiciatis obcaecati fugit quasi.</p>
+  <br /><br><br>
+  <div class="pricing-cards cards-container">
+    {% for product in site.data.products %}
+    <a href="{{product.site_link}}">
+      <div class="card product">
+        <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
+        <div class="card-title"><h4>{{product.title}}</h4></div>
+        <div class="card-description">
+          <p>{{product.description | truncate:200 }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

@@ -1,19 +1,24 @@
-- title: 'CRM Software that''s <span class="gradient-text flexible-text-animate">flexible</span>, not frustrating.'
+# Relaso CRM
+- title: 'The CRM Software <br>that''s <span class="gradient-text flexible-text-animate">flexible</span>, not frustrating.'
   subtitle: "Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity."
   illustration_img: "assets/images/undraw_add_information_j2wg.svg"
   video_url: "https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
 
+
+# Relaso Hospitech
 - title: 'Hospital equipment distribution with <span class="gradient-text flexible-text-animate"> Relaso Hospitech</span>'
   subtitle: "Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. "
   illustration_img: "assets/images/hospitech_illustration.svg"
-  video_url: "https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
+  video_url: "https://www.youtube.com/watch?v=cyLzBbunZbo"
 
-- title: 'Empower Your Clinics with <span class="gradient-text flexible-text-animate">Relaso Clinic</span>'
+# Relaso Clinics
+- title: 'Empower Your Clinic Management with <span class="gradient-text flexible-text-animate">Relaso Clinic</span>'
   subtitle: "Our clinic-focused CRM allows you to track appointments, manage patient data, and improve follow-ups effortlessly. Experience a healthier workflow and elevate patient satisfaction with our intuitive platform."
   illustration_img: "assets/images/clinics_illustration.svg"
   video_url: "https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
 
-- title: 'Streamline Your Support with <span class="gradient-text flexible-text-animate">Relaso Helpdesk</span>'
+# Relaso Helpdesk
+- title: 'Streamline Your Support Systems with <span class="gradient-text flexible-text-animate">Relaso Helpdesk</span>'
   subtitle: "Our Relaso Helpdesk CRM enables your support team to handle inquiries with ease, ensuring no question goes unanswered. Delight your customers with fast responses and robust solutions—all in one powerful platform."
   illustration_img: "assets/images/helpdesk_illustration.svg"
   video_url: "https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"

@@ -28,19 +28,29 @@ footer {
     }
   }
 
+  .fc-1,
+  .fc-2,
+  .fc-3 {
+    width: 12rem;
+  }
+  .fc-4 {
+    flex-grow: 1;
+  }
   .footer-column {
     display: flex;
     flex-direction: column;
     flex: 1 1 17rem;
     gap: 0.8rem;
     flex-wrap: wrap;
+    min-width: 10rem;
 
     h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    p, .address {
+    p,
+    .address {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -74,9 +84,8 @@ footer {
       }
     }
 
-    &.fc-3 {
-      flex: 3;
-
+    &.fc-4 {
+      
       .news-letter-text {
         line-height: 1.8;
         margin-bottom: 1rem;
@@ -101,8 +110,7 @@ footer {
             opacity: 1;
           }
 
-
-          @include for-tablet-landscape-up{
+          @include for-tablet-landscape-up {
             background-color: transparent;
           }
         }

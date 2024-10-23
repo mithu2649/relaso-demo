@@ -131,12 +131,18 @@ nav.main-navbar {
   }
 
   .menu-button {
-    display: none;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 3rem;
+    width:3rem;
 
     button {
       background: none;
       border: none;
-      font-size: 30px;
+      font-size: 20px;
       cursor: pointer;
 
       .menu-icon{
@@ -146,7 +152,9 @@ nav.main-navbar {
   }
 
   .navigation-links-mobile {
-    background: transparent;
+    background: $background-light-alpha;
+    -webkit-backdrop-filter: blur(8px); 
+    backdrop-filter: blur(50px);
     display: none;
 
     @include for-tablet-landscape-up {
@@ -194,15 +202,16 @@ nav.main-navbar {
     }
 
     .menu-button {
-      display: block; // Show hamburger menu button on mobile
+      display: flex; // Show hamburger menu button on mobile
     }
 
     .nav-links-container {
-      display: block;
+      display: flex;
       border-radius: 1rem;
-      background: $background-light-alpha;
+      background: $background-color;
       backdrop-filter: blur(50px);
-
+      position: relative;
+      width: 100%;
       li {
         margin: 10px 0;
       }

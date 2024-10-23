@@ -16,10 +16,16 @@ title: Pricing for Hospitech
     </div>
     <div>
       <div class="action-buttons-container">
-        <a href="/pricing" class="filled-btn">Try for free</a>
-        <a href="#watch-video" id="openVideoBtn" class="outline-btn"
-          ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
-        >
+        <div class="call-to-action-btns-container">
+          <a href="/pricing" class="filled-btn">Try for free</a>
+          <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
+        </div>
+
+        <div class="slide-change-btn-container">
+          <button class="prev-slide"><i class="fa-solid fa-angle-left"></i></button>
+          <button class="next-slide"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -46,22 +52,7 @@ title: Pricing for Hospitech
     </div>
   </div>
 </section>
-
-<!-- The Modal for the video -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <iframe
-      id="relaso-crm-video"
-      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
-      title="Relaso CRM Overview"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
+<!-- <br><br> -->
 
 <section class="client-companies">
   <div class="happy-customers-heading">
@@ -81,6 +72,49 @@ title: Pricing for Hospitech
 </section>
 
 
+<section class="features-section">
+  <div class="features-header section-header">
+    <div class="chip"></div>
+    <div class="heading">
+      <h3 class="heading-text">
+        Relaso for Hospitech offers you multiple features
+      </h3>
+    </div>
+    <div class="feature-summary">
+      <p class="header-sub-para">
+        Relaso offers a seamless all-in-one solution, enabling effortless
+        pipeline management, efficient deal management, and relationship
+        nurturing—all from an intuitive platform. <br />Key features include:
+      </p>
+    </div>
+  </div>
+  <div class="feature-cards cards-container">
+    {% for feature in site.data.primary_features %}
+    <div class="card">
+      <div class="card-icon"><i class="{{feature.fa_icon_class}}"></i></div>
+      <div class="card-title"><h4>{{feature.title}}</h4></div>
+      <div class="card-description"><p>{{ feature.description}}</p></div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- The Modal for the video -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <iframe
+      id="relaso-crm-video"
+      src="https://www.youtube.com/embed/qmfJJ_lWpyM"
+      title="Relaso CRM Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
 
 <script defer>
   const isSmallScreen = window.innerWidth < 768;
@@ -117,16 +151,10 @@ title: Pricing for Hospitech
           document.querySelector(".hero-illustration").style.display = "none";
           const player = new Plyr("#player", { enabled: true, autoplay: true });
           window.player = player;
-
-          gsap.delayedCall(3, revertIllustrationAnimation);
         },
       });
 
-      function revertIllustrationAnimation(){
-        document.querySelector(".video-container").style.display = "none";
-        document.querySelector(".hero-illustration").style.display = "flex";
-      }
-
+ 
       shakeTimeline.to(".action-buttons-container .filled-btn", {
         y: -16, // Move the button 10px horizontally
         scale: 1.07,
@@ -148,40 +176,6 @@ title: Pricing for Hospitech
       });
     }
   });
-
-  // Get elements
-  const modal = document.getElementById("videoModal");
-  const btn = document.getElementById("openVideoBtn");
-  const span = document.getElementsByClassName("close")[0];
-
-  btn.onclick = function () {
-    // modal.style.display = "flex"; // Change to flex to center it
-
-    if (window.getComputedStyle(modal).display === "none") {
-      // Set display to block (or flex/inline-block depending on your layout)
-      gsap.set(modal, { display: "flex" });
-      gsap.fromTo('.modal-content', 
-        { 
-          scale: 0.5, 
-          transformOrigin: "0% 100%" // Bottom-left corner
-        }, 
-        { 
-          scale: 1, 
-          duration: 0.2, 
-          ease: "power2.out" // Smooth ease-out effect
-        }
-      );
-    }
-  };
-
-  span.onclick = function () {
-    modal.style.display = "none"; // Hide the modal again
-  };
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
 </script>
 
-  `
+<script src="assets/js/videoModalOpenClose.js" defer></script>

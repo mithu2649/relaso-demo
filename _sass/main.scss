@@ -9,7 +9,7 @@ html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
+  height: 150vh;
   // animation: gradientAnimation 5s ease infinite; /* Infinite animation */
 }
 
@@ -19,6 +19,11 @@ body {
   font-weight: 400;
   @include for-phone-only {
     padding: 0 2rem;
+  }
+
+  em{
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
   }
 }
 
