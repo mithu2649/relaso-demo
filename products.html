@@ -3,20 +3,49 @@ layout: default
 title: Relaso Pricing Page | Choose your product
 ---
 <div class="pricing-products">
-  <h1 class="gradient-text">We offer multiple products that can seamlessly transform your business</h1>
-  <p class="header-sub-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, architecto repellat facere sed voluptates mollitia maiores impedit nemo cupiditate fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cum et officia voluptates dolores dicta! Corporis sit inventore enim, in aspernatur id vel expedita earum debitis rerum aperiam molestias ratione ex dolores quo qui architecto ipsa perspiciatis obcaecati fugit quasi.</p>
-  <br /><br><br>
+  <br /><br />
+  <h1 class="gradient-text">We offer multiple products that can improve your business</h1>
+
   <div class="pricing-cards cards-container">
     {% for product in site.data.products %}
-    <a href="{{product.site_link}}">
-      <div class="card product">
-        <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
-        <div class="card-title"><h4>{{product.title}}</h4></div>
-        <div class="card-description">
-          <p>{{product.description | truncate:200 }}</p>
-        </div>
+
+    <div class="card product">
+      <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
+      <div class="card-title"><h4>{{product.title}}</h4></div>
+      <div class="card-description">
+        <p>{{product.description | truncate:200 }}</p>
       </div>
-    </a>
+      <a href="{{ product.site_link }}" class="outline-btn bookDemoBtn"
+        >Visit Site</a
+      >
+    </div>
+
     {% endfor %}
   </div>
 </div>
+
+
+
+<style>
+  .pricing-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    h1{
+      padding: 3rem 0;
+    }
+    
+    .pricing-cards {
+      align-items: center;
+      justify-content: center;
+      
+      .product {
+        
+        .card-description {
+          min-height: 9rem;
+        }
+      }
+    }
+  }
+</style>

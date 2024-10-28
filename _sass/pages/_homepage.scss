@@ -6,7 +6,6 @@
   .plyr__poster {
     background-size: cover !important;
   }
-  
 }
 body {
   overflow-x: hidden;
@@ -77,16 +76,16 @@ body {
     min-height: 30rem;
 
     @include breakpoints.for-phone-only {
-      gap: 1rem;
-    }
-    @include breakpoints.for-tablet-landscape-down {
-      gap: 2rem;
-    }
-    @include breakpoints.for-big-desktop-down {
       gap: 0rem;
     }
+    @include breakpoints.for-tablet-landscape-down {
+      // gap: 2rem;
+    }
     @include breakpoints.for-big-desktop-down {
-      gap: 2rem;
+      // gap: 0rem;
+    }
+    @include breakpoints.for-big-desktop-down {
+      // gap: 2rem;
     }
 
     .action-buttons-container {
@@ -150,6 +149,9 @@ body {
 
   .column2 {
     width: 100%;
+    @include breakpoints.for-tablet-portrait-down {
+      width: 110%;
+    }
     .illustrations-container {
       border-radius: 1.5rem;
       width: 100%;
@@ -159,10 +161,6 @@ body {
       img {
         width: 90%;
         display: none;
-        // @include breakpoints.for-tablet-landscape-down{
-        //   display: block !important;
-        //   display
-        // }
       }
       #player {
         border-radius: 1rem !important;

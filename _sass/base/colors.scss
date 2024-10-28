@@ -7,3 +7,4 @@ $secondary-color        : orangered;
 $background-color       : #f8f9fa;
 $background-dark        : #231d42b7;
 $background-light-alpha : rgba(255, 255, 255, 0.315);
+$gradient-color         :  linear-gradient(to right, #{$accent-color}, #{$secondary-color}); //

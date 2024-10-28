@@ -1,8 +1,13 @@
 @use "../base/colors";
+@use "../mixins/breakpoints";
 
 #pricing-section {
-  max-width: 90%;
+  max-width: 95%;
   margin: 0 auto;
+
+  @include breakpoints.for-tablet-portrait-down {
+    max-width: 100%;
+  }
 
   .headline-container {
     // border: 1px dotted blue;
@@ -11,14 +16,39 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 0 4rem 0;
+
+    h3 {
+      color: colors.$accent-color-lightest;
+    }
+    @include breakpoints.for-tablet-portrait-down {
+      padding: 0.4rem;
+      h3 {
+        width: 100%;
+        padding: 0;
+      }
+    }
   }
-  #pricing-table.has-single-child{
+  @include breakpoints.for-tablet-portrait-down {
+    #pricing-table {
+      padding: 2rem 0rem;
+      .card {
+        transform: scale(1) !important;
+      }
+      .big-card{
+        order:-1;
+      }
+    }
+  }
+
+
+  #pricing-table.has-single-child {
     max-width: 50rem;
     margin: 0 auto;
   }
   .cards-container {
     flex-direction: row-reverse;
     .card {
+      -webkit-tap-highlight-color: transparent;
       transform: scale(0.9);
       padding: 3rem;
       gap: 1rem;
@@ -29,8 +59,14 @@
       box-sizing: border-box;
       box-shadow: 0px 0px 10px colors.$accent-color-light;
 
-    //   height: 60rem;
-    //   overflow: scroll;
+      @include breakpoints.for-tablet-portrait-down {
+        width: 100% !important;
+        padding: 2rem 1rem;
+        margin: 0;
+      }
+
+      //   height: 60rem;
+      //   overflow: scroll;
 
       .plan-header {
         text-align: center;

@@ -122,6 +122,14 @@ title: Pricing for Hospitech
 <script defer>
   const isSmallScreen = window.innerWidth < 768;
   document.addEventListener("DOMContentLoaded", function () {
+    const player = new Plyr("#player", { enabled: true, autoplay: false });
+    window.player = player;
+    const playerInModal = new Plyr("#playerInModal", {
+      enabled: true,
+      autoplay: false,
+    });
+    window.playerInModal = playerInModal;
+
     gsap.defaults({
       ease: "power4.in",
       duration: 1,
@@ -152,12 +160,10 @@ title: Pricing for Hospitech
       //   repeatDelay: 10,
       //   onComplete: () => {
       //     document.querySelector(".video-container").style.display = "flex";
-          // document.querySelector(".hero-illustration").style.display = "none";
-          const player = new Plyr("#player", { enabled: true, autoplay: true });
-          window.player = player;
+      // document.querySelector(".hero-illustration").style.display = "none";
+
       //   },
       // });
-
 
       shakeTimeline.to(".action-buttons-container .filled-btn", {
         y: -16, // Move the button 10px horizontally
