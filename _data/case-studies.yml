@@ -1,0 +1,21 @@
+- name: Tirumala Seven Hills Pvt. Ltd.
+  description: |
+    Tirumala Seven Hills provides country-wide Mobile Tower refrigeration unit maintenance and repair service for two major telecom providers. Relaso CRM was used to manage and monitor the operations of over 625 Customer Service professionals across India. Key functionalities include scheduling routine maintenance, ensuring compliance with SLA, managing customer service requests with auto-escalation, and tracking service requests with mobile before and after photo uploads along with automatic GPS tracking.
+  company_logo: 'assets/images/tirumala_logo.png'
+
+- name: Keya Seth Aromatherapy
+  description: |
+    Keya Seth, an internationally recognized aromatherapist, launched her brand in 2004, offering natural cosmeceutical products for skin, hair, and total beauty. The brand has received numerous national and international awards. Keya Seth implemented an innovative lead acquisition strategy facilitated by Relaso, targeting women through advertisements. Relaso managed calls and SMS for customer inquiries, organized competitions, and handled both inbound and outbound Call Center operations, ensuring seamless lead capture and customer interaction management.<br><br>The large volume of calls continuously comes through the Call center which is handled by a dedicated team. Relaso was used to manage the calls and route them appropriately. Relaso Call Center Software popped up with caller details of prior interactions when a call came in. It also provided a way to fill in missing Contact details and take notes on caller requirements and tagged for easy classification and analysis later. The call record was stored for random quality checks later. Potential customers could also SMS to Relaso managed numbers. On average around 2 SMS per second came from that number. The SMS along with contact details and other information provided are captured in Relaso CRM. The Call Center Team uses the leads captured to make outbound calls. The details of conversation as well as the notes taken are stored in Relaso CRM as before. Keya Seth also used the mobile number to organize competitions at festival outlets like Durga Puja. Visitors to the stall will send SMS along with asked for details like name, answer etc. to the designated number which is then captured in our CRM and used to choose random winners.
+
+
+  company_logo: 'assets/images/keya_seth-logo.jpg'
+
+- name: SIMBA Group
+  description: |
+    Uganda-based SIMBA Group, led by entrepreneur Joel Bellenson, provides energy-efficient fuel substitutes. Relaso is used to track the on-the-road Sales Team in real-time, ensuring proper coverage and accuracy in report filing and revenue tracking. The Relaso Sales CRM offers real-time GPS location data of the Sales team and manages Sales and Expenses data for the team.
+  company_logo: 'assets/images/simba-group-logo.jpg'
+
+- name: Notable Clients
+  description: |
+    Some notable clients include TruthTrance Inc. Florida, ShareKhan, Advisorkhoj, Lalani Infotech, Ujjewan Healthcare, S. S. Medicorp, Sakshi Jewelry, and Skipper Furnishing.
+  company_logo: '#'

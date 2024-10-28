@@ -35,7 +35,16 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/about" >
+          <a href="/">
+            Home
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/about">
             About
           </a>
         
@@ -43,26 +52,8 @@
     
       <li>
         
-          <!-- Regular link without dropdown -->
-          <a href="/blog" >
-            Blog
-          </a>
-        
-      </li>
-    
-      <li>
-        
-          <!-- Regular link without dropdown -->
-          <a href="/pricing" >
-            Pricing
-          </a>
-        
-      </li>
-    
-      <li>
-        
           <!-- Parent link for dropdown -->
-          <a href="/products" class="has-dropdown " data-toggle="dropdown">
+          <a href="/products" class="has-dropdown" data-toggle="dropdown">
             Products
           </a>
 
@@ -70,7 +61,7 @@
           <ul class="dropdown-menu">
             
               <li>
-                <a href="/about" >
+                <a href="/" >
                   Relaso CRM
                 </a>
               </li>
@@ -105,6 +96,12 @@
                 </a>
               </li>
             
+              <li>
+                <a href="#" >
+                  Relaso Document Management
+                </a>
+              </li>
+            
           </ul>
 
         
@@ -113,7 +110,34 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/contact" >
+          <a href="/pricing">
+            Pricing
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/case-studies">
+            Case Studies
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/blog">
+            Blog
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/contact">
             Contact
           </a>
         
@@ -146,14 +170,20 @@
       <ul class="nav-links-container">
         
         <li>
+          <a href="/" >
+            Home
+          </a>
+        </li>
+        
+        <li>
           <a href="/about" >
             About
           </a>
         </li>
         
         <li>
-          <a href="/blog" >
-            Blog
+          <a href="/products" >
+            Products
           </a>
         </li>
         
@@ -164,8 +194,14 @@
         </li>
         
         <li>
-          <a href="/products" >
-            Products
+          <a href="/case-studies" >
+            Case Studies
+          </a>
+        </li>
+        
+        <li>
+          <a href="/blog" >
+            Blog
           </a>
         </li>
         
@@ -227,38 +263,43 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="chip-container">
       <div class="chip"></div>
     </div>
-    <div class="hero-text">
-      Hospital equipment distribution with <span class="gradient-text flexible-text-animate"> Relaso Hospitech</span>
-    </div>
+    <div class="hero-text">Hospital equipment distribution with <span class="gradient-text flexible-text-animate"> Relaso Hospitech</span></div>
     <div>
-      <p class="header-sub-para"> Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. </p>
+      <p class="header-sub-para">Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. </p>
     </div>
     <div>
       <div class="action-buttons-container">
         <div class="call-to-action-btns-container">
-          <a href="/pricing" class="filled-btn">Try for free</a>
-          <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
+          <a href="/pricing/pricingPage?product=relasoHospitech" class="filled-btn"
+            >Try for free</a
+          >
+          <a href="#watch-video" id="openVideoBtn" class="outline-btn"
+            ><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a
+          >
         </div>
 
         <div class="slide-change-btn-container">
-          <button class="prev-slide"><i class="fa-solid fa-angle-left"></i></button>
-          <button class="next-slide"><i class="fa-solid fa-angle-right"></i></button>
+          <button class="prev-slide">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+          <button class="next-slide">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
         </div>
-
       </div>
     </div>
   </div>
 
   <div class="column2 right">
     <div class="illustrations-container">
-      <img
+      <!-- <img
         class="hero-illustration"
         src="/assets/images/hospitech_illustration.svg"
         alt="Illustration"
-      />
+      /> -->
       <div class="video-container plyr__video-embed" id="player">
         <iframe
-          src="https://www.youtube.com/watch?v=cyLzBbunZbo"
+          src="https://www.youtube.com/embed/cyLzBbunZbo"
           title="Introduction to Relaso"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -337,7 +378,6 @@ document.addEventListener('DOMContentLoaded', function () {
   
 </section>
 
-
 <section class="features-section">
   <div class="features-header section-header">
     <div class="chip"></div>
@@ -383,7 +423,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-
 <!-- The Modal for the video -->
 <div id="videoModal" class="modal">
   <div class="modal-content">
@@ -427,18 +466,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
-      const illustrationVideoAnimate = gsap.timeline({
-        repeat: 1,
-        repeatDelay: 10,
-        onComplete: () => {
-          document.querySelector(".video-container").style.display = "flex";
-          document.querySelector(".hero-illustration").style.display = "none";
+
+      // const illustrationVideoAnimate = gsap.timeline({
+      //   repeat: 1,
+      //   repeatDelay: 10,
+      //   onComplete: () => {
+      //     document.querySelector(".video-container").style.display = "flex";
+          // document.querySelector(".hero-illustration").style.display = "none";
           const player = new Plyr("#player", { enabled: true, autoplay: true });
           window.player = player;
-        },
-      });
+      //   },
+      // });
 
- 
+
       shakeTimeline.to(".action-buttons-container .filled-btn", {
         y: -16, // Move the button 10px horizontally
         scale: 1.07,
@@ -449,20 +489,21 @@ document.addEventListener('DOMContentLoaded', function () {
         repeat: 5, // Shake back and forth 5 times
       });
 
-      illustrationVideoAnimate.to(".hero-illustration", {
-        y: -13, // Move the button 10px horizontally
-        scale: 1.02,
-        rotate: -4,
-        duration: 0.1, // Short duration for each shake movement
-        ease: "power1.inOut", // Smooth transition
-        yoyo: true, // Move back to original position
-        repeat: 4, // Shake back and forth 5 times
-      });
+      // illustrationVideoAnimate.to(".hero-illustration", {
+      //   y: -13, // Move the button 10px horizontally
+      //   scale: 1.02,
+      //   rotate: -4,
+      //   duration: 0.1, // Short duration for each shake movement
+      //   ease: "power1.inOut", // Smooth transition
+      //   yoyo: true, // Move back to original position
+      //   repeat: 4, // Shake back and forth 5 times
+      // });
     }
   });
 </script>
 
-<script src="assets/js/videoModalOpenClose.js" defer></script> <footer>
+<script src="assets/js/videoModalOpenClose.js" defer></script>
+ <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
       <h3>Head Office:</h3>

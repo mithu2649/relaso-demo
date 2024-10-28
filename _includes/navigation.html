@@ -11,7 +11,7 @@
       <li>
         {% if item.dropdown == 'true' %}
           <!-- Parent link for dropdown -->
-          <a href="{{ item.link }}" class="has-dropdown {% if page.url == item.link %}current-tab{% endif %}" data-toggle="dropdown">
+          <a href="{{ item.link }}" class="has-dropdown" data-toggle="dropdown">
             {{ item.name }}
           </a>
 
@@ -28,7 +28,7 @@
 
         {% else %}
           <!-- Regular link without dropdown -->
-          <a href="{{ item.link }}" {% if page.url == item.link %}class="current-tab"{% endif %}>
+          <a href="{{ item.link }}">
             {{ item.name }}
           </a>
         {% endif %}

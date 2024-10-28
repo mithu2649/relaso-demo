@@ -1,0 +1,1483 @@
+{
+  "Relaso General CRM": {
+    "id": 1,
+    "name": "Relaso General CRM",
+    "description": "This is a generic Relaso CRM which will have no such account profile customisation. But a empty account(with no customisation) will be present to act as account profile. So that existing account that are there in relaso and are running without any account profile doesnot get affected. \nCurrently this application is used by ssmedicorp, pathimage, mercurymedical with there respective plans",
+    "pageContent": null,
+    "applicationURI": "relaso-general-crm",
+    "trialPeriod": 30,
+    "periodDiscount": "{\"monthly\":\"0\",\"quarterly\":\"1.7\",\"yearly\":\"10\"}",
+    "openForSale": "\u0000",
+    "plans": [
+      {
+        "Enterprise": {
+          "id": 77,
+          "name": "Enterprise",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2025-08-12",
+          "endDate": null,
+          "updated": 1724518519000,
+          "created": 1724504835000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": null,
+          "includeFeatures": null,
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0000",
+          "popular": "\u0000",
+          "uid": "relaso-enterprise-general-plan",
+          "category": "Relaso",
+          "applicationID": 1,
+          "planURI": "relaso-enterprise-general-plan",
+          "pricing": {
+            "India": {
+              "monthly": 2000.0,
+              "quarterly": 5898.0,
+              "yearly": 21600.0
+            },
+            "Global": {
+              "monthly": 14.99,
+              "quarterly": 44.20551,
+              "yearly": 161.892
+            }
+          },
+          "addOnModules": null,
+          "accountProfileID": 1,
+          "features": [
+            "contact",
+            "client",
+            "communicator",
+            "user",
+            "taskevent",
+            "import",
+            "datastorage",
+            "filestorage",
+            "systemtaskreminder",
+            "userascontact",
+            "email",
+            "sms",
+            "customfield",
+            "autoforwardemail",
+            "report",
+            "reportcustomfield",
+            "publicsharing",
+            "mobileaccess",
+            "salespipeline",
+            "lead",
+            "opportunity",
+            "locationtracker",
+            "repeattaskevent",
+            "prioritysms",
+            "commbyemail",
+            "subscribedocumentbyemail",
+            "subscribedocumentbysms",
+            "subscribenotebyemail",
+            "subscribenotebysms",
+            "subscribetodobyemail",
+            "subscribetodobysms",
+            "subscribetaskeventbyemail",
+            "subscribetaskeventbysms",
+            "supportbyemail",
+            "supportbysms",
+            "servicelogin",
+            "notifyopportunitybysms",
+            "notifyopportunitybyemail",
+            "notifycampaignbyemail",
+            "notifycampaignbysms",
+            "supportwebform",
+            "leadwebform",
+            "workflow",
+            "businessrule",
+            "bookmark",
+            "campaign",
+            "todo",
+            "document",
+            "brandmonitoring",
+            "blog",
+            "support",
+            "case",
+            "notifyrecordupdates",
+            "associatewith",
+            "taskinvite",
+            "subscribebycomment",
+            "ronintask",
+            "api",
+            "social",
+            "notifycasebysms",
+            "notifycasebyemail",
+            "customdashboard"
+          ]
+        }
+      }
+    ],
+    "allFeature": {
+      "contact": {
+        "id": 45,
+        "name": "Contact",
+        "uid": "contact",
+        "created": 1320851181000,
+        "type": "account"
+      },
+      "client": {
+        "id": 46,
+        "name": "Client",
+        "uid": "client",
+        "created": 1320851209000,
+        "type": "account"
+      },
+      "communicator": {
+        "id": 50,
+        "name": "Communicator",
+        "uid": "communicator",
+        "created": 1320897897000,
+        "type": "account"
+      },
+      "user": {
+        "id": 41,
+        "name": "User",
+        "uid": "user",
+        "created": 1319951229000,
+        "type": "account"
+      },
+      "taskevent": {
+        "id": 60,
+        "name": "Task & Event",
+        "uid": "taskevent",
+        "created": 1320898496000,
+        "type": "account"
+      },
+      "import": {
+        "id": 66,
+        "name": "Import",
+        "uid": "import",
+        "created": 1320898833000,
+        "type": "user"
+      },
+      "datastorage": {
+        "id": 44,
+        "name": "Database storage",
+        "uid": "datastorage",
+        "created": 1320851152000,
+        "type": "account"
+      },
+      "filestorage": {
+        "id": 43,
+        "name": "File storage",
+        "uid": "filestorage",
+        "created": 1320851129000,
+        "type": "account"
+      },
+      "systemtaskreminder": {
+        "id": 110,
+        "name": "System defined Task Reminder",
+        "uid": "systemtaskreminder",
+        "created": 1389162750000,
+        "type": "account"
+      },
+      "userascontact": {
+        "id": 105,
+        "name": "An User can be Contact of other Users",
+        "uid": "userascontact",
+        "created": 1389161567000,
+        "type": "account"
+      },
+      "email": {
+        "id": 59,
+        "name": "Email",
+        "uid": "email",
+        "created": 1320898296000,
+        "type": "account"
+      },
+      "sms": {
+        "id": 58,
+        "name": "SMS",
+        "uid": "sms",
+        "created": 1320898284000,
+        "type": "account"
+      },
+      "customfield": {
+        "id": 99,
+        "name": "Custom Field",
+        "uid": "customfield",
+        "created": 1352888850000,
+        "type": "account"
+      },
+      "autoforwardemail": {
+        "id": 94,
+        "name": "Can Autoforward Emails to Relaso Dropbox",
+        "uid": "autoforwardemail",
+        "created": 1320901187000,
+        "type": "account"
+      },
+      "report": {
+        "id": 65,
+        "name": "Report",
+        "uid": "report",
+        "created": 1320898816000,
+        "type": "user"
+      },
+      "reportcustomfield": {
+        "id": 98,
+        "name": "Open Custom Fields for Reporting",
+        "uid": "reportcustomfield",
+        "created": 1331296043000,
+        "type": "account"
+      },
+      "publicsharing": {
+        "id": 102,
+        "name": "Public Sharing Available",
+        "uid": "publicsharing",
+        "created": 1389161311000,
+        "type": "account"
+      },
+      "mobileaccess": {
+        "id": 92,
+        "name": "Mobile Access",
+        "uid": "mobileaccess",
+        "created": 1320901091000,
+        "type": "account"
+      },
+      "salespipeline": {
+        "id": 117,
+        "name": "Sales Pipeline",
+        "uid": "salespipeline",
+        "created": 1428562158000,
+        "type": "account"
+      },
+      "lead": {
+        "id": 104,
+        "name": "Lead",
+        "uid": "lead",
+        "created": 1389161387000,
+        "type": "account"
+      },
+      "opportunity": {
+        "id": 62,
+        "name": "Opportunity",
+        "uid": "opportunity",
+        "created": 1320898536000,
+        "type": "account"
+      },
+      "locationtracker": {
+        "id": 97,
+        "name": "Location Tracker",
+        "uid": "locationtracker",
+        "created": 1330619464000,
+        "type": "account"
+      },
+      "repeattaskevent": {
+        "id": 96,
+        "name": "Recurring Task & Event",
+        "uid": "repeattaskevent",
+        "created": 1328940031000,
+        "type": "account"
+      },
+      "prioritysms": {
+        "id": 95,
+        "name": "Priority SMS",
+        "uid": "prioritysms",
+        "created": 1328939902000,
+        "type": "account"
+      },
+      "commbyemail": {
+        "id": 91,
+        "name": "Excecute Communicator by Email",
+        "uid": "commbyemail",
+        "created": 1320901057000,
+        "type": "account"
+      },
+      "subscribedocumentbyemail": {
+        "id": 90,
+        "name": "Subscribe Document by Email",
+        "uid": "subscribedocumentbyemail",
+        "created": 1320901004000,
+        "type": "account"
+      },
+      "subscribedocumentbysms": {
+        "id": 89,
+        "name": "Subscribe Document by SMS",
+        "uid": "subscribedocumentbysms",
+        "created": 1320900985000,
+        "type": "account"
+      },
+      "subscribenotebyemail": {
+        "id": 87,
+        "name": "Subscribe Note by Email",
+        "uid": "subscribenotebyemail",
+        "created": 1320900943000,
+        "type": "account"
+      },
+      "subscribenotebysms": {
+        "id": 88,
+        "name": "Subscribe Note by SMS",
+        "uid": "subscribenotebysms",
+        "created": 1320900962000,
+        "type": "account"
+      },
+      "subscribetodobyemail": {
+        "id": 85,
+        "name": "Subscribe Todo by Email",
+        "uid": "subscribetodobyemail",
+        "created": 1320900749000,
+        "type": "account"
+      },
+      "subscribetodobysms": {
+        "id": 86,
+        "name": "Subscribe Todo by SMS",
+        "uid": "subscribetodobysms",
+        "created": 1320900768000,
+        "type": "account"
+      },
+      "subscribetaskeventbyemail": {
+        "id": 83,
+        "name": "Subscribe Task & Event by Email",
+        "uid": "subscribetaskeventbyemail",
+        "created": 1320900454000,
+        "type": "account"
+      },
+      "subscribetaskeventbysms": {
+        "id": 84,
+        "name": "Subscribe Task & Event by SMS",
+        "uid": "subscribetaskeventbysms",
+        "created": 1320900729000,
+        "type": "account"
+      },
+      "supportbyemail": {
+        "id": 79,
+        "name": "Accept Support Ticket by Email",
+        "uid": "supportbyemail",
+        "created": 1320900121000,
+        "type": "account"
+      },
+      "supportbysms": {
+        "id": 78,
+        "name": "Accept Support Ticket by SMS",
+        "uid": "supportbysms",
+        "created": 1320900103000,
+        "type": "account"
+      },
+      "servicelogin": {
+        "id": 77,
+        "name": "Account / Service / Customer login",
+        "uid": "servicelogin",
+        "created": 1320899576000,
+        "type": "account"
+      },
+      "notifyopportunitybysms": {
+        "id": 74,
+        "name": "Notify Opportunity by SMS",
+        "uid": "notifyopportunitybysms",
+        "created": 1320899212000,
+        "type": "account"
+      },
+      "notifyopportunitybyemail": {
+        "id": 73,
+        "name": "Notify Opportunity by Email",
+        "uid": "notifyopportunitybyemail",
+        "created": 1320899068000,
+        "type": "account"
+      },
+      "notifycampaignbyemail": {
+        "id": 71,
+        "name": "Notify Campaign by Email",
+        "uid": "notifycampaignbyemail",
+        "created": 1320899013000,
+        "type": "account"
+      },
+      "notifycampaignbysms": {
+        "id": 72,
+        "name": "Notify Campaign by SMS",
+        "uid": "notifycampaignbysms",
+        "created": 1320899032000,
+        "type": "account"
+      },
+      "supportwebform": {
+        "id": 70,
+        "name": "Web Form Support",
+        "uid": "supportwebform",
+        "created": 1320898961000,
+        "type": "account"
+      },
+      "leadwebform": {
+        "id": 69,
+        "name": "Web Form Lead",
+        "uid": "leadwebform",
+        "created": 1320898939000,
+        "type": "account"
+      },
+      "workflow": {
+        "id": 68,
+        "name": "Workflow management in Business Rule",
+        "uid": "workflow",
+        "created": 1320898899000,
+        "type": "account"
+      },
+      "businessrule": {
+        "id": 67,
+        "name": "Business Rule",
+        "uid": "businessrule",
+        "created": 1320898865000,
+        "type": "user"
+      },
+      "bookmark": {
+        "id": 64,
+        "name": "Bookmark",
+        "uid": "bookmark",
+        "created": 1320898714000,
+        "type": "account"
+      },
+      "campaign": {
+        "id": 63,
+        "name": "Campaign",
+        "uid": "campaign",
+        "created": 1320898690000,
+        "type": "account"
+      },
+      "todo": {
+        "id": 61,
+        "name": "Todo",
+        "uid": "todo",
+        "created": 1320898509000,
+        "type": "account"
+      },
+      "document": {
+        "id": 57,
+        "name": "Document",
+        "uid": "document",
+        "created": 1320898242000,
+        "type": "user"
+      },
+      "brandmonitoring": {
+        "id": 56,
+        "name": "Brand Monitoring",
+        "uid": "brandmonitoring",
+        "created": 1320898215000,
+        "type": "account"
+      },
+      "blog": {
+        "id": 55,
+        "name": "Blog",
+        "uid": "blog",
+        "created": 1320898042000,
+        "type": "account"
+      },
+      "support": {
+        "id": 48,
+        "name": "Customer Support",
+        "uid": "support",
+        "created": 1320897734000,
+        "type": "user"
+      },
+      "case": {
+        "id": 47,
+        "name": "Case",
+        "uid": "case",
+        "created": 1320897699000,
+        "type": "account"
+      },
+      "notifyrecordupdates": {
+        "id": 111,
+        "name": "Notify Record Updates",
+        "uid": "notifyrecordupdates",
+        "created": 1389162780000,
+        "type": "account"
+      },
+      "associatewith": {
+        "id": 109,
+        "name": "Can Associate a Note, Task, Event with other applicable record",
+        "uid": "associatewith",
+        "created": 1389162537000,
+        "type": "account"
+      },
+      "taskinvite": {
+        "id": 108,
+        "name": "Can invite in Task or Event",
+        "uid": "taskinvite",
+        "created": 1389161878000,
+        "type": "account"
+      },
+      "subscribebycomment": {
+        "id": 107,
+        "name": "Can subscribe by Comment",
+        "uid": "subscribebycomment",
+        "created": 1389161823000,
+        "type": "account"
+      },
+      "ronintask": {
+        "id": 103,
+        "name": "Ronin Task Available",
+        "uid": "ronintask",
+        "created": 1389161367000,
+        "type": "account"
+      },
+      "api": {
+        "id": 100,
+        "name": "API",
+        "uid": "api",
+        "created": 1352889143000,
+        "type": "user"
+      },
+      "social": {
+        "id": 51,
+        "name": "Social Media",
+        "uid": "social",
+        "created": 1320897928000,
+        "type": "user"
+      },
+      "notifycasebysms": {
+        "id": 76,
+        "name": "Notify Case / Support / DTS by SMS",
+        "uid": "notifycasebysms",
+        "created": 1320899520000,
+        "type": "account"
+      },
+      "notifycasebyemail": {
+        "id": 75,
+        "name": "Notify Case / Support / DTS by Email",
+        "uid": "notifycasebyemail",
+        "created": 1320899444000,
+        "type": "account"
+      },
+      "customdashboard": {
+        "id": 120,
+        "name": "Custom Dashboard",
+        "uid": "customdashboard",
+        "created": 1724524672000,
+        "type": "account"
+      }
+    }
+  },
+  "Dip_App1": {
+    "id": 2,
+    "name": "Dip_App1",
+    "description": null,
+    "pageContent": null,
+    "applicationURI": "DAP",
+    "trialPeriod": null,
+    "periodDiscount": "{\"quarterly\":\"10\"}",
+    "openForSale": "\u0000",
+    "plans": [
+      {
+        "Dip_plan1": {
+          "id": 78,
+          "name": "Dip_plan1",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2024-08-27",
+          "endDate": null,
+          "updated": 1724737224000,
+          "created": 1724737224000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": null,
+          "includeFeatures": null,
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0000",
+          "popular": "\u0000",
+          "uid": "dpan",
+          "category": "Relaso",
+          "applicationID": 2,
+          "planURI": "PLN",
+          "pricing": { "Global": { "quarterly": 81.0 } },
+          "addOnModules": null,
+          "accountProfileID": 2,
+          "features": [
+            "user",
+            "customfield",
+            "reportcustomfield",
+            "contact",
+            "client",
+            "case",
+            "opportunity",
+            "support",
+            "salespipeline",
+            "report",
+            "businessrule",
+            "taskevent",
+            "todo",
+            "notifycasebyemail",
+            "notifycasebysms",
+            "notifyopportunitybyemail",
+            "notifyopportunitybysms",
+            "notifycampaignbyemail",
+            "notifycampaignbysms",
+            "servicelogin",
+            "mobileaccess",
+            "supportwebform",
+            "leadwebform",
+            "email",
+            "sms",
+            "lead",
+            "mobileaccessbysms",
+            "autoforwardemail",
+            "communicator",
+            "document",
+            "datastorage",
+            "filestorage",
+            "customdashboard",
+            "ronintask"
+          ]
+        }
+      },
+      {
+        "DipikaPlan": {
+          "id": 79,
+          "name": "DipikaPlan",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2026-03-08",
+          "endDate": null,
+          "updated": 1725521689000,
+          "created": 1724742760000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": null,
+          "includeFeatures": null,
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0001",
+          "popular": "\u0000",
+          "uid": "pln",
+          "category": "Relaso",
+          "applicationID": 2,
+          "planURI": "pln",
+          "pricing": {
+            "Global": { "quarterly": 540.0 },
+            "India": { "quarterly": 270.0 }
+          },
+          "addOnModules": null,
+          "accountProfileID": 3,
+          "features": [
+            "user",
+            "customfield",
+            "reportcustomfield",
+            "contact",
+            "client",
+            "case",
+            "opportunity",
+            "support",
+            "salespipeline",
+            "report",
+            "businessrule",
+            "taskevent",
+            "todo",
+            "notifycasebyemail",
+            "notifycasebysms",
+            "notifyopportunitybyemail",
+            "notifyopportunitybysms",
+            "notifycampaignbyemail",
+            "notifycampaignbysms",
+            "servicelogin",
+            "mobileaccess",
+            "supportwebform",
+            "leadwebform",
+            "email",
+            "sms",
+            "lead",
+            "mobileaccessbysms",
+            "autoforwardemail",
+            "communicator",
+            "document",
+            "datastorage",
+            "filestorage",
+            "customdashboard",
+            "ronintask"
+          ]
+        }
+      }
+    ],
+    "allFeature": {
+      "user": {
+        "id": 41,
+        "name": "User",
+        "uid": "user",
+        "created": 1319951229000,
+        "type": "account"
+      },
+      "customfield": {
+        "id": 99,
+        "name": "Custom Field",
+        "uid": "customfield",
+        "created": 1352888850000,
+        "type": "account"
+      },
+      "reportcustomfield": {
+        "id": 98,
+        "name": "Open Custom Fields for Reporting",
+        "uid": "reportcustomfield",
+        "created": 1331296043000,
+        "type": "account"
+      },
+      "contact": {
+        "id": 45,
+        "name": "Contact",
+        "uid": "contact",
+        "created": 1320851181000,
+        "type": "account"
+      },
+      "client": {
+        "id": 46,
+        "name": "Client",
+        "uid": "client",
+        "created": 1320851209000,
+        "type": "account"
+      },
+      "case": {
+        "id": 47,
+        "name": "Case",
+        "uid": "case",
+        "created": 1320897699000,
+        "type": "account"
+      },
+      "opportunity": {
+        "id": 62,
+        "name": "Opportunity",
+        "uid": "opportunity",
+        "created": 1320898536000,
+        "type": "account"
+      },
+      "support": {
+        "id": 48,
+        "name": "Customer Support",
+        "uid": "support",
+        "created": 1320897734000,
+        "type": "user"
+      },
+      "salespipeline": {
+        "id": 117,
+        "name": "Sales Pipeline",
+        "uid": "salespipeline",
+        "created": 1428562158000,
+        "type": "account"
+      },
+      "report": {
+        "id": 65,
+        "name": "Report",
+        "uid": "report",
+        "created": 1320898816000,
+        "type": "user"
+      },
+      "businessrule": {
+        "id": 67,
+        "name": "Business Rule",
+        "uid": "businessrule",
+        "created": 1320898865000,
+        "type": "user"
+      },
+      "taskevent": {
+        "id": 60,
+        "name": "Task & Event",
+        "uid": "taskevent",
+        "created": 1320898496000,
+        "type": "account"
+      },
+      "todo": {
+        "id": 61,
+        "name": "Todo",
+        "uid": "todo",
+        "created": 1320898509000,
+        "type": "account"
+      },
+      "notifycasebyemail": {
+        "id": 75,
+        "name": "Notify Case / Support / DTS by Email",
+        "uid": "notifycasebyemail",
+        "created": 1320899444000,
+        "type": "account"
+      },
+      "notifycasebysms": {
+        "id": 76,
+        "name": "Notify Case / Support / DTS by SMS",
+        "uid": "notifycasebysms",
+        "created": 1320899520000,
+        "type": "account"
+      },
+      "notifyopportunitybyemail": {
+        "id": 73,
+        "name": "Notify Opportunity by Email",
+        "uid": "notifyopportunitybyemail",
+        "created": 1320899068000,
+        "type": "account"
+      },
+      "notifyopportunitybysms": {
+        "id": 74,
+        "name": "Notify Opportunity by SMS",
+        "uid": "notifyopportunitybysms",
+        "created": 1320899212000,
+        "type": "account"
+      },
+      "notifycampaignbyemail": {
+        "id": 71,
+        "name": "Notify Campaign by Email",
+        "uid": "notifycampaignbyemail",
+        "created": 1320899013000,
+        "type": "account"
+      },
+      "notifycampaignbysms": {
+        "id": 72,
+        "name": "Notify Campaign by SMS",
+        "uid": "notifycampaignbysms",
+        "created": 1320899032000,
+        "type": "account"
+      },
+      "servicelogin": {
+        "id": 77,
+        "name": "Account / Service / Customer login",
+        "uid": "servicelogin",
+        "created": 1320899576000,
+        "type": "account"
+      },
+      "mobileaccess": {
+        "id": 92,
+        "name": "Mobile Access",
+        "uid": "mobileaccess",
+        "created": 1320901091000,
+        "type": "account"
+      },
+      "supportwebform": {
+        "id": 70,
+        "name": "Web Form Support",
+        "uid": "supportwebform",
+        "created": 1320898961000,
+        "type": "account"
+      },
+      "leadwebform": {
+        "id": 69,
+        "name": "Web Form Lead",
+        "uid": "leadwebform",
+        "created": 1320898939000,
+        "type": "account"
+      },
+      "email": {
+        "id": 59,
+        "name": "Email",
+        "uid": "email",
+        "created": 1320898296000,
+        "type": "account"
+      },
+      "sms": {
+        "id": 58,
+        "name": "SMS",
+        "uid": "sms",
+        "created": 1320898284000,
+        "type": "account"
+      },
+      "lead": {
+        "id": 104,
+        "name": "Lead",
+        "uid": "lead",
+        "created": 1389161387000,
+        "type": "account"
+      },
+      "mobileaccessbysms": {
+        "id": 93,
+        "name": "Execute Communicator Commands by SMS",
+        "uid": "mobileaccessbysms",
+        "created": 1320901137000,
+        "type": "account"
+      },
+      "autoforwardemail": {
+        "id": 94,
+        "name": "Can Autoforward Emails to Relaso Dropbox",
+        "uid": "autoforwardemail",
+        "created": 1320901187000,
+        "type": "account"
+      },
+      "communicator": {
+        "id": 50,
+        "name": "Communicator",
+        "uid": "communicator",
+        "created": 1320897897000,
+        "type": "account"
+      },
+      "document": {
+        "id": 57,
+        "name": "Document",
+        "uid": "document",
+        "created": 1320898242000,
+        "type": "user"
+      },
+      "datastorage": {
+        "id": 44,
+        "name": "Database storage",
+        "uid": "datastorage",
+        "created": 1320851152000,
+        "type": "account"
+      },
+      "filestorage": {
+        "id": 43,
+        "name": "File storage",
+        "uid": "filestorage",
+        "created": 1320851129000,
+        "type": "account"
+      },
+      "customdashboard": {
+        "id": 120,
+        "name": "Custom Dashboard",
+        "uid": "customdashboard",
+        "created": 1724524672000,
+        "type": "account"
+      },
+      "ronintask": {
+        "id": 103,
+        "name": "Ronin Task Available",
+        "uid": "ronintask",
+        "created": 1389161367000,
+        "type": "account"
+      }
+    }
+  },
+  "Relaso for Lawyers": {
+    "id": 3,
+    "name": "Relaso for Lawyers",
+    "description": null,
+    "pageContent": null,
+    "applicationURI": "relaso-for-lawyers",
+    "trialPeriod": 15,
+    "periodDiscount": "{\"yearly\":\"5000\"}",
+    "openForSale": "\u0001",
+    "plans": [],
+    "allFeature": {}
+  },
+  "Relaso for HospiTech": {
+    "id": 6,
+    "name": "Relaso for HospiTech",
+    "description": "Relaso CRM, developed by HospiTech, is a specialized customer relationship management system tailored for companies in the medical imaging industry, such as those selling USG, X-ray, MRI, and CT scan machines. This innovative CRM enhances customer engagement by automating follow-ups and managing service requests efficiently. It offers detailed client profiles, integrates seamlessly with sales and service systems, and provides actionable insights through data analytics. With its secure, user-friendly interface and customizable features, Relaso CRM streamlines operations, supports better client relationships, and drives growth for medical imaging businesses.",
+    "pageContent": null,
+    "applicationURI": "relaso-for-hospitech",
+    "trialPeriod": 15,
+    "periodDiscount": "{\"yearly\":\"12\",\"halfyearly\":\"10\",\"quarterly\":\"0\"}",
+    "openForSale": "\u0001",
+    "plans": [
+      {
+        "Relaso for HospiTech Enterprise": {
+          "id": 80,
+          "name": "Relaso for HospiTech Enterprise",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2024-09-12",
+          "endDate": null,
+          "updated": 1729066689000,
+          "created": 1726121974000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": null,
+          "includeFeatures": "customfield,communicator",
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0001",
+          "popular": "\u0000",
+          "uid": "rhte",
+          "category": "Relaso",
+          "applicationID": 6,
+          "planURI": "enterprise",
+          "pricing": {
+            "Global": {
+              "yearly": 126.6144,
+              "halfyearly": 64.746,
+              "quarterly": 35.97
+            },
+            "India": {
+              "yearly": 17952.0,
+              "halfyearly": 9180.0,
+              "quarterly": 5100.0
+            }
+          },
+          "addOnModules": null,
+          "accountProfileID": 5,
+          "features": [
+            "opportunity",
+            "lead",
+            "contact",
+            "notifyopportunitybysms",
+            "notifyopportunitybyemail",
+            "salespipeline",
+            "client",
+            "leadwebform",
+            "campaign",
+            "notifycampaignbysms",
+            "notifycampaignbyemail",
+            "email",
+            "sms",
+            "document",
+            "brandmonitoring",
+            "blog",
+            "linkedin",
+            "facebook",
+            "twitter",
+            "social",
+            "wapintegration",
+            "autoforwardemail",
+            "supportbyemail",
+            "supportwebform",
+            "workflow",
+            "support",
+            "servicelogin",
+            "notifycasebysms",
+            "notifycasebyemail",
+            "taskevent",
+            "supportbysms",
+            "repeattaskevent",
+            "subscribetaskeventbysms",
+            "subscribetaskeventbyemail",
+            "systemtaskreminder",
+            "associatewith",
+            "taskinvite",
+            "ronintask",
+            "todo",
+            "subscribetodobysms",
+            "subscribetodobyemail",
+            "businessrule",
+            "report",
+            "reportcustomfield",
+            "customdashboard",
+            "customfield",
+            "communicator"
+          ]
+        }
+      },
+      {
+        "Relaso for HospiTech Premium": {
+          "id": 81,
+          "name": "Relaso for HospiTech Premium",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2024-10-16",
+          "endDate": null,
+          "updated": 1729065795000,
+          "created": 1729065795000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": "servicelogin,brandmonitoring,blog,linkedin,facebook,twitter,social,wapintegration,todo,taskinvite,commbyemail",
+          "includeFeatures": "customfield,communicator",
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0001",
+          "popular": "\u0001",
+          "uid": "rhtp",
+          "category": "Relaso",
+          "applicationID": 6,
+          "planURI": "premium",
+          "pricing": {
+            "Global": {
+              "yearly": 158.2944,
+              "halfyearly": 80.946,
+              "quarterly": 44.97
+            },
+            "India": {
+              "yearly": 13200.0,
+              "halfyearly": 6750.0,
+              "quarterly": 3750.0
+            }
+          },
+          "addOnModules": null,
+          "accountProfileID": 6,
+          "features": [
+            "opportunity",
+            "lead",
+            "contact",
+            "notifyopportunitybysms",
+            "notifyopportunitybyemail",
+            "salespipeline",
+            "client",
+            "leadwebform",
+            "campaign",
+            "notifycampaignbysms",
+            "notifycampaignbyemail",
+            "email",
+            "sms",
+            "document",
+            "autoforwardemail",
+            "taskevent",
+            "repeattaskevent",
+            "subscribetaskeventbysms",
+            "subscribetaskeventbyemail",
+            "systemtaskreminder",
+            "associatewith",
+            "ronintask",
+            "subscribetodobysms",
+            "subscribetodobyemail",
+            "businessrule",
+            "workflow",
+            "report",
+            "reportcustomfield",
+            "customdashboard",
+            "customfield",
+            "communicator"
+          ]
+        }
+      },
+      {
+        "Relaso for HospiTech Standard": {
+          "id": 82,
+          "name": "Relaso for HospiTech Standard",
+          "description": null,
+          "accountID": null,
+          "active": "\u0001",
+          "startDate": "2024-10-16",
+          "endDate": null,
+          "updated": 1729074321000,
+          "created": 1729074321000,
+          "billingPeriod": "monthly",
+          "excludeFeatures": "salespipeline,servicelogin,api,supportwebform,leadwebform,campaign,email,sms,brandmonitoring,blog,linkedin,facebook,twitter,social,wapintegration,associatewith,locationtracker,hiddenusers,document,autoforwardemail,todo,taskinvite,commbyemail",
+          "includeFeatures": "customfield,communicator",
+          "filterOrder": null,
+          "reports": null,
+          "affPercentage": null,
+          "affRecurringPercentage": null,
+          "canBuy": "\u0001",
+          "popular": "\u0000",
+          "uid": "rhts",
+          "category": "Relaso",
+          "applicationID": 6,
+          "planURI": "standard",
+          "pricing": {
+            "Global": {
+              "yearly": 119.2224,
+              "halfyearly": 60.965999999999994,
+              "quarterly": 33.87
+            },
+            "India": {
+              "yearly": 10032.0,
+              "halfyearly": 5130.0,
+              "quarterly": 2850.0
+            }
+          },
+          "addOnModules": null,
+          "accountProfileID": 6,
+          "features": ["customfield", "communicator"]
+        }
+      }
+    ],
+    "allFeature": {
+      "opportunity": {
+        "id": 62,
+        "name": "Opportunity",
+        "uid": "opportunity",
+        "created": 1320898536000,
+        "type": "account"
+      },
+      "lead": {
+        "id": 104,
+        "name": "Lead",
+        "uid": "lead",
+        "created": 1389161387000,
+        "type": "account"
+      },
+      "contact": {
+        "id": 45,
+        "name": "Contact",
+        "uid": "contact",
+        "created": 1320851181000,
+        "type": "account"
+      },
+      "notifyopportunitybysms": {
+        "id": 74,
+        "name": "Notify Opportunity by SMS",
+        "uid": "notifyopportunitybysms",
+        "created": 1320899212000,
+        "type": "account"
+      },
+      "notifyopportunitybyemail": {
+        "id": 73,
+        "name": "Notify Opportunity by Email",
+        "uid": "notifyopportunitybyemail",
+        "created": 1320899068000,
+        "type": "account"
+      },
+      "salespipeline": {
+        "id": 117,
+        "name": "Sales Pipeline",
+        "uid": "salespipeline",
+        "created": 1428562158000,
+        "type": "account"
+      },
+      "client": {
+        "id": 46,
+        "name": "Client",
+        "uid": "client",
+        "created": 1320851209000,
+        "type": "account"
+      },
+      "leadwebform": {
+        "id": 69,
+        "name": "Web Form Lead",
+        "uid": "leadwebform",
+        "created": 1320898939000,
+        "type": "account"
+      },
+      "campaign": {
+        "id": 63,
+        "name": "Campaign",
+        "uid": "campaign",
+        "created": 1320898690000,
+        "type": "account"
+      },
+      "notifycampaignbysms": {
+        "id": 72,
+        "name": "Notify Campaign by SMS",
+        "uid": "notifycampaignbysms",
+        "created": 1320899032000,
+        "type": "account"
+      },
+      "notifycampaignbyemail": {
+        "id": 71,
+        "name": "Notify Campaign by Email",
+        "uid": "notifycampaignbyemail",
+        "created": 1320899013000,
+        "type": "account"
+      },
+      "email": {
+        "id": 59,
+        "name": "Email",
+        "uid": "email",
+        "created": 1320898296000,
+        "type": "account"
+      },
+      "sms": {
+        "id": 58,
+        "name": "SMS",
+        "uid": "sms",
+        "created": 1320898284000,
+        "type": "account"
+      },
+      "document": {
+        "id": 57,
+        "name": "Document",
+        "uid": "document",
+        "created": 1320898242000,
+        "type": "user"
+      },
+      "brandmonitoring": {
+        "id": 56,
+        "name": "Brand Monitoring",
+        "uid": "brandmonitoring",
+        "created": 1320898215000,
+        "type": "account"
+      },
+      "blog": {
+        "id": 55,
+        "name": "Blog",
+        "uid": "blog",
+        "created": 1320898042000,
+        "type": "account"
+      },
+      "linkedin": {
+        "id": 54,
+        "name": "Linkedin",
+        "uid": "linkedin",
+        "created": 1320897984000,
+        "type": "account"
+      },
+      "facebook": {
+        "id": 53,
+        "name": "Facebook",
+        "uid": "facebook",
+        "created": 1320897970000,
+        "type": "account"
+      },
+      "twitter": {
+        "id": 52,
+        "name": "Twitter",
+        "uid": "twitter",
+        "created": 1320897960000,
+        "type": "account"
+      },
+      "social": {
+        "id": 51,
+        "name": "Social Media",
+        "uid": "social",
+        "created": 1320897928000,
+        "type": "user"
+      },
+      "wapintegration": {
+        "id": 122,
+        "name": "WhatApp Integration",
+        "uid": "wapintegration",
+        "created": 1724524703000,
+        "type": "account"
+      },
+      "autoforwardemail": {
+        "id": 94,
+        "name": "Can Autoforward Emails to Relaso Dropbox",
+        "uid": "autoforwardemail",
+        "created": 1320901187000,
+        "type": "account"
+      },
+      "supportbyemail": {
+        "id": 79,
+        "name": "Accept Support Ticket by Email",
+        "uid": "supportbyemail",
+        "created": 1320900121000,
+        "type": "account"
+      },
+      "supportwebform": {
+        "id": 70,
+        "name": "Web Form Support",
+        "uid": "supportwebform",
+        "created": 1320898961000,
+        "type": "account"
+      },
+      "workflow": {
+        "id": 68,
+        "name": "Workflow management in Business Rule",
+        "uid": "workflow",
+        "created": 1320898899000,
+        "type": "account"
+      },
+      "support": {
+        "id": 48,
+        "name": "Customer Support",
+        "uid": "support",
+        "created": 1320897734000,
+        "type": "user"
+      },
+      "servicelogin": {
+        "id": 77,
+        "name": "Account / Service / Customer login",
+        "uid": "servicelogin",
+        "created": 1320899576000,
+        "type": "account"
+      },
+      "notifycasebysms": {
+        "id": 76,
+        "name": "Notify Case / Support / DTS by SMS",
+        "uid": "notifycasebysms",
+        "created": 1320899520000,
+        "type": "account"
+      },
+      "notifycasebyemail": {
+        "id": 75,
+        "name": "Notify Case / Support / DTS by Email",
+        "uid": "notifycasebyemail",
+        "created": 1320899444000,
+        "type": "account"
+      },
+      "taskevent": {
+        "id": 60,
+        "name": "Task & Event",
+        "uid": "taskevent",
+        "created": 1320898496000,
+        "type": "account"
+      },
+      "supportbysms": {
+        "id": 78,
+        "name": "Accept Support Ticket by SMS",
+        "uid": "supportbysms",
+        "created": 1320900103000,
+        "type": "account"
+      },
+      "repeattaskevent": {
+        "id": 96,
+        "name": "Recurring Task & Event",
+        "uid": "repeattaskevent",
+        "created": 1328940031000,
+        "type": "account"
+      },
+      "subscribetaskeventbysms": {
+        "id": 84,
+        "name": "Subscribe Task & Event by SMS",
+        "uid": "subscribetaskeventbysms",
+        "created": 1320900729000,
+        "type": "account"
+      },
+      "subscribetaskeventbyemail": {
+        "id": 83,
+        "name": "Subscribe Task & Event by Email",
+        "uid": "subscribetaskeventbyemail",
+        "created": 1320900454000,
+        "type": "account"
+      },
+      "systemtaskreminder": {
+        "id": 110,
+        "name": "System defined Task Reminder",
+        "uid": "systemtaskreminder",
+        "created": 1389162750000,
+        "type": "account"
+      },
+      "associatewith": {
+        "id": 109,
+        "name": "Can Associate a Note, Task, Event with other applicable record",
+        "uid": "associatewith",
+        "created": 1389162537000,
+        "type": "account"
+      },
+      "taskinvite": {
+        "id": 108,
+        "name": "Can invite in Task or Event",
+        "uid": "taskinvite",
+        "created": 1389161878000,
+        "type": "account"
+      },
+      "ronintask": {
+        "id": 103,
+        "name": "Ronin Task Available",
+        "uid": "ronintask",
+        "created": 1389161367000,
+        "type": "account"
+      },
+      "todo": {
+        "id": 61,
+        "name": "Todo",
+        "uid": "todo",
+        "created": 1320898509000,
+        "type": "account"
+      },
+      "subscribetodobysms": {
+        "id": 86,
+        "name": "Subscribe Todo by SMS",
+        "uid": "subscribetodobysms",
+        "created": 1320900768000,
+        "type": "account"
+      },
+      "subscribetodobyemail": {
+        "id": 85,
+        "name": "Subscribe Todo by Email",
+        "uid": "subscribetodobyemail",
+        "created": 1320900749000,
+        "type": "account"
+      },
+      "businessrule": {
+        "id": 67,
+        "name": "Business Rule",
+        "uid": "businessrule",
+        "created": 1320898865000,
+        "type": "user"
+      },
+      "report": {
+        "id": 65,
+        "name": "Report",
+        "uid": "report",
+        "created": 1320898816000,
+        "type": "user"
+      },
+      "reportcustomfield": {
+        "id": 98,
+        "name": "Open Custom Fields for Reporting",
+        "uid": "reportcustomfield",
+        "created": 1331296043000,
+        "type": "account"
+      },
+      "customdashboard": {
+        "id": 120,
+        "name": "Custom Dashboard",
+        "uid": "customdashboard",
+        "created": 1724524672000,
+        "type": "account"
+      }
+    }
+  }
+}

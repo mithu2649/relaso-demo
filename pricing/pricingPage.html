@@ -1,0 +1,159 @@
+---
+title: "Hospitech CRM - Pricing"
+layout: default
+---
+
+<section id="pricing-section">
+  <div class="headline-container">
+    <h1>Discover the Best Value for Your Investment</h1>
+    <h3>Affordable Plans Tailored to You</h3>
+  </div>
+  <div id="pricing-table" class="pricing-containers cards-container"></div>
+</section>
+
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  const productQuery = urlParams.get("product");
+
+  const productStringMap = {
+    relasoGeneral: "Relaso General CRM",
+    relasoHospitech: "Relaso for HospiTech",
+    relasoLawyers: "Relaso for Lawyers",
+  };
+
+  const productSelected = productStringMap[productQuery] || "Product not found";
+  console.log(productSelected);
+
+  // Function to fetch the user's country based on their IP
+  const getUserCountry = async () => {
+    try {
+      const response = await fetch("http://ip-api.com/json/");
+      const data = await response.json();
+      return data.country.toLowerCase() == "india" ? "India" : "Global";
+    } catch (error) {
+      console.error("Error fetching IP location:", error);
+      return "Global"; // Return Global if there is an error
+    }
+  };
+
+  // Function to fetch pricing plans
+  const fetchPricingPlans = async () => {
+    try {
+      const response = await fetch("../../assets/js/completePlanDetails.json");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("Error fetching pricing data:", error);
+      throw error; // Re-throw the error to handle it later
+    }
+  };
+
+  // Main function to execute the logic
+  const init = async () => {
+    const country = await getUserCountry(); // Get the user's country
+    if (!country) {
+      // Handle the case where country could not be fetched
+      console.error("Could not determine user location.");
+      return;
+    }
+
+    const data = await fetchPricingPlans(); // Fetch pricing plans
+
+    const pricingTable = document.getElementById("pricing-table");
+
+    // Access plans
+    const plansData = data[productSelected].plans;
+    const allFeatures = data[productSelected].allFeature;
+
+    plansData.forEach((planObject) => {
+      const planKey = Object.keys(planObject)[0];
+      const plan = planObject[planKey];
+
+      // Check if pricing exists for the user's location
+      const pricing = plan.pricing[country];
+      if (!pricing) {
+        console.warn(`No pricing available for ${plan.name} in ${country}.`);
+        return; // Skip this plan if no pricing is available
+      }
+
+      // Create a container for each plan
+      const planDiv = document.createElement("div");
+      planDiv.className = `card ${
+        plan.name.toLowerCase().includes("premium")
+          ? "big-card gradient-border"
+          : ""
+      }`;
+
+      // Create the plan's HTML structure
+      planDiv.innerHTML = `
+      <div class="plan-header">
+        <h2 class="plan-name ${
+          plan.name.toLowerCase().includes("premium") ? "gradient-text" : ""
+        }">${plan.name}</h2>
+        <h4 class="plan-price"><i class="fa-solid ${
+          country.toLowerCase() == "india"
+            ? "fa-indian-rupee-sign"
+            : "fa-dollar-sign"
+        }"></i> ${pricing.yearly}<span class="small">/year</span></h4>
+        <p class="plan-user">&nbsp;per user</p>
+      </div>
+      <div class="plan-footer">
+        <a href="https://relaso.com/signup/relaso-for-hospitech" 
+            class="start-trial-btn ${
+              plan.name.toLowerCase().includes("premium")
+                ? "filled-btn"
+                : "outline-btn"
+            }">
+            Start Free Trial
+        </a>
+      </div>
+      <div class="plan-body">
+        <h3>Features:</h3><br>
+        <ul class="plan-features">
+          ${plan.features
+            .map((featureUid) => {
+              const featureDetails = allFeatures[featureUid];
+              return `<li class="feature">${
+                featureDetails ? featureDetails.name : featureUid
+              }</li>`;
+            })
+            .join("")}
+        </ul>
+      </div>
+    `;
+
+      // Append the plan card to the pricing table
+      pricingTable.appendChild(planDiv);
+    });
+  };
+  // Initialize the app
+  init();
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+  //////////////// adds gradient text automatically if there's only one plan //////////////
+  ////////////////////////////////////////////////////////////////////////////////////////
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const parent = document.querySelector("#pricing-table");
+
+    function applyStyleIfSingleChild() {
+      if (parent.children.length === 1) {
+        parent.classList.add("has-single-child");
+        parent.children[0].classList.add("big-card");
+        parent.children[0].classList.add("gradient-border");
+      }
+    }
+
+    // Run initially and whenever content changes
+    applyStyleIfSingleChild();
+
+    // Observer to detect dynamic changes
+    const observer = new MutationObserver(applyStyleIfSingleChild);
+    observer.observe(parent, { childList: true });
+  });
+</script>

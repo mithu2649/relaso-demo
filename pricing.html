@@ -4,20 +4,44 @@ title: Relaso Pricing Page | Choose your product
 ---
 
 <div class="pricing-products">
-  <h1 class="gradient-text">Choose a product to see plans:</h1>
   <br /><br />
+  <h1 class="gradient-text">Choose a product to see plans:</h1>
   <div class="pricing-cards cards-container">
     {% for product in site.data.products %}
-    <a href="{{product.site_link}}">
-      <div class="card product">
-        <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
-        <div class="card-title"><h4>{{product.title}}</h4></div>
-        <div class="card-description">
-          <p>{{product.description | truncate:200 }}</p>
-        </div>
-        <a href="#" class="outline-btn bookDemoBtn">See Plans</a>
+
+    <div class="card product">
+      <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
+      <div class="card-title"><h4>{{product.title}}</h4></div>
+      <div class="card-description">
+        <p>{{product.description | truncate:200 }}</p>
       </div>
-    </a>
+      <a href="{{ product.pricing_link }}" class="outline-btn bookDemoBtn"
+        >See Plans</a
+      >
+    </div>
+
     {% endfor %}
   </div>
 </div>
+
+<style>
+  .pricing-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    h1{
+      padding: 3rem 0;
+    }
+    
+    .pricing-cards {
+      align-items: center;
+      justify-content: center;
+      .product {
+        .card-description {
+          min-height: 9rem;
+        }
+      }
+    }
+  }
+</style>

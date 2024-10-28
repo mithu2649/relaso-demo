@@ -1,35 +1,62 @@
 - title: Relaso CRM
   fa_icon_class: fas fa-users
-  description: A comprehensive platform for managing customer relationships, streamlining communication, and business growth through advanced tools designed to improve efficiency, and customer satisfaction.
-  site_link: /about
+  description: >-
+    A comprehensive platform for managing customer relationships, streamlining
+    communication, and business growth through advanced tools designed to
+    improve efficiency, and customer satisfaction.
+  site_link: '/'
+  pricing_link: /pricing/pricingPage?product=relasoGeneral
 
 - title: Relaso Hospitech
   fa_icon_class: fas fa-hospital
-  description: Empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. 
+  description: >-
+    Empowering healthcare equipment distributors with seamless lead management,
+    automated workflows, and real-time insights.
   site_link: /hospitech
-  
+  pricing_link: /pricing/pricingPage?product=relasoHospitech
+
 - title: Relaso Clinic
   fa_icon_class: fas fa-stethoscope
-  description: Designed for clinics to manage patient appointments, streamline interactions, and improve overall service delivery, ensuring a seamless and efficient healthcare experience.
-  site_link: '#'
-  
+  description: >-
+    Designed for clinics to manage patient appointments, streamline
+    interactions, and improve overall service delivery, ensuring a seamless and
+    efficient healthcare experience.
+  site_link: "#"
+  pricing_link: "/pricing/pricingPage?product=relasoHospitech"
+
 - title: Relaso Examination
   fa_icon_class: fas fa-clipboard
-  description: Automate the entire exam process—from candidate registration to result publication. Seamless experiences for administrators, evaluators, and candidates alike.
-  site_link: '#'
-  
+  description: >-
+    Automate the entire exam process—from candidate registration to result
+    publication. Seamless experiences for administrators, evaluators, and
+    candidates alike.
+  site_link: "#"
+  pricing_link: "#"
+
 - title: Relaso HelpDesk
   fa_icon_class: fas fa-headset
-  description: Exceptional customer support with efficient ticket management. Track, prioritize, and resolve queries faster while enhancing customer satisfaction and boosting team productivity effortlessly.
-  site_link:  '#'
-  
+  description: >-
+    Exceptional customer support with efficient ticket management. Track,
+    prioritize, and resolve queries faster while enhancing customer satisfaction
+    and boosting team productivity effortlessly.
+  site_link: "#"
+  pricing_link: "#"
+
 - title: Relaso for Law Firms
   fa_icon_class: fas fa-gavel
-  description: A specialized solution for legal professionals, offering tools to manage cases, streamline billing, and organize documentation for improved productivity and client service.
-  site_link: '#'
+  description: >-
+    A specialized solution for legal professionals, offering tools to manage
+    cases, streamline billing, and organize documentation for improved
+    productivity and client service.
+  site_link: "#"
+  pricing_link: "#"
 
-# - title: Relaso for sales
-#   fa_icon_class: fa fa-bar-chart
-#   description: A specialized solution for sales professionals, offering tools to manage cases, streamline billing, and organize documentation for improved productivity and client service.
-#   site_link: /sales
-  
+- title: Relaso Document Management
+  fa_icon_class: far fa-file-lines
+  description: >-
+    Software solution designed to store, manage, and track digital documents
+    efficiently. It provides a centralized repository where organizations can
+    securely manage files, ensuring easy access, version control, and compliance
+    with regulatory standards.
+  site_link: "#"
+  pricing_link: "#"

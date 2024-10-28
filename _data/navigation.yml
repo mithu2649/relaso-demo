@@ -1,16 +1,22 @@
+- name: Home
+  link: /
+
 - name: About
   link: /about
-
-- name: Blog
-  link: /blog
-
-- name: Pricing
-  link: /pricing   
 
 - name: Products
   link: /products
   dropdown: 'true'
   data: products
+
+- name: Pricing
+  link: /pricing   
+
+- name: Case Studies
+  link: /case-studies  
+
+- name: Blog
+  link: /blog
 
 - name: Contact
   link: /contact

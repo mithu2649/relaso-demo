@@ -1,0 +1,75 @@
+@use "../base/colors";
+@use "../mixins/breakpoints";
+
+$logo-width: 15rem; // Fixed width for the logo
+$margin-between-items: 20px; // Space between company items
+$padding-between-logo-text: 5rem; // Space between logo and text
+
+.companies-container {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoints.for-tablet-landscape-down {
+    padding: 0;
+  }
+
+
+  h1 {
+    padding: 0rem 0rem 2rem 0rem;
+
+  }
+  
+  .company-item {
+    display: flex;
+    align-items: center;
+    margin: $margin-between-items 0; // Space between company items
+    border-bottom: 1px solid colors.$accent-color-lightest;
+    padding: 3rem 0rem;
+    align-items: flex-start;
+    
+    @include breakpoints.for-tablet-portrait-down {
+      flex-direction: column !important;
+    }
+    
+    h2{
+      padding: 0rem 0rem 2rem 0rem;
+      .faded-text {
+        color: gray;
+      }
+    }
+
+    &.flex-row {
+      flex-direction: row; // Logo on left
+    }
+    
+    &.flex-row-reverse {
+      flex-direction: row-reverse; // Logo on right
+    }
+
+    .company-logo {
+      flex: 0 0 $logo-width; // Fixed width for the logo
+
+      img {
+        max-width: 100%; // Responsive logo
+        height: auto; // Maintain aspect ratio
+        opacity: 0.8;
+      }
+    }
+
+    .company-info {
+      flex: 1; // Allow the info section to grow
+      padding: 0 $padding-between-logo-text; // Space between logo and text
+      @include breakpoints.for-tablet-landscape-down {
+        padding: 0;
+      }
+      p {
+        font-family: "Libre Baskerville", serif;
+        font-style: italic;
+        padding-left: 2.5rem;
+        line-height: 2rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

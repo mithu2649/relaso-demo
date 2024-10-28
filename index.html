@@ -11,9 +11,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       <div class="chip"></div>
     </div>
     <div class="hero-text">
-      The CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate"
-        >flexible,&nbsp;</span
-      >not frustrating.
+      The CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate">flexible,&nbsp;</span>not frustrating.
     </div>
     <div>
       <p class="main-header-sub-para header-sub-para">{{ page.hero-paragraph }}</p>
@@ -22,7 +20,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
     <div>
       <div class="action-buttons-container">
         <div class="call-to-action-btns-container">
-          <a href="/pricing" class="filled-btn">Try for free</a>
+          <a href="{{ site.data.hero_slides[0].pricing_link }}" class="filled-btn pricing-link">Try for free</a>
           <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
         </div>
 
@@ -47,10 +45,9 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
           src="{{ site.data.hero_slides[0].video_url }}"
           title="Introduction to Relaso"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-          allow="autoplay"
           style="aspect-ratio: 16 / 9"
         ></iframe>
       </div>
@@ -137,6 +134,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
 <div id="videoModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
+    <div class="video-container plyr__video-embed" id="player">
     <iframe
       id="relaso-crm-video"
       src="https://www.youtube.com/embed/qmfJJ_lWpyM"
@@ -146,6 +144,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
     ></iframe>
+  </div>
   </div>
 </div>
 
@@ -176,23 +175,25 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
         });
 
         const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
-        const illustrationVideoAnimate = gsap.timeline({
-          repeat: 1,
-          repeatDelay: 4,
-          onComplete: () => {
-            document.querySelector(".video-container").style.display = "flex";
-            document.querySelector(".hero-illustration").style.display = "none";
-            const player = new Plyr("#player", { enabled: true, autoplay: true });
+        // const illustrationVideoAnimate = gsap.timeline({
+        //   repeat: 1,
+        //   repeatDelay: 4,
+        //   onComplete: () => {
+        //     document.querySelector(".video-container").style.display = "flex";
+        //     document.querySelector(".hero-illustration").style.display = "none";
+            const player = new Plyr("#player", { enabled: true, autoplay: false });
             window.player = player;
+            const playerInModal = new Plyr("#playerInModal", { enabled: true, autoplay: false });
+            window.playerInModal = playerInModal;
 
-            gsap.delayedCall(3, revertIllustrationAnimation);
-          },
-        });
+        //     gsap.delayedCall(3, revertIllustrationAnimation);
+        //   },
+        // });
 
-        function revertIllustrationAnimation(){
-          document.querySelector(".video-container").style.display = "none";
-          document.querySelector(".hero-illustration").style.display = "flex";
-        }
+        // function revertIllustrationAnimation(){
+        //   document.querySelector(".video-container").style.display = "none";
+        //   document.querySelector(".hero-illustration").style.display = "flex";
+        // }
 
         shakeTimeline.to(".action-buttons-container .filled-btn", {
           y: -16, // Move the button 10px horizontally
@@ -232,6 +233,8 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
         const videoIframe = document.querySelector('#relaso-crm-video');
         const heroText = document.querySelector('.hero-text');
         const headerSubPara = document.querySelector('.main-header-sub-para');
+        const pricingLink = document.querySelector('.pricing-link');
+
 
         const slideAnimationDelaySeconds = 12;
         let currentIndex = 0;
@@ -255,6 +258,7 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
                 // videoIframe.src = nextSlide.video_url;
                 heroText.innerHTML = nextSlide.title;
                 headerSubPara.textContent = nextSlide.subtitle;
+                pricingLink.setAttribute('href', nextSlide.pricing_link);
 
                 // Slide new content in from the right
                 gsap.fromTo(' .hero-text, .main-header-sub-para', { x: 200, opacity: 0,}, { x: 0, opacity: 1, duration: 0.5, });

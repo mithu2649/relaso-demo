@@ -35,7 +35,16 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/about" >
+          <a href="/">
+            Home
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/about">
             About
           </a>
         
@@ -43,26 +52,8 @@
     
       <li>
         
-          <!-- Regular link without dropdown -->
-          <a href="/blog" >
-            Blog
-          </a>
-        
-      </li>
-    
-      <li>
-        
-          <!-- Regular link without dropdown -->
-          <a href="/pricing" >
-            Pricing
-          </a>
-        
-      </li>
-    
-      <li>
-        
           <!-- Parent link for dropdown -->
-          <a href="/products" class="has-dropdown " data-toggle="dropdown">
+          <a href="/products" class="has-dropdown" data-toggle="dropdown">
             Products
           </a>
 
@@ -70,7 +61,7 @@
           <ul class="dropdown-menu">
             
               <li>
-                <a href="/about" >
+                <a href="/" class="current-tab">
                   Relaso CRM
                 </a>
               </li>
@@ -105,6 +96,12 @@
                 </a>
               </li>
             
+              <li>
+                <a href="#" >
+                  Relaso Document Management
+                </a>
+              </li>
+            
           </ul>
 
         
@@ -113,7 +110,34 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/contact" >
+          <a href="/pricing">
+            Pricing
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/case-studies">
+            Case Studies
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/blog">
+            Blog
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/contact">
             Contact
           </a>
         
@@ -146,14 +170,20 @@
       <ul class="nav-links-container">
         
         <li>
+          <a href="/" class="current-tab" >
+            Home
+          </a>
+        </li>
+        
+        <li>
           <a href="/about" >
             About
           </a>
         </li>
         
         <li>
-          <a href="/blog" >
-            Blog
+          <a href="/products" >
+            Products
           </a>
         </li>
         
@@ -164,8 +194,14 @@
         </li>
         
         <li>
-          <a href="/products" >
-            Products
+          <a href="/case-studies" >
+            Case Studies
+          </a>
+        </li>
+        
+        <li>
+          <a href="/blog" >
+            Blog
           </a>
         </li>
         
@@ -228,9 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="chip"></div>
     </div>
     <div class="hero-text">
-      The CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate"
-        >flexible,&nbsp;</span
-      >not frustrating.
+      The CRM Software that's&nbsp;<span class="gradient-text flexible-text-animate">flexible,&nbsp;</span>not frustrating.
     </div>
     <div>
       <p class="main-header-sub-para header-sub-para">Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity.</p>
@@ -239,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div>
       <div class="action-buttons-container">
         <div class="call-to-action-btns-container">
-          <a href="/pricing" class="filled-btn">Try for free</a>
+          <a href="/pricing/pricingPage?product=relasoGeneral" class="filled-btn pricing-link">Try for free</a>
           <a href="#watch-video" id="openVideoBtn" class="outline-btn"><i class="fa-regular fa-circle-play"></i>&nbsp;&nbsp;Watch Video</a> 
         </div>
 
@@ -264,10 +298,9 @@ document.addEventListener('DOMContentLoaded', function () {
           src="https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"
           title="Introduction to Relaso"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
-          allow="autoplay"
           style="aspect-ratio: 16 / 9"
         ></iframe>
       </div>
@@ -403,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   <div class="product-cards cards-container">
     
-    <a href="/about">
+    <a href="/">
       <div class="card">
         <div class="card-icon"><i class="fas fa-users"></i></div>
         <div class="card-title"><h4>Relaso CRM</h4></div>
@@ -457,6 +490,15 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </a>
     
+    <a href="#">
+      <div class="card">
+        <div class="card-icon"><i class="far fa-file-lines"></i></div>
+        <div class="card-title"><h4>Relaso Document Management</h4></div>
+        <div class="card-description"><p>Software solution designed to store, manage, and track digital documents efficiently. It provides a centralized repository where organizations can securely manage files, ensuring easy access, versi...</p></div>
+        <!-- <a href="#" class="outline-btn bookDemoBtn">Book a demo</a> -->
+      </div>
+    </a>
+    
   </div>
 </section>
 
@@ -464,6 +506,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <div id="videoModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
+    <div class="video-container plyr__video-embed" id="player">
     <iframe
       id="relaso-crm-video"
       src="https://www.youtube.com/embed/qmfJJ_lWpyM"
@@ -473,6 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
     ></iframe>
+  </div>
   </div>
 </div>
 
@@ -503,23 +547,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const shakeTimeline = gsap.timeline({ repeat: -1, repeatDelay: 4 });
-        const illustrationVideoAnimate = gsap.timeline({
-          repeat: 1,
-          repeatDelay: 4,
-          onComplete: () => {
-            document.querySelector(".video-container").style.display = "flex";
-            document.querySelector(".hero-illustration").style.display = "none";
-            const player = new Plyr("#player", { enabled: true, autoplay: true });
+        // const illustrationVideoAnimate = gsap.timeline({
+        //   repeat: 1,
+        //   repeatDelay: 4,
+        //   onComplete: () => {
+        //     document.querySelector(".video-container").style.display = "flex";
+        //     document.querySelector(".hero-illustration").style.display = "none";
+            const player = new Plyr("#player", { enabled: true, autoplay: false });
             window.player = player;
+            const playerInModal = new Plyr("#playerInModal", { enabled: true, autoplay: false });
+            window.playerInModal = playerInModal;
 
-            gsap.delayedCall(3, revertIllustrationAnimation);
-          },
-        });
+        //     gsap.delayedCall(3, revertIllustrationAnimation);
+        //   },
+        // });
 
-        function revertIllustrationAnimation(){
-          document.querySelector(".video-container").style.display = "none";
-          document.querySelector(".hero-illustration").style.display = "flex";
-        }
+        // function revertIllustrationAnimation(){
+        //   document.querySelector(".video-container").style.display = "none";
+        //   document.querySelector(".hero-illustration").style.display = "flex";
+        // }
 
         shakeTimeline.to(".action-buttons-container .filled-btn", {
           y: -16, // Move the button 10px horizontally
@@ -548,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ////// slideshow //////
 
      // Access slides data and convert it to a JavaScript object
-     const slides = [{"title":"The CRM Software <br>that's <span class=\"gradient-text flexible-text-animate\">flexible</span>, not frustrating.","subtitle":"Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity.","illustration_img":"assets/images/undraw_add_information_j2wg.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"},{"title":"Hospital equipment distribution with <span class=\"gradient-text flexible-text-animate\"> Relaso Hospitech</span>","subtitle":"Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. ","illustration_img":"assets/images/hospitech_illustration.svg","video_url":"https://www.youtube.com/watch?v=cyLzBbunZbo"},{"title":"Empower Your Clinic Management with <span class=\"gradient-text flexible-text-animate\">Relaso Clinic</span>","subtitle":"Our clinic-focused CRM allows you to track appointments, manage patient data, and improve follow-ups effortlessly. Experience a healthier workflow and elevate patient satisfaction with our intuitive platform.","illustration_img":"assets/images/clinics_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"},{"title":"Streamline Your Support Systems with <span class=\"gradient-text flexible-text-animate\">Relaso Helpdesk</span>","subtitle":"Our Relaso Helpdesk CRM enables your support team to handle inquiries with ease, ensuring no question goes unanswered. Delight your customers with fast responses and robust solutions—all in one powerful platform.","illustration_img":"assets/images/helpdesk_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4"}];
+     const slides = [{"title":"The CRM Software <br>that's <span class=\"gradient-text flexible-text-animate\">flexible</span>, not frustrating.","subtitle":"Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity.","illustration_img":"assets/images/undraw_add_information_j2wg.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"},{"title":"Hospital equipment distribution with <span class=\"gradient-text flexible-text-animate\"> Relaso Hospitech</span>","subtitle":"Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. ","illustration_img":"assets/images/hospitech_illustration.svg","video_url":"https://www.youtube.com/embed/cyLzBbunZbo","pricing_link":"/pricing/pricingPage?product=relasoHospitech"},{"title":"Empower Your Clinic Management with <span class=\"gradient-text flexible-text-animate\">Relaso Clinic</span>","subtitle":"Our clinic-focused CRM allows you to track appointments, manage patient data, and improve follow-ups effortlessly. Experience a healthier workflow and elevate patient satisfaction with our intuitive platform.","illustration_img":"assets/images/clinics_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"},{"title":"Streamline Your Support Systems with <span class=\"gradient-text flexible-text-animate\">Relaso Helpdesk</span>","subtitle":"Our Relaso Helpdesk CRM enables your support team to handle inquiries with ease, ensuring no question goes unanswered. Delight your customers with fast responses and robust solutions—all in one powerful platform.","illustration_img":"assets/images/helpdesk_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"}];
 
      // Debugging output to make sure slides data is loaded correctly
      console.log("Slides data:", slides);
@@ -559,6 +605,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const videoIframe = document.querySelector('#relaso-crm-video');
         const heroText = document.querySelector('.hero-text');
         const headerSubPara = document.querySelector('.main-header-sub-para');
+        const pricingLink = document.querySelector('.pricing-link');
+
 
         const slideAnimationDelaySeconds = 12;
         let currentIndex = 0;
@@ -582,6 +630,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // videoIframe.src = nextSlide.video_url;
                 heroText.innerHTML = nextSlide.title;
                 headerSubPara.textContent = nextSlide.subtitle;
+                pricingLink.setAttribute('href', nextSlide.pricing_link);
 
                 // Slide new content in from the right
                 gsap.fromTo(' .hero-text, .main-header-sub-para', { x: 200, opacity: 0,}, { x: 0, opacity: 1, duration: 0.5, });

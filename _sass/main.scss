@@ -30,7 +30,7 @@ body {
 }
 
 section {
-  padding: 3rem 0rem;
+  padding: 3rem 0rem 5rem 0rem;
   border-bottom: 1px solid rgba(216, 171, 255, 0.61);
   @include breakpoints.for-tablet-landscape-down {
     padding: 1rem 0rem;

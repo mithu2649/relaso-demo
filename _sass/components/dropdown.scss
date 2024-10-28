@@ -1,4 +1,5 @@
 @use "../base/colors";
+@use "../mixins/breakpoints";
 
 .nav-links-container {
   li {
@@ -21,7 +22,7 @@
         border-top: none;
         position: absolute;
         top: calc(50% - 0.4rem);
-        right: 0.8rem;
+        right: 0.3rem;
         transform: rotate(-45deg);
 
     }
@@ -30,7 +31,8 @@
     .dropdown-menu {
       display: none; /* Hidden by default */
       position: absolute;
-      top: 90%; /* Align dropdown below the parent */
+      z-index: 99 !important;
+      top: 99%; /* Align dropdown below the parent */
       left: 0;
       background-color: colors.$background-light-alpha;
       backdrop-filter: blur(20px);
@@ -40,10 +42,17 @@
       margin: 0;
       min-width: 16rem;
       box-shadow: 0 4px 8px colors.$accent-color-lightest; /* Add slight shadow */
+      
 
       opacity: 0; // Start with an opacity of 0
       transform: translateY(-10px); // Start slightly above
       transition: opacity 0.3s ease, transform 0.3s ease; // Smooth transition
+
+
+      @include breakpoints.for-big-desktop-down {
+        background-color: white;
+      }
+
 
       li {
         display: flex;

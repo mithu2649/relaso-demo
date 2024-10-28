@@ -1,0 +1,19 @@
+---
+layout: default
+title: Relaso Blogs
+---
+
+<div class="companies-container">
+    <h1>Case Studies and Clients:</h1>
+    {% for company in site.data.case-studies %}
+    <div class="company-item flex-row">        
+        <div class="company-logo">
+          <img src="{{ company.company_logo }}" alt="{{ company.name }} Logo">
+        </div>
+        <div class="company-info">
+          <h2><span class="faded-text">{{ forloop.index }} |</span> {{ company.name }}</h2>
+          <p>{{ company.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>

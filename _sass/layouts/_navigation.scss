@@ -2,8 +2,7 @@
 @use "../mixins/breakpoints";
 
 .scrolled {
-  background: rgba(255, 255, 255, 0.651);
-  backdrop-filter: blur(20px);
+  background: white;
   height: 5rem !important;
   z-index: 99;
   border-bottom: 2px solid colors.$accent-color-lightest;
@@ -64,7 +63,7 @@ nav.main-navbar {
 
     li a {
       color: black;
-      padding: 2rem;
+      padding: 2rem 1.5rem;
       transition: 0.2s ease;
       display: inline-block;
 
@@ -87,6 +86,8 @@ nav.main-navbar {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////    Navigation bar for Mobile     ////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// 
+/// styles related to dropdown menus are defined in dropdown.scss
 
 .navbar {
   display: none;
@@ -171,7 +172,7 @@ nav.main-navbar {
       gap: 20px;
       padding: 0;
       margin: 0;
-      padding: 2rem;
+      padding: 2rem 0rem;
       box-shadow: 0px 0px 10px gray;
       li {
         padding: 0;
@@ -180,6 +181,7 @@ nav.main-navbar {
           text-decoration: none;
           color: black;
           font-size: 18px;
+
           &:hover {
             color: colors.$accent-color;
           }
@@ -212,7 +214,7 @@ nav.main-navbar {
       display: flex;
       border-radius: 1rem;
       background: colors.$background-color;
-      backdrop-filter: blur(50px);
+      // backdrop-filter: blur(50px);
       position: relative;
       width: 100%;
       li {

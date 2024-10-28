@@ -2,7 +2,7 @@
 @use "../mixins/breakpoints";
 
 .blogs-container {
-  padding: 3rem 0;
+  padding: 3rem 5rem;
   display: flex;
   flex-direction: column;
   @include breakpoints.for-tablet-landscape-down {

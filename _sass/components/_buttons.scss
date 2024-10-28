@@ -4,7 +4,7 @@
     background: linear-gradient(#{colors.$accent-color-light}, #{colors.$accent-color});
     background-color: colors.$accent-color;
     display: inline-block;
-    color: white;
+    color: white ;
     padding: 0.9rem;
     height: 4rem;
     line-height: 1.8rem;
@@ -14,6 +14,7 @@
     text-align: center;
     font-weight: bold;
     font-size: clamp(0.4rem, 0.8636rem + 0.5818vw, 1.3rem);
+    text-wrap: nowrap;
 
 
     // @include for-tablet-portrait-down{
@@ -39,6 +40,7 @@
     text-align: center;
     font-weight: bold;
     font-size: clamp(0.4rem, 0.8636rem + 0.5818vw, 1.3rem);
+    text-wrap: nowrap;
 
     
     &:hover {
