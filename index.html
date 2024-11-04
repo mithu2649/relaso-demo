@@ -131,7 +131,7 @@ permalink: '/'
 
   <div class="product-cards cards-container">
     {% for product in site.data.products %}
-    <a href="{{product.site_link}}">
+    <a href="{{ site.baseurl }}{{product.site_link}}">
       <div class="card">
         <div class="card-icon"><i class="{{product.fa_icon_class}}"></i></div>
         <div class="card-title"><h4>{{product.title}}</h4></div>
@@ -329,5 +329,5 @@ permalink: '/'
     }
 </script>
 
-<script src="assets/js/videoModalOpenClose.js" defer></script>
+<script src="{{ site.baseurl }}/assets/js/videoModalOpenClose.js" defer></script>
 

@@ -25,7 +25,7 @@
       <h3>Quick links:</h3>
       <div class="footer-links">
         {% for item in site.data.footer-links1 %}
-        <a href="{{item.link}}">{{item.name}}</a>
+        <a href="{{ site.baseurl }}{{item.link}}">{{item.name}}</a>
         {% endfor %}
        
       </div>
@@ -36,7 +36,7 @@
       <div class="footer-links">
            
         {% for post in site.posts limit: 8 %}
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
         {% endfor %}
         <!-- <br><br>
         <hr>
@@ -79,7 +79,7 @@
     <i class="fa-solid fa-chevron-up"></i>
   </button>
 </footer>
-<script src="/assets/js/smoothScroll.js"></script>
+<script src="{{ site.baseurl }}/assets/js/smoothScroll.js"></script>
 <script defer>
     backToTop("backToTop");
 </script>
