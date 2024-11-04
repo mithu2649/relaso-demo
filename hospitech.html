@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Pricing for Hospitech
+permalink: '/hospitech/'
 ---
 
 <section class="main-hero-section">
@@ -37,8 +38,7 @@ title: Pricing for Hospitech
 
   <div class="column2 right">
     <div class="illustrations-container">
-      <!-- <img
-        class="hero-illustration"
+      <!-- <img loading="lazy"         class="hero-illustration"
         src="{{ site.data.hero_slides[1].illustration_img | relative_url }}"
         alt="Illustration"
       /> -->
@@ -66,9 +66,8 @@ title: Pricing for Hospitech
   <div class="companiy-logos">
     {% for client in site.data.happy_clients %} <div class="logo-container" {%
     if client.color=='white' %}style="filter: invert(1);" {% endif %}>
-    <img
-      class="happy-clients-logo"
-      src="{{ client.logo }}"
+    <img loading="lazy"       class="happy-clients-logo"
+      src="{{ client.logo | relative_url}}"
       alt="{{ client.name }}"
       title="{{ client.name }}"
     />

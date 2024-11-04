@@ -118,8 +118,22 @@ $accent-color: colors.$accent-color;
   }
 }
 
+
+
+@include breakpoints.for-big-desktop-down {
+  .about-page {
+    padding: 1.5rem;
+  }
+}
+
 // Responsive Layout
 @include breakpoints.for-tablet-landscape-down {
+  .about-page{
+    padding: 0 !important;
+  }
+  .about-section{
+    padding: 0 !important;
+  }
   .about-section,
   .vision-section,
   .security-section,
@@ -130,11 +144,5 @@ $accent-color: colors.$accent-color;
     .image {
       margin-bottom: 1rem;
     }
-  }
-}
-
-@include breakpoints.for-big-desktop-down {
-  .about-page {
-    padding: 1.5rem;
   }
 }

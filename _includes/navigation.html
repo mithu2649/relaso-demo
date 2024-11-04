@@ -1,6 +1,6 @@
 <nav class="main-navbar">
   <div class="logo-container"><a href="/">
-    <img src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
+    <img loading="lazy" src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
     <!-- <h4 class="gradien-text">elaso</h4> -->
       <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
     </a></div>
@@ -11,15 +11,16 @@
       <li>
         {% if item.dropdown == 'true' %}
           <!-- Parent link for dropdown -->
-          <a href="{{ item.link }}" class="has-dropdown" data-toggle="dropdown">
-            {{ item.name }}
+
+          <a href="{{ item.link }}" class="has-dropdown  data-toggle="dropdown">
+            {{ item.name }} {{ current_link}}
           </a>
 
           <!-- Dropdown items -->
           <ul class="dropdown-menu">
             {% for subitem in site.data[item.data] %}
               <li>
-                <a href="{{ subitem.site_link }}" {% if page.url == subitem.site_link %}class="current-tab"{% endif %}>
+                <a href="{{ subitem.site_link }}">
                   {{ subitem.title }}
                 </a>
               </li>
@@ -28,7 +29,7 @@
 
         {% else %}
           <!-- Regular link without dropdown -->
-          <a href="{{ item.link }}">
+          <a href="{{ item.link }}" >
             {{ item.name }}
           </a>
         {% endif %}
@@ -47,7 +48,7 @@
   <div class="navbar">
     <div class="logo-container">
       <a href="/">
-          <img src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
+          <img loading="lazy" src="{{ '/assets//images/relaso-logo-full.png' | relative_url }}" alt="Relaso Logo">
       </a>
     </div>
     
@@ -61,7 +62,7 @@
       <ul class="nav-links-container">
         {% for item in site.data.navigation %}
         <li>
-          <a href="{{ item.link }}" {% if page.url==item.link %}class="current-tab" {% endif %}>
+          <a href="{{ item.link }}" >
             {{ item.name }}
           </a>
         </li>

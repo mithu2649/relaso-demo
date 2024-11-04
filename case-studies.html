@@ -1,14 +1,15 @@
 ---
 layout: default
 title: Relaso Blogs
+permalink: '/case-studies/'
 ---
 
 <div class="companies-container">
-    <h1>Case Studies and Clients:</h1>
+    <h1 class="gradient-text">Case Studies and Clients:</h1>
     {% for company in site.data.case-studies %}
     <div class="company-item flex-row">        
         <div class="company-logo">
-          <img src="{{ company.company_logo }}" alt="{{ company.name }} Logo">
+          <img loading="lazy" src="{{ company.company_logo | relative_url }}" alt="{{ company.name }} Logo">
         </div>
         <div class="company-info">
           <h2><span class="faded-text">{{ forloop.index }} |</span> {{ company.name }}</h2>

@@ -2,13 +2,16 @@
   link: /hospitech
 
 - name: Relaso for Car Dealership
-  link: /relaso-for-car-dealership
+  link: '#'
 
 - name: Relaso for Doctors
-  link: /relaso-for-doctors
+  link: '#'
 
 - name: Relaso for Lawyers
-  link: /relaso-for-lawyers
+  link: '#'
 
 - name: Relaso for Law-firms
-  link: /relaso-for-law-firms
+  link: '#'
+
+- name: Privacy Policy
+  link: /privacy

@@ -86,7 +86,7 @@ nav.main-navbar {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////    Navigation bar for Mobile     ////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/// 
+///
 /// styles related to dropdown menus are defined in dropdown.scss
 
 .navbar {
@@ -141,7 +141,7 @@ nav.main-navbar {
     justify-content: center;
 
     height: 3rem;
-    width:3rem;
+    width: 3rem;
 
     button {
       background: none;
@@ -149,7 +149,7 @@ nav.main-navbar {
       font-size: 20px;
       cursor: pointer;
 
-      .menu-icon{
+      .menu-icon {
         font-size: 1.2rem;
       }
     }
@@ -157,7 +157,7 @@ nav.main-navbar {
 
   .navigation-links-mobile {
     background: colors.$background-light-alpha;
-    -webkit-backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(50px);
     display: none;
 
@@ -218,4 +218,9 @@ nav.main-navbar {
       }
     }
   }
+}
+
+// Current tab styles
+.current-tab {
+  font-weight: bold;
 }

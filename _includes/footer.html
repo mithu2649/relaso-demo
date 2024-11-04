@@ -27,18 +27,31 @@
         {% for item in site.data.footer-links1 %}
         <a href="{{item.link}}">{{item.name}}</a>
         {% endfor %}
+       
       </div>
     </div>
 
     <div class="footer-column fc-3">
       <h3>Blog Posts:</h3>
       <div class="footer-links">
-        {% for post in site.posts %}
-        <a href="{{post.url}}">{{ post.title }}</a>
+           
+        {% for post in site.posts limit: 8 %}
+            <a href="{{ post.url }}">{{ post.title }}</a>
         {% endfor %}
+        <!-- <br><br>
+        <hr>
+        <br>
+        <h3>More links:</h3>
+        {% for item in site.data.footer-links2 %}
+        <a href="{{item.link}}">{{item.name}}</a>
+        {% endfor %} -->
+
       </div>
     </div>
+    
   </div>
+
+ 
 
   <div class="footer-column fc-4">
     <h3>Newsletter:</h3>

@@ -3,6 +3,7 @@ title: "Relaso CRM - Homepage"
 layout: default
 hero-paragraph: "Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication,
 and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity."
+permalink: '/'
 ---
 
 <section class="main-hero-section">
@@ -49,9 +50,8 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
 
   <div class="column2 right">
     <div class="illustrations-container">
-      <img
-        class="hero-illustration"
-        src="{{ site.data.hero_slides[0].illustration_img }}"
+      <img loading="lazy"         class="hero-illustration"
+        src="{{ site.data.hero_slides[0].illustration_img | relative_url}}"
         alt="Illustration"
       />
       <div class="video-container plyr__video-embed" id="player">
@@ -76,9 +76,8 @@ and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos a
   <div class="companiy-logos">
     {% for client in site.data.happy_clients %} <div class="logo-container" {%
     if client.color=='white' %}style="filter: invert(1);" {% endif %}>
-    <img
-      class="happy-clients-logo"
-      src="{{ client.logo }}"
+    <img loading="lazy"       class="happy-clients-logo"
+      src="{{ client.logo | relative_url}}"
       alt="{{ client.name }}"
       title="{{ client.name }}"
     />

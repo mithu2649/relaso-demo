@@ -11,9 +11,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-
     <script
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
       defer
@@ -24,7 +23,7 @@
 
     <nav class="main-navbar">
   <div class="logo-container"><a href="/">
-    <img src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
+    <img loading="lazy" src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
     <!-- <h4 class="gradien-text">elaso</h4> -->
       <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
     </a></div>
@@ -35,7 +34,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/">
+          <a href="/" >
             Home
           </a>
         
@@ -44,7 +43,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/about">
+          <a href="/about" >
             About
           </a>
         
@@ -53,51 +52,52 @@
       <li>
         
           <!-- Parent link for dropdown -->
-          <a href="/products" class="has-dropdown" data-toggle="dropdown">
-            Products
+
+          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+            Products 
           </a>
 
           <!-- Dropdown items -->
           <ul class="dropdown-menu">
             
               <li>
-                <a href="/" >
+                <a href="/">
                   Relaso CRM
                 </a>
               </li>
             
               <li>
-                <a href="/hospitech" >
+                <a href="/hospitech">
                   Relaso Hospitech
                 </a>
               </li>
             
               <li>
-                <a href="#" >
+                <a href="#">
                   Relaso Clinic
                 </a>
               </li>
             
               <li>
-                <a href="#" >
+                <a href="#">
                   Relaso Examination
                 </a>
               </li>
             
               <li>
-                <a href="#" >
+                <a href="#">
                   Relaso HelpDesk
                 </a>
               </li>
             
               <li>
-                <a href="#" >
+                <a href="#">
                   Relaso for Law Firms
                 </a>
               </li>
             
               <li>
-                <a href="#" >
+                <a href="#">
                   Relaso Document Management
                 </a>
               </li>
@@ -110,7 +110,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/pricing">
+          <a href="/pricing" >
             Pricing
           </a>
         
@@ -119,7 +119,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/case-studies">
+          <a href="/case-studies" >
             Case Studies
           </a>
         
@@ -128,7 +128,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/blog">
+          <a href="/blog" >
             Blog
           </a>
         
@@ -137,7 +137,7 @@
       <li>
         
           <!-- Regular link without dropdown -->
-          <a href="/contact">
+          <a href="/contact" >
             Contact
           </a>
         
@@ -156,7 +156,7 @@
   <div class="navbar">
     <div class="logo-container">
       <a href="/">
-          <img src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
+          <img loading="lazy" src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
       </a>
     </div>
     
@@ -258,10 +258,25 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-</script> <div class="document-container">
-  <h1>About Socielo Tech | Our Vision</h1>
-  <p>02 Oct 2024 - Relaso.com</p>
-  ![Company Vision Image](/assets/images/product-meeting.png)
+</script> <div class="main-post-container">
+  <div class="toc">
+    <h2 class="toc-title">Table of Contents</h2>
+    <ul id="toc-list"></ul>
+  </div>
+
+  <div class="document-container" id="post-container">
+    
+    <h1>About Socielo Tech | Our Vision</h1>
+    <p class="para-menu">
+      <span>02 Oct 2024 - Relaso.com</span>
+      <span class="doc-menu-container">
+        <span class="print-text" onclick="window.print()"
+          ><i class="fa fa-print"></i> Print</span
+        >
+        <span id="share-button"><i class="fa fa-share"></i> Share</span>
+      </span>
+    </p>
+    ![Company Vision Image](/assets/images/product-meeting.png)
 
 ## About Socielo Tech
 
@@ -285,7 +300,139 @@ Our team is comprised of seasoned professionals dedicated to driving excellence 
 
 At Socielo Tech, we are not just about building software; we are about building a community of innovators and problem solvers who strive to make a meaningful impact in the business landscape.
 
+
+    <!-- <button id="download-pdf" onclick="window.print()">Print Document</button> -->
+  </div>
 </div>
+<button id="backToTop" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+
+<style>
+
+  
+  .para-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    span.doc-menu-container {
+      display: flex;
+      gap: 2rem;
+    }
+    .print-text,
+    #share-button {
+      cursor: pointer;
+      &:hover {
+        color: indigo;
+        background: white;
+      }
+    }
+  }
+
+
+
+</style>
+
+<script defer>
+  document
+    .getElementById("share-button")
+    .addEventListener("click", async () => {
+      const url = window.location.href;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: "Read this amazing blog at Relaso.",
+            url: url,
+          });
+          console.log("Content shared successfully!");
+        } catch (error) {
+          console.error("Error sharing content:", error);
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(url);
+          showPopup("Copied to clipboard!");
+        } catch (error) {
+          console.error("Error copying to clipboard:", error);
+          alert("Failed to copy the URL.");
+        }
+      }
+    });
+
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+
+    // Style the popup
+    popup.style.position = "absolute";
+    popup.style.backgroundColor = "#333";
+    popup.style.color = "#fff";
+    popup.style.padding = "10px 20px";
+    popup.style.borderRadius = "5px";
+    popup.style.zIndex = "1000";
+    popup.style.fontSize = "14px";
+
+    // Append the popup near the share button
+    const shareButton = document.getElementById("share-button");
+    const rect = shareButton.getBoundingClientRect();
+    popup.style.top = `${rect.top + window.scrollY - 230}px`; // Position above the button
+    popup.style.left = `${rect.left - 120}px`;
+
+    document.body.appendChild(popup);
+
+    // Remove the popup after 2 seconds
+    setTimeout(() => {
+      popup.remove();
+    }, 2000);
+  }
+</script>
+
+<script defer>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocList = document.getElementById("toc-list");
+    const headers = document.querySelectorAll("h1[id], h2[id], h3[id]"); // Adjust tags as needed
+
+    headers.forEach(header => {
+      const tocItem = document.createElement("li");
+      const tocLink = document.createElement("a");
+      tocLink.setAttribute('class', 'page-link')
+
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = header.textContent;
+
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+  });
+</script>
+
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', ()=>{
+      // Usage examples
+    smoothScroll('a.page-link', '.navbar'); // Initialize smooth scrolling
+    backToTop('backToTop'); // Initialize back to top button functionality
+  })
+</script>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toc = document.querySelector('.toc');
+    const postContainer = document.querySelector('.main-post-container');
+
+    window.addEventListener('scroll', function () {
+        // Check if the user has scrolled down more than 300 pixels
+        if (window.scrollY > 200) {
+            toc.classList.add('sticky'); // Add sticky class to TOC
+        } else {
+            toc.classList.remove('sticky'); // Remove sticky class from TOC
+        }
+    });
+});
+</script>
+
  <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
@@ -315,30 +462,63 @@ At Socielo Tech, we are not just about building software; we are about building 
         
         <a href="/hospitech">Relaso for Hospitech</a>
         
-        <a href="/relaso-for-car-dealership">Relaso for Car Dealership</a>
+        <a href="#">Relaso for Car Dealership</a>
         
-        <a href="/relaso-for-doctors">Relaso for Doctors</a>
+        <a href="#">Relaso for Doctors</a>
         
-        <a href="/relaso-for-lawyers">Relaso for Lawyers</a>
+        <a href="#">Relaso for Lawyers</a>
         
-        <a href="/relaso-for-law-firms">Relaso for Law-firms</a>
+        <a href="#">Relaso for Law-firms</a>
         
+        <a href="/privacy">Privacy Policy</a>
+        
+       
       </div>
     </div>
 
     <div class="footer-column fc-3">
       <h3>Blog Posts:</h3>
       <div class="footer-links">
+           
         
-        <a href="/2024/10/23/what-is-relaso-hospitech.html">What is Relaso for Hospitech?  | Hospitech CRM</a>
+            <a href="/blog/the-beauty-of-stars-copy/">Distant Objects | The Beauty of Stars in the Night Sky</a>
         
-        <a href="/2024/10/22/transforming-healthcare-management-for-clinics.html">Transforming Healthcare Management for Clinics</a>
+            <a href="/blog/technology/">The Transformative Role of Technology in Modern Business</a>
         
-        <a href="/2018/08/20/why-choose-relaso-over-other-CRMs.html">Why choose Relaso over other CRMs</a>
+            <a href="/blog/sustainable-business/">Sustainable Business Practices: How to Go Green</a>
         
+            <a href="/blog/what-is-crm-software/">Unlocking Growth: The Power of CRM Software for Businesses</a>
+        
+            <a href="/blog/the-wishpers-of-the-forest/">Whispers of the Forest | A Journey Through Nature</a>
+        
+            <a href="/blog/what-is-relaso-hospitech/">What is Relaso for Hospitech?  | Hospitech CRM</a>
+        
+            <a href="/blog/corporate-responsibility/">Corporate responsibility involves businesses acting ethically and contributing to social and environmental goals</a>
+        
+            <a href="/blog/sustainability/">Sustainability in business focuses on practices that promote environmental health, social well-being, and economic growth</a>
+        
+        <!-- <br><br>
+        <hr>
+        <br>
+        <h3>More links:</h3>
+        
+        <a href="/relaso-for-hospitech">Why relaso?</a>
+        
+        <a href="/relaso-for-car-dealership">What is CRM?</a>
+        
+        <a href="/relaso-for-doctors">This is a link</a>
+        
+        <a href="/relaso-for-lawyers">This is a link</a>
+        
+        <a href="/relaso-for-law-firms">This is a link</a>
+         -->
+
       </div>
     </div>
+    
   </div>
+
+ 
 
   <div class="footer-column fc-4">
     <h3>Newsletter:</h3>

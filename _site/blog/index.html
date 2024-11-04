@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relaso Blogs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+  </head>
+  <body>
+
+    <nav class="main-navbar">
+  <div class="logo-container"><a href="/">
+    <img loading="lazy" src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
+    <!-- <h4 class="gradien-text">elaso</h4> -->
+      <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
+    </a></div>
+<!-- Navigation links for Desktop -->
+<div class="navigation-links">
+  <ul class="nav-links-container">
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/" >
+            Home
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/about" >
+            About
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Parent link for dropdown -->
+
+          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+            Products 
+          </a>
+
+          <!-- Dropdown items -->
+          <ul class="dropdown-menu">
+            
+              <li>
+                <a href="/">
+                  Relaso CRM
+                </a>
+              </li>
+            
+              <li>
+                <a href="/hospitech">
+                  Relaso Hospitech
+                </a>
+              </li>
+            
+              <li>
+                <a href="#">
+                  Relaso Clinic
+                </a>
+              </li>
+            
+              <li>
+                <a href="#">
+                  Relaso Examination
+                </a>
+              </li>
+            
+              <li>
+                <a href="#">
+                  Relaso HelpDesk
+                </a>
+              </li>
+            
+              <li>
+                <a href="#">
+                  Relaso for Law Firms
+                </a>
+              </li>
+            
+              <li>
+                <a href="#">
+                  Relaso Document Management
+                </a>
+              </li>
+            
+          </ul>
+
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/pricing" >
+            Pricing
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/case-studies" >
+            Case Studies
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/blog" >
+            Blog
+          </a>
+        
+      </li>
+    
+      <li>
+        
+          <!-- Regular link without dropdown -->
+          <a href="/contact" >
+            Contact
+          </a>
+        
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="try-free-btn">
+    <a href="/pricing" class="filled-btn">Try for free</a>
+  </div>
+</nav>
+
+<nav>
+  <div class="navbar">
+    <div class="logo-container">
+      <a href="/">
+          <img loading="lazy" src="/assets//images/relaso-logo-full.png" alt="Relaso Logo">
+      </a>
+    </div>
+    
+    <div class="menu-button">
+      <button id="menu-toggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered menu-icon"></i>
+      </button>
+    </div>
+    
+    <div class="navigation-links-mobile" id="mobile-menu">
+      <ul class="nav-links-container">
+        
+        <li>
+          <a href="/" >
+            Home
+          </a>
+        </li>
+        
+        <li>
+          <a href="/about" >
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/products" >
+            Products
+          </a>
+        </li>
+        
+        <li>
+          <a href="/pricing" >
+            Pricing
+          </a>
+        </li>
+        
+        <li>
+          <a href="/case-studies" >
+            Case Studies
+          </a>
+        </li>
+        
+        <li>
+          <a href="/blog" >
+            Blog
+          </a>
+        </li>
+        
+        <li>
+          <a href="/contact" >
+            Contact
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script defer>
+  // Function to change navbar style on scroll
+  window.onscroll = function() {
+      const nav = document.querySelector('nav.main-navbar');
+      if (window.scrollY > 80) { // Change '100' to any pixel value you prefer
+          nav.classList.add('scrolled');
+      } else {
+          nav.classList.remove('scrolled');
+      }
+  };
+</script>
+
+<script defer>
+
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    let menu = document.getElementById('mobile-menu');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+      document.querySelector('.menu-button').style.border='none';
+
+    } else {
+      menu.style.display = 'flex';
+      document.querySelector('.menu-button').style.border='1px dotted blue';
+    }
+  });
+</script>
+
+
+<script defer>
+
+document.addEventListener('DOMContentLoaded', function () {
+  var dropdownToggles = document.querySelectorAll('[data-toggle="dropdown"]');
+
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+          var dropdownMenu = this.nextElementSibling;
+      dropdownMenu.classList.toggle('active');
+    });
+  });
+});
+
+</script> <div class="blogs-container cards-container">
+  <div class="categories">
+    <h3>Categories</h3>
+    <ul>
+      <li><a class="page-link" href="#recommended">Recommended Posts</a></li>
+      <li><a class="page-link" href="#latest">Latest Posts</a></li>
+      <li><a class="page-link" href="#editorial">Relaso Editorial</a></li>
+    </ul>
+  </div>
+  <h4>All Tags:</h4>
+  <div class="tags-container">
+        
+    <span class="chip tag"
+      ><a href="#filter?tag=astronomy">Astronomy</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=night-sky">Night sky</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=stargazing">Stargazing</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=recommended">Recommended</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=detailed">Detailed</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=business">Business</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=sustainability">Sustainability</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=green-business">Green business</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=eco-friendly-practices">Eco-friendly practices</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=corporate-responsibility">Corporate responsibility</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=crm">Crm</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=business-growth">Business growth</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=customer-relationship-management">Customer relationship management</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=technology">Technology</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=nature">Nature</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=conservation">Conservation</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=adventure">Adventure</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=travel">Travel</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=environment">Environment</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=cooking">Cooking</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=gourmet">Gourmet</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=recipes">Recipes</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=culinary-arts">Culinary arts</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=software">Software</a></span
+    >
+     
+  </div>
+  <br />
+  <div id="recommended" class="post-category">
+    <h1 class="gradient-text">Recommended Posts</h1>
+    <div class="scroll-btns-container">
+      <button class="previous"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <ul class="posts-container" id="recommended-posts">
+     
+    <a href="/blog/the-beauty-of-stars-copy/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="astronomy,night sky,stargazing,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://scribbledartsfromtheheart.com/wp-content/uploads/2015/01/zodiac20stars.jpg?w=300"
+            alt="Distant Objects | The Beauty of Stars in the Night Sky"
+          />
+          <h3 class="post-title">Distant Objects | The Beauty of Stars in the Night Sky</h3>
+          <span class="post-author-text">Example Person</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/technology/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202301/technology-in-the-workplace-sixteen_nine.png?size=948:533"
+            alt="The Transformative Role of Technology in Modern Business"
+          />
+          <h3 class="post-title">The Transformative Role of Technology in Modern Business</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Exploring how technology drives innovation, operational efficiency, and competitive advantage across industries.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/sustainable-business/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="sustainability,green business,eco-friendly practices,corporate responsibility,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.ecomasteryproject.com/wp-content/uploads/2024/01/sustainable_cleaning_for_businesses.jpg"
+            alt="Sustainable Business Practices: How to Go Green"
+          />
+          <h3 class="post-title">Sustainable Business Practices: How to Go Green</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Adopting sustainable business practices is essential for companies looking to minimize their environmental impact. This article explores practical steps businesses can...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/what-is-crm-software/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="CRM,business growth,customer relationship management,technology,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://cdn.sanity.io/images/poftgen7/production/49d4051d7ca7ce6b30ab4d1ca607b114f6aa47ea-1200x628.webp?w=800&q=100&fit=max&auto=format&dpr=2"
+            alt="Unlocking Growth: The Power of CRM Software for Businesses"
+          />
+          <h3 class="post-title">Unlocking Growth: The Power of CRM Software for Businesses</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">31 October 2024</span>
+          </div>
+          <div class="post-excerpt">Customer Relationship Management (CRM) software is essential for businesses aiming to enhance customer interactions, streamline operations, and drive growth. This arti...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/the-wishpers-of-the-forest/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="nature,conservation,adventure,travel,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://backiee.com/static/wallpapers/3840x2160/406839.jpg"
+            alt="Whispers of the Forest | A Journey Through Nature"
+          />
+          <h3 class="post-title">Whispers of the Forest | A Journey Through Nature</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">30 October 2024</span>
+          </div>
+          <div class="post-excerpt">Exploring the depths of the forest can be a transformative experience, connecting us with the natural world. In this post, we delve into the sights, sounds, and wonder...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/green-business/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://images.businessnewsdaily.com/app/uploads/2022/04/04074138/Green-environmentally-responsible-company_gpointstudio.png"
+            alt="Green business | Prioritize environmental responsibility"
+          />
+          <h3 class="post-title">Green business | Prioritize environmental responsibility</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Green business refers to eco-friendly companies that prioritize environmental responsibility.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/gourmet-cooking/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="cooking,gourmet,recipes,culinary arts,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.prlog.org/12550367-lamb-chop-gourmet-meal-at-cape-coral-gourmet-club.jpg"
+            alt="Culinary Delights | Exploring the World of Gourmet Cooking"
+          />
+          <h3 class="post-title">Culinary Delights | Exploring the World of Gourmet Cooking</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Embarking on a culinary journey can transform ordinary meals into extraordinary experiences. In this post, we explore the art of gourmet cooking and share tips for cre...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/why-choose-relaso-over-other-CRMs-copy-2/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="recommended,technology,software,business"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.relaso.com/assets/media/c2.webp"
+            alt="Why choose Relaso over other CRMs"
+          />
+          <h3 class="post-title">Why choose Relaso over other CRMs</h3>
+          <span class="post-author-text">Relaso.com</span>
+          <div>
+            <span class="post-date">20 August 2018</span>
+          </div>
+          <div class="post-excerpt">We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans en...</div>
+        </div>
+      </li>
+    </a>
+    
+  </ul>
+
+  <div id="latest" class="post-category">
+    <h1 class="gradient-text">Latest Posts</h1>
+    <div class="scroll-btns-container">
+      <button class="previous"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <ul class="posts-container">
+     
+    <a href="/blog/sustainable-business/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="sustainability,green business,eco-friendly practices,corporate responsibility,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.ecomasteryproject.com/wp-content/uploads/2024/01/sustainable_cleaning_for_businesses.jpg"
+            alt="Sustainable Business Practices: How to Go Green"
+          />
+          <h3 class="post-title">Sustainable Business Practices: How to Go Green</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Adopting sustainable business practices is essential for companies looking to minimize their environmental impact. This article explores practical steps businesses can...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/technology/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202301/technology-in-the-workplace-sixteen_nine.png?size=948:533"
+            alt="The Transformative Role of Technology in Modern Business"
+          />
+          <h3 class="post-title">The Transformative Role of Technology in Modern Business</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Exploring how technology drives innovation, operational efficiency, and competitive advantage across industries.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/the-beauty-of-stars-copy/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="astronomy,night sky,stargazing,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://scribbledartsfromtheheart.com/wp-content/uploads/2015/01/zodiac20stars.jpg?w=300"
+            alt="Distant Objects | The Beauty of Stars in the Night Sky"
+          />
+          <h3 class="post-title">Distant Objects | The Beauty of Stars in the Night Sky</h3>
+          <span class="post-author-text">Example Person</span>
+          <div>
+            <span class="post-date">01 November 2024</span>
+          </div>
+          <div class="post-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/what-is-crm-software/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="CRM,business growth,customer relationship management,technology,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://cdn.sanity.io/images/poftgen7/production/49d4051d7ca7ce6b30ab4d1ca607b114f6aa47ea-1200x628.webp?w=800&q=100&fit=max&auto=format&dpr=2"
+            alt="Unlocking Growth: The Power of CRM Software for Businesses"
+          />
+          <h3 class="post-title">Unlocking Growth: The Power of CRM Software for Businesses</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">31 October 2024</span>
+          </div>
+          <div class="post-excerpt">Customer Relationship Management (CRM) software is essential for businesses aiming to enhance customer interactions, streamline operations, and drive growth. This arti...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/the-wishpers-of-the-forest/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="nature,conservation,adventure,travel,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://backiee.com/static/wallpapers/3840x2160/406839.jpg"
+            alt="Whispers of the Forest | A Journey Through Nature"
+          />
+          <h3 class="post-title">Whispers of the Forest | A Journey Through Nature</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">30 October 2024</span>
+          </div>
+          <div class="post-excerpt">Exploring the depths of the forest can be a transformative experience, connecting us with the natural world. In this post, we delve into the sights, sounds, and wonder...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/what-is-relaso-hospitech/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags=""
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://media-exp1.licdn.com/dms/image/C4E12AQFyHE7riSsRUw/article-cover_image-shrink_720_1280/0/1523026246245?e=2147483647&v=beta&t=aoPvVj3jTr_L76KsjsYoAzyOdLhhbsQwD2hbmojddfE"
+            alt="What is Relaso for Hospitech?  | Hospitech CRM"
+          />
+          <h3 class="post-title">What is Relaso for Hospitech?  | Hospitech CRM</h3>
+          <span class="post-author-text">relaso.com</span>
+          <div>
+            <span class="post-date">23 October 2024</span>
+          </div>
+          <div class="post-excerpt">Relaso Hospitech CRM is designed specifically for companies in the healthcare technology sector, helping them manage distribution, sales, customer relationships, and m...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/corporate-responsibility/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,responsibility"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220609155551/Social-responsibility.png"
+            alt="Corporate responsibility involves businesses acting ethically and contributing to social and environmental goals"
+          />
+          <h3 class="post-title">Corporate responsibility involves businesses acting ethically and contributing to social and environmental goals</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2024</span>
+          </div>
+          <div class="post-excerpt">Corporate responsibility involves businesses acting ethically and contributing to social and environmental goals.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/gourmet-cooking/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="cooking,gourmet,recipes,culinary arts,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.prlog.org/12550367-lamb-chop-gourmet-meal-at-cape-coral-gourmet-club.jpg"
+            alt="Culinary Delights | Exploring the World of Gourmet Cooking"
+          />
+          <h3 class="post-title">Culinary Delights | Exploring the World of Gourmet Cooking</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Embarking on a culinary journey can transform ordinary meals into extraordinary experiences. In this post, we explore the art of gourmet cooking and share tips for cre...</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/business-growth/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,nature,sustainability"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://example.com/placeholder.jpg"
+            alt="Business growth strategies help companies expand and increase revenue sustainably"
+          />
+          <h3 class="post-title">Business growth strategies help companies expand and increase revenue sustainably</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Business growth strategies help companies expand and increase revenue sustainably.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/eco-friendly-practices/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,eco-friendly practices,nature,environment"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.boulderassociates.com/wp-content/uploads/2021/08/shutterstock_1049886992.jpg"
+            alt="Eco-friendly practices to reduce their environmental impact"
+          />
+          <h3 class="post-title">Eco-friendly practices to reduce their environmental impact</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Eco-friendly practices help individuals and organizations reduce their environmental impact.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/green-business/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://images.businessnewsdaily.com/app/uploads/2022/04/04074138/Green-environmentally-responsible-company_gpointstudio.png"
+            alt="Green business | Prioritize environmental responsibility"
+          />
+          <h3 class="post-title">Green business | Prioritize environmental responsibility</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Green business refers to eco-friendly companies that prioritize environmental responsibility.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/sustainability/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="detailed,business,sustainability,nature,environment"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://example.com/placeholder.jpg"
+            alt="Sustainability in business focuses on practices that promote environmental health, social well-being, and economic growth"
+          />
+          <h3 class="post-title">Sustainability in business focuses on practices that promote environmental health, social well-being, and economic growth</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">04 May 2021</span>
+          </div>
+          <div class="post-excerpt">Sustainability in business focuses on practices that promote environmental health, social well-being, and economic growth.</div>
+        </div>
+      </li>
+    </a>
+    
+    <a href="/blog/why-choose-relaso-over-other-CRMs-copy-2/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="recommended,technology,software,business"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://www.relaso.com/assets/media/c2.webp"
+            alt="Why choose Relaso over other CRMs"
+          />
+          <h3 class="post-title">Why choose Relaso over other CRMs</h3>
+          <span class="post-author-text">Relaso.com</span>
+          <div>
+            <span class="post-date">20 August 2018</span>
+          </div>
+          <div class="post-excerpt">We believe that powerful tools shouldn't break the bank. Relaso CRM is designed to be **affordable** without compromising on features. Our competitive pricing plans en...</div>
+        </div>
+      </li>
+    </a>
+    
+  </ul>
+
+  <br />
+
+  <div id="editorial" class="post-category">
+    <h1 class="gradient-text">Relaso Editorial</h1>
+    <div class="scroll-btns-container">
+      <button class="previous"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <ul class="posts-container">
+           
+    <a href="/blog/what-is-crm-software/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags="CRM,business growth,customer relationship management,technology,recommended"
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://cdn.sanity.io/images/poftgen7/production/49d4051d7ca7ce6b30ab4d1ca607b114f6aa47ea-1200x628.webp?w=800&q=100&fit=max&auto=format&dpr=2"
+            alt="Unlocking Growth: The Power of CRM Software for Businesses"
+          />
+          <h3 class="post-title">Unlocking Growth: The Power of CRM Software for Businesses</h3>
+          <span class="post-author-text">Mithu Mondal</span>
+          <div>
+            <span class="post-date">31 October 2024</span>
+          </div>
+          <div class="post-excerpt">Customer Relationship Management (CRM) software is essential for businesses aiming to enhance customer interactions, streamline operations, and drive growth. This arti...</div>
+        </div>
+      </li>
+    </a>
+        
+    <a href="/blog/what-is-relaso-hospitech/">
+      <li class="card card-container">
+        <div
+          class="article-container"
+          data-post-tags=""
+        >
+          <img
+            loading="lazy"
+            class="post-poster"
+            src="https://media-exp1.licdn.com/dms/image/C4E12AQFyHE7riSsRUw/article-cover_image-shrink_720_1280/0/1523026246245?e=2147483647&v=beta&t=aoPvVj3jTr_L76KsjsYoAzyOdLhhbsQwD2hbmojddfE"
+            alt="What is Relaso for Hospitech?  | Hospitech CRM"
+          />
+          <h3 class="post-title">What is Relaso for Hospitech?  | Hospitech CRM</h3>
+          <span class="post-author-text">relaso.com</span>
+          <div>
+            <span class="post-date">23 October 2024</span>
+          </div>
+          <div class="post-excerpt">Relaso Hospitech CRM is designed specifically for companies in the healthcare technology sector, helping them manage distribution, sales, customer relationships, and m...</div>
+        </div>
+      </li>
+    </a>
+                   
+  </ul>
+
+  <div class="categories">
+    <h3>Categories</h3>
+    <ul>
+      <li><a class="page-link" href="#recommended">Recommended Posts</a></li>
+      <li><a class="page-link" href="#latest">Latest Posts</a></li>
+      <li><a class="page-link" href="#editorial">Relaso Editorial</a></li>
+    </ul>
+  </div>
+
+  <h4>All Tags:</h4>
+  <div class="tags-container">
+        
+    <span class="chip tag"
+      ><a href="#filter?tag=astronomy">Astronomy</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=night-sky">Night sky</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=stargazing">Stargazing</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=recommended">Recommended</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=detailed">Detailed</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=business">Business</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=sustainability">Sustainability</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=green-business">Green business</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=eco-friendly-practices">Eco-friendly practices</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=corporate-responsibility">Corporate responsibility</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=crm">Crm</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=business-growth">Business growth</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=customer-relationship-management">Customer relationship management</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=technology">Technology</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=nature">Nature</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=conservation">Conservation</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=adventure">Adventure</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=travel">Travel</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=environment">Environment</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=cooking">Cooking</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=gourmet">Gourmet</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=recipes">Recipes</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=culinary-arts">Culinary arts</a></span
+    >
+      
+    <span class="chip tag"
+      ><a href="#filter?tag=software">Software</a></span
+    >
+     
+  </div>
+</div>
+
+<button id="backToTop" class="back-to-top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<script src="/assets/js/scroller.js" defer></script>
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    setupScroller(".next", "next");
+    setupScroller(".previous", "previous");
+  });
+</script>
+
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Usage examples
+    smoothScroll(".categories a.page-link", ".navbar"); 
+    backToTop("backToTop");
+  });
+</script>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    const postsContainer = document.getElementById("recommended-posts");
+    const posts = Array.from(postsContainer.children);
+
+    // Shuffle function
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      }
+      return array;
+    }
+
+    // Shuffle the posts
+    const shuffledPosts = shuffleArray(posts);
+
+    // Clear the original posts and append shuffled posts
+    postsContainer.innerHTML = "";
+    shuffledPosts.forEach((post) => postsContainer.appendChild(post));
+  });
+</script>
+
+<script defer>
+  // Function to generate a random color in hexadecimal format
+  function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  // Function to determine if a color is light or dark
+  function isLightColor(color) {
+    // Convert hex color to RGB
+    const r = parseInt(color.slice(1, 3), 16);
+    const g = parseInt(color.slice(3, 5), 16);
+    const b = parseInt(color.slice(5, 7), 16);
+    // Calculate luminance
+    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+    return luminance > 150;
+  }
+
+  // Function to apply random background and appropriate text color to each chip
+  function applyRandomColorsToChips() {
+    const chips = document.querySelectorAll(".tags-container .chip");
+    chips.forEach((chip) => {
+      const randomColor = getRandomColor();
+      const textColor = isLightColor(randomColor) ? "#000000" : "#FFFFFF";
+      chip.style.borderColor = randomColor;
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", applyRandomColorsToChips);
+
+</script>
+
+<script defer>
+  // Function to filter posts based on selected tag
+  function filterPostsByTag(selectedTag) {
+    const posts = document.querySelectorAll(".card-container");
+    posts.forEach((post) => {
+      const postTags = post.childNodes[1]
+        .getAttribute("data-post-tags")
+        .toLowerCase()
+        .split(",");
+      if (postTags.includes(selectedTag.toLowerCase())) {
+        post.parentElement.style.display = "flex";
+      } else {
+        post.parentElement.style.display = "none";
+      }
+      
+    });
+  }
+
+
+  document.querySelectorAll(".tags-container .chip").forEach((chip) => {
+    chip.addEventListener("click", function (event) {
+      event.preventDefault(); 
+
+      const selectedTag = this.textContent.trim();
+      window.scrollTo({
+        top: 10,
+        behavior: 'smooth'
+      });
+
+      filterPostsByTag(selectedTag);
+    });
+  });
+</script>
+ <footer>
+  <div class="footer-container">
+    <div class="footer-column fc-1">
+      <h3>Head Office:</h3>
+      <div class="fc" style="display: flex;">
+        <i class="fa fa-map-marker-alt"></i>
+        <address class="address">
+          87E/1, Selimpur Rd, <br />
+          Dhakuria, Naskar Para, <br />
+          Garfa, Kolkata, <br />
+          West Bengal 700031
+        </address>
+      </div>
+      <p>
+        <i class="fa fa-phone-alt"></i
+        ><a href="tel:+918274897500">+91 82748 97500</a>
+      </p>
+      <p>
+        <i class="fa fa-envelope"></i
+        ><a href="mailto:marketing@relaso.com">marketing@relaso.com</a>
+      </p>
+    </div>
+
+    <div class="footer-column fc-2">
+      <h3>Quick links:</h3>
+      <div class="footer-links">
+        
+        <a href="/hospitech">Relaso for Hospitech</a>
+        
+        <a href="#">Relaso for Car Dealership</a>
+        
+        <a href="#">Relaso for Doctors</a>
+        
+        <a href="#">Relaso for Lawyers</a>
+        
+        <a href="#">Relaso for Law-firms</a>
+        
+        <a href="/privacy">Privacy Policy</a>
+        
+       
+      </div>
+    </div>
+
+    <div class="footer-column fc-3">
+      <h3>Blog Posts:</h3>
+      <div class="footer-links">
+           
+        
+            <a href="/blog/the-beauty-of-stars-copy/">Distant Objects | The Beauty of Stars in the Night Sky</a>
+        
+            <a href="/blog/technology/">The Transformative Role of Technology in Modern Business</a>
+        
+            <a href="/blog/sustainable-business/">Sustainable Business Practices: How to Go Green</a>
+        
+            <a href="/blog/what-is-crm-software/">Unlocking Growth: The Power of CRM Software for Businesses</a>
+        
+            <a href="/blog/the-wishpers-of-the-forest/">Whispers of the Forest | A Journey Through Nature</a>
+        
+            <a href="/blog/what-is-relaso-hospitech/">What is Relaso for Hospitech?  | Hospitech CRM</a>
+        
+            <a href="/blog/corporate-responsibility/">Corporate responsibility involves businesses acting ethically and contributing to social and environmental goals</a>
+        
+            <a href="/blog/sustainability/">Sustainability in business focuses on practices that promote environmental health, social well-being, and economic growth</a>
+        
+        <!-- <br><br>
+        <hr>
+        <br>
+        <h3>More links:</h3>
+        
+        <a href="/relaso-for-hospitech">Why relaso?</a>
+        
+        <a href="/relaso-for-car-dealership">What is CRM?</a>
+        
+        <a href="/relaso-for-doctors">This is a link</a>
+        
+        <a href="/relaso-for-lawyers">This is a link</a>
+        
+        <a href="/relaso-for-law-firms">This is a link</a>
+         -->
+
+      </div>
+    </div>
+    
+  </div>
+
+ 
+
+  <div class="footer-column fc-4">
+    <h3>Newsletter:</h3>
+    <p class="news-letter-text">
+      At Relaso, we understand the dedication and effort your sales team puts in
+      every day. That’s why we’ve developed a CRM tailored specifically for
+      sales professionals. With intuitive, powerful tools, you can effortlessly
+      track leads, nurture customer relationships, and close deals more
+      efficiently. <br /><br />Stay ahead by subscribing to our newsletter and
+      be the first to know about our latest product launches!
+    </p>
+    <br />
+
+    <form action="#">
+      <input
+        class="text-field"
+        type="email"
+        placeholder="Enter your email here"
+      />
+      <a type="submit" href="#" class="filled-btn">Subscribe</a>
+    </form>
+  </div>
+</footer>
+
+
+  </body>
+</html>

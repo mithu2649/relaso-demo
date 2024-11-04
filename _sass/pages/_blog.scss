@@ -2,37 +2,66 @@
 @use "../mixins/breakpoints";
 
 .blogs-container {
-  padding: 3rem 5rem;
+  margin: 3rem 5rem;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+
   @include breakpoints.for-tablet-landscape-down {
     padding: 0;
+    margin: 0;
+    ul {
+      height: auto !important;
+      padding: 0;
+      overflow: scroll !important;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .categories {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: baseline;
+      padding-top: 0;
+      h3 {
+        border: none;
+      }
+    }
+    .scroll-btns-container {
+      display: none;
+    }
   }
 
   ul {
-    padding-left: 2rem;
+    padding: 1rem 0 3rem 2rem;
     list-style: none;
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     gap: 1.2rem;
     flex-basis: 1;
     flex-grow: 0;
-    flex-wrap: wrap;
+    overflow: hidden;
+    // flex-wrap: wrap;
     @include breakpoints.for-tablet-landscape-down {
       padding-left: 0;
+      li.card {
+        height: 100%;
+      }
     }
 
     a {
       color: colors.$accent-color;
+      // max-width: 20rem;
+      flex-shrink: 0;
+      flex-basis: 20rem;
     }
 
-    li {
+    li.card {
       background-color: colors.$background-light-alpha;
       gap: 0.6rem !important;
       padding: 2rem;
       border-radius: 1rem;
       padding: 1rem;
-      max-width: 20rem;
       height: 32rem;
       overflow: hidden;
 
@@ -53,6 +82,7 @@
         object-fit: cover;
         border-radius: 0.8rem;
         border: 2px solid rgb(220, 213, 226);
+        box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.733);
       }
 
       .post-title {
@@ -64,17 +94,132 @@
 
         font-weight: 300;
         color: black !important;
-
       }
       .post-date {
         color: gray;
         font-size: 1rem;
       }
 
-      .post-author-text{
-        color: gray
-
+      .post-author-text {
+        color: gray;
       }
     }
+  }
+}
+
+.posts-container {
+  position: relative; // Required for absolute positioning of the pseudo-element
+  overflow: hidden; // Hide overflow to maintain a clean edge
+  width: 100%;
+  // Optional styling for the posts container
+  // padding: 20px; // Adjust as necessary
+  // background-color: white; // Background color
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  // background: linear-gradient(
+  //   to right,
+  //   rgba(255, 255, 255, 0) 0%,
+  //   rgb(0, 0, 0) 100%
+  // );
+  background-attachment: scroll; // Ensure the background scrolls with the content
+  background-size: 100% 100%; // Cover the entire container
+  background-position: bottom; // Position the gradient at the bottom
+}
+.categories {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  h3 {
+    border-right: 1px solid black;
+    padding: 0 2rem 0 0;
+  }
+  ul {
+    padding: 0;
+    li {
+      border: 2px solid colors.$accent-color-light;
+      padding: 0.3rem 1rem;
+      border-radius: 8rem;
+    }
+  }
+}
+.post-category {
+  display: flex;
+  justify-content: space-between;
+
+  .scroll-btns-container {
+    button {
+      background: colors.$accent-color-lightest;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 4rem;
+      height: 2.6rem;
+      width: 3.4rem;
+
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+      text-align: center;
+      &:hover {
+        background: colors.$accent-color-lighter;
+        box-shadow: 0px 0px 4px colors.$accent-color-light;
+      }
+    }
+  }
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.3rem 2rem 0.3rem 2rem;
+
+  .chip {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    // line-height: 2rem;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // font-weight: bold;
+    opacity: 1;
+    box-sizing: border-box;
+    transition: 0.1s ease;
+
+    &:hover {
+      font-weight: bold;
+      letter-spacing: 0.03px;
+    }
+  }
+}
+
+/* Back to Top Button Styles */
+.back-to-top {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  height: 65px;
+  width: 65px;
+  display: none;
+  background-color: colors.$accent-color-dark;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1.2rem;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+  outline: none;
+  line-height: 0px;
+  box-shadow: 2px 2px 10px colors.$accent-color;
+
+  &:hover {
+    background-color: colors.$accent-color;
+    color: white;
   }
 }

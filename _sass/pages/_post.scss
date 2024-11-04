@@ -1,31 +1,143 @@
 @use "../mixins/breakpoints";
+@use "../base/colors";
 
-.document-container {
-  background-color: rgba(255, 255, 255, 0.445);
-  border-radius: 1.5rem;
-  padding: 7rem 7rem;
-  max-width: 70rem;
-  box-shadow: 0px 0px 20px rgb(177, 177, 177);
-  margin: 0 auto;
-  line-height: 2rem;
-  font-size: 0.95rem;
+.main-post-container {
   display: flex;
-  flex-direction: column;
+  margin-top: 12rem;
   gap: 2rem;
-  margin-top: 16rem;
-
-  font-family: "Koh Santepheap", serif;
-
-  @include breakpoints.for-tablet-landscape-down {
-    box-shadow: none;
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0rem;
-    margin-top: 0;
-    background: transparent;
+  @include breakpoints.for-desktop-down {
+    flex-direction: column;
+    margin-top: 2rem;
   }
 
-  img {
-    width: 100%;
+  .sticky {
+    position: fixed; /* Fix the TOC to the top of the viewport */
+    top: 10rem; /* Align it to the top */
+    left: 10rem; /* Align it to the left */
+    // z-index: 99; /* Ensure it appears above other content */
+  }
+
+  .toc {
+    background-color: colors.$background-light-alpha;
+    border: 1px solid colors.$accent-color-lightest;
+    box-shadow: 0px 0px 20px colors.$accent-color-lightest;
+    border-radius: 1rem;
+    padding: 2rem 1.4rem;
+    top: 10rem;
+    left: 0;
+    position: sticky;
+    flex-basis: 22rem;
+    flex-shrink: 0;
+    height: fit-content;
+
+    @include breakpoints.for-desktop-down {
+      position: static !important;
+      z-index: unset;
+    }
+    .toc-title {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid black;
+      padding: 0 0 1.2rem 0;
+      font-size: 1.2rem;
+    }
+    ul {
+      list-style: none;
+      li {
+        padding: 0.6rem 1rem;
+        a {
+          color: rgb(0, 0, 0);
+          &:hover {
+            color: colors.$accent-color-dark;
+            border-bottom: 2px dotted colors.$accent-color-dark;
+          }
+          &:focus{
+            border-bottom: 2px dotted colors.$accent-color-darkest;
+            color: colors.$accent-color-darkest;
+          }
+        }
+      }
+    }
+  }
+
+  .document-container {
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 1.5rem;
+    padding: 7rem 7rem;
+    max-width: 70rem;
+    box-shadow: 0px 0px 20px rgb(177, 177, 177);
+    margin: 0 auto;
+    line-height: 2rem;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-family: "Koh Santepheap", serif;
+
+    @include breakpoints.for-tablet-landscape-down {
+      box-shadow: none;
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 0rem;
+      margin-top: 0;
+      background: transparent;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media print {
+  /* Remove styles */
+  body {
+    background: none !important; /* Remove background */
+    color: black !important; /* Set text color */
+  }
+
+  #download-pdf,
+  .print-text {
+    display: none; /* Hide the download button */
+  }
+
+  /* Other styles to remove or adjust */
+  .unwanted-style {
+    display: none !important; /* Hide unwanted elements */
+  }
+  footer {
+    display: none !important;
+  }
+  .navbar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -5.2rem;
+    border: none;
+  }
+
+  .doc-menu-container {
+    display: none !important;
+  }
+
+  .main-post-container {
+    gap: 0;
+
+    .toc {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      box-shadow: none;
+      height: fit-content;
+      border: none;
+      padding: 0;
+      gap: 0;
+      margin: 0;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }

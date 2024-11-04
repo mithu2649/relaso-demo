@@ -2,8 +2,155 @@
 layout: default
 ---
 
-<div class="document-container">
-  <h1>{{ page.title }}</h1>
-  <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
-  {{ content }}
+<div class="main-post-container">
+  <div class="toc">
+    <h2 class="toc-title">Table of Contents</h2>
+    <ul id="toc-list"></ul>
+  </div>
+
+  <div class="document-container" id="post-container">
+    
+    <h1>{{ page.title }}</h1>
+    <p class="para-menu">
+      <span>{{ page.date | date_to_string }} - {{ page.author }}</span>
+      <span class="doc-menu-container">
+        <span class="print-text" onclick="window.print()"
+          ><i class="fa fa-print"></i> Print</span
+        >
+        <span id="share-button"><i class="fa fa-share"></i> Share</span>
+      </span>
+    </p>
+    {{ content }}
+
+    <!-- <button id="download-pdf" onclick="window.print()">Print Document</button> -->
+  </div>
 </div>
+<button id="backToTop" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+
+<style>
+
+  
+  .para-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    span.doc-menu-container {
+      display: flex;
+      gap: 2rem;
+    }
+    .print-text,
+    #share-button {
+      cursor: pointer;
+      &:hover {
+        color: indigo;
+        background: white;
+      }
+    }
+  }
+
+
+
+</style>
+
+<script defer>
+  document
+    .getElementById("share-button")
+    .addEventListener("click", async () => {
+      const url = window.location.href;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: "Read this amazing blog at Relaso.",
+            url: url,
+          });
+          console.log("Content shared successfully!");
+        } catch (error) {
+          console.error("Error sharing content:", error);
+        }
+      } else {
+        try {
+          await navigator.clipboard.writeText(url);
+          showPopup("Copied to clipboard!");
+        } catch (error) {
+          console.error("Error copying to clipboard:", error);
+          alert("Failed to copy the URL.");
+        }
+      }
+    });
+
+  function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+
+    // Style the popup
+    popup.style.position = "absolute";
+    popup.style.backgroundColor = "#333";
+    popup.style.color = "#fff";
+    popup.style.padding = "10px 20px";
+    popup.style.borderRadius = "5px";
+    popup.style.zIndex = "1000";
+    popup.style.fontSize = "14px";
+
+    // Append the popup near the share button
+    const shareButton = document.getElementById("share-button");
+    const rect = shareButton.getBoundingClientRect();
+    popup.style.top = `${rect.top + window.scrollY - 230}px`; // Position above the button
+    popup.style.left = `${rect.left - 120}px`;
+
+    document.body.appendChild(popup);
+
+    // Remove the popup after 2 seconds
+    setTimeout(() => {
+      popup.remove();
+    }, 2000);
+  }
+</script>
+
+<script defer>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const tocList = document.getElementById("toc-list");
+    const headers = document.querySelectorAll("h1[id], h2[id], h3[id]"); // Adjust tags as needed
+
+    headers.forEach(header => {
+      const tocItem = document.createElement("li");
+      const tocLink = document.createElement("a");
+      tocLink.setAttribute('class', 'page-link')
+
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = header.textContent;
+
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+  });
+</script>
+
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', ()=>{
+      // Usage examples
+    smoothScroll('a.page-link', '.navbar'); // Initialize smooth scrolling
+    backToTop('backToTop'); // Initialize back to top button functionality
+  })
+</script>
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toc = document.querySelector('.toc');
+    const postContainer = document.querySelector('.main-post-container');
+
+    window.addEventListener('scroll', function () {
+        // Check if the user has scrolled down more than 300 pixels
+        if (window.scrollY > 200) {
+            toc.classList.add('sticky'); // Add sticky class to TOC
+        } else {
+            toc.classList.remove('sticky'); // Remove sticky class from TOC
+        }
+    });
+});
+</script>
+
