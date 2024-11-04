@@ -1,4 +1,6 @@
 @use "mixins/breakpoints";
+@use "base/colors";
+
 
 html {
   background: rgb(178, 166, 255);
@@ -20,7 +22,7 @@ body {
     "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 400;
   @include breakpoints.for-phone-only {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   em {
@@ -46,5 +48,27 @@ section {
   width: 60%;
   @include breakpoints.for-tablet-landscape-down {
     width: 100%;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  height: 65px;
+  width: 65px;
+  display: none;
+  background-color: colors.$accent-color-dark;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1.2rem;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 2px 2px 10px colors.$accent-color;
+
+  &:hover {
+    background-color: colors.$accent-color;
   }
 }

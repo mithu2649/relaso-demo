@@ -9,6 +9,7 @@
 }
 body {
   overflow-x: hidden;
+  padding: 0rem 2rem;
   section {
     @include breakpoints.for-big-desktop-down {
       gap: 0.5rem;
@@ -144,6 +145,9 @@ body {
     .header-sub-para {
       text-align: left;
       height: 6rem;
+      @include breakpoints.for-tablet-landscape-down {
+        height: unset;
+      }
     }
   }
 
@@ -238,10 +242,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7rem;
+  gap: 4rem;
 
   @include breakpoints.for-tablet-landscape-down {
     padding: 2rem 0;
+    .feature-cards .card {
+      flex-basis: fit-content;
+    }
   }
 
   .features-header {
@@ -290,6 +297,10 @@ section.areasWeServe {
       }
       @include breakpoints.for-desktop-down {
         width: 100% !important;
+      }
+
+      @include breakpoints.for-tablet-portrait-down {
+        min-height:fit-content;
       }
 
       &:hover {

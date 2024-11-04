@@ -53,7 +53,7 @@
         
           <!-- Parent link for dropdown -->
 
-          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+          <a href="/products" class="has-dropdown"  data-toggle="dropdown">
             Products 
           </a>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -384,35 +384,69 @@ document.addEventListener('DOMContentLoaded', function () {
         enhancing our commitment to delivering exceptional solutions.
       </p>
       <div class="team-members">
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
-          </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
+        
 
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
+          <div class="team-members">
+            
+              <div class="member">
+                <div class="image-placeholder">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/people/angshuman.png"
+                    alt="Angsuman Chakraborty's Photo"
+                  />
+                </div>
+                <div class="member-info">
+                  <p>Angsuman Chakraborty</p>
+                  <p>Founder</p>
+                </div>
+              </div>
+            
+              <div class="member">
+                <div class="image-placeholder">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/people/dipankar.png"
+                    alt="Dipankar Das's Photo"
+                  />
+                </div>
+                <div class="member-info">
+                  <p>Dipankar Das</p>
+                  <p>Director - QA</p>
+                </div>
+              </div>
+            
+              <div class="member">
+                <div class="image-placeholder">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/people/abhishek.png"
+                    alt="Abhishek Pandey's Photo"
+                  />
+                </div>
+                <div class="member-info">
+                  <p>Abhishek Pandey</p>
+                  <p>Product</p>
+                </div>
+              </div>
+            
+              <div class="member">
+                <div class="image-placeholder">
+                  <img
+                    loading="lazy"
+                    src="/assets/images/people/sabhyasachi.png"
+                    alt="Sabyasachi Ghosh's Photo"
+                  />
+                </div>
+                <div class="member-info">
+                  <p>Sabyasachi Ghosh</p>
+                  <p>Sales</p>
+                </div>
+              </div>
+            
           </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
 
-        <div class="member">
+        <!-- <div class="member">
           <div class="image-placeholder">
             <img
               loading="lazy"
@@ -424,21 +458,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>John Doe</p>
             <p>Head of Engineering & QA</p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
-          </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
+        
 
         <!-- Repeat for additional team members -->
       </div>
@@ -553,8 +575,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <a type="submit" href="#" class="filled-btn">Subscribe</a>
     </form>
   </div>
-</footer>
 
+  <button id="backToTop" title="Back to top" class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+    backToTop("backToTop");
+</script>
 
   </body>
 </html>

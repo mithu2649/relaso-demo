@@ -130,35 +130,27 @@ permalink: "/about/"
         enhancing our commitment to delivering exceptional solutions.
       </p>
       <div class="team-members">
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
-          </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
+        {% assign team = site.data.team-members.team %}
 
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
+          <div class="team-members">
+            {% for member in team %}
+              <div class="member">
+                <div class="image-placeholder">
+                  <img
+                    loading="lazy"
+                    src="{{ member.image }}"
+                    alt="{{ member.name }}'s Photo"
+                  />
+                </div>
+                <div class="member-info">
+                  <p>{{ member.name }}</p>
+                  <p>{{ member.title }}</p>
+                </div>
+              </div>
+            {% endfor %}
           </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
 
-        <div class="member">
+        <!-- <div class="member">
           <div class="image-placeholder">
             <img
               loading="lazy"
@@ -170,21 +162,9 @@ permalink: "/about/"
             <p>John Doe</p>
             <p>Head of Engineering & QA</p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="member">
-          <div class="image-placeholder">
-            <img
-              loading="lazy"
-              src="https://media.istockphoto.com/vectors/profile-placeholder-image-gray-silhouette-no-photo-vector-id1016744004?k=6&m=1016744004&s=612x612&w=0&h=L-6pLRmsCm-LHeaC493SSAOSB5ftQB8s3MX87WrktMU="
-              alt="John Doe's Photo"
-            />
-          </div>
-          <div class="member-info">
-            <p>John Doe</p>
-            <p>Head of Engineering & QA</p>
-          </div>
-        </div>
+        
 
         <!-- Repeat for additional team members -->
       </div>

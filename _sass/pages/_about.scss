@@ -46,11 +46,11 @@ $accent-color: colors.$accent-color;
       }
 
       p {
-        font-size: 0.9rem;
-        line-height: 2.2;
+        // font-size: 0.9rem;
+        line-height: 2rem;
         color: #333;
-        font-family: "Libre Baskerville", serif;
-        font-style: italic;
+        // font-family: "Libre Baskerville", serif;
+        // font-style: italic;
       }
     }
 
@@ -70,10 +70,15 @@ $accent-color: colors.$accent-color;
 
   // Team Section Specific Styles
   .team-section {
+    .content{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
     .team-members {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 3rem;
       margin-top: 1rem;
 
       .member {
@@ -90,16 +95,18 @@ $accent-color: colors.$accent-color;
           display: flex;
 
           img {
-            height: 100px;
-            width: 100px;
+            height: 90px;
+            width: 90px;
             object-position: center;
             object-fit: cover;
             display: block;
+            filter: brightness(1.2);
           }
         }
 
         .member-info {
           p {
+            font-size: 1.4rem;
             margin: 0;
 
             &:first-child {
@@ -108,8 +115,8 @@ $accent-color: colors.$accent-color;
             }
 
             &:last-child {
-              font-size: 0.9rem;
-              color: #666;
+              font-size: 1.2rem;
+              color: #000000;
             }
           }
         }
@@ -132,7 +139,8 @@ $accent-color: colors.$accent-color;
     padding: 0 !important;
   }
   .about-section{
-    padding: 0 !important;
+    // padding: 0 !important;
+    box-shadow: 0px 0px 10px colors.$accent-color-lightest;
   }
   .about-section,
   .vision-section,
@@ -143,6 +151,9 @@ $accent-color: colors.$accent-color;
 
     .image {
       margin-bottom: 1rem;
+      img{
+        height: 16rem !important;
+      }
     }
   }
 }

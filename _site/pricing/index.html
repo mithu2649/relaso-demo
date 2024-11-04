@@ -53,7 +53,7 @@
         
           <!-- Parent link for dropdown -->
 
-          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+          <a href="/products" class="has-dropdown"  data-toggle="dropdown">
             Products 
           </a>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -261,9 +261,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </script> <div class="pricing-products">
   <br /><br />
   <h1 class="gradient-text">Choose a product to see plans:</h1>
+  <p class="header-sub-para">Our suite of products is designed to drive business growth, streamline operations, and elevate customer satisfaction across various industries. From managing customer relationships with Relaso CRM to enhancing healthcare services with Relaso Hospitech and Relaso Clinic, our solutions cater to diverse professional needs. <br><br></p>
+  
   <div class="pricing-cards cards-container">
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-users"></i></div>
       <div class="card-title"><h4>Relaso CRM</h4></div>
@@ -276,7 +277,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-hospital"></i></div>
       <div class="card-title"><h4>Relaso Hospitech</h4></div>
@@ -289,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
       <div class="card-title"><h4>Relaso Clinic</h4></div>
@@ -302,7 +301,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-clipboard"></i></div>
       <div class="card-title"><h4>Relaso Examination</h4></div>
@@ -315,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-headset"></i></div>
       <div class="card-title"><h4>Relaso HelpDesk</h4></div>
@@ -328,7 +325,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="fas fa-gavel"></i></div>
       <div class="card-title"><h4>Relaso for Law Firms</h4></div>
@@ -341,7 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     
-
     <div class="card product">
       <div class="card-icon"><i class="far fa-file-lines"></i></div>
       <div class="card-title"><h4>Relaso Document Management</h4></div>
@@ -358,6 +353,13 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 <style>
+  .header-sub-para {
+    width: 70%;
+
+    @media (max-width: 600px) { 
+      width: 100%;
+    }
+  }
   .pricing-products {
     display: flex;
     flex-direction: column;
@@ -488,8 +490,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <a type="submit" href="#" class="filled-btn">Subscribe</a>
     </form>
   </div>
-</footer>
 
+  <button id="backToTop" title="Back to top" class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+    backToTop("backToTop");
+</script>
 
   </body>
 </html>

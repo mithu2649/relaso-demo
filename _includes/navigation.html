@@ -12,7 +12,7 @@
         {% if item.dropdown == 'true' %}
           <!-- Parent link for dropdown -->
 
-          <a href="{{ item.link }}" class="has-dropdown  data-toggle="dropdown">
+          <a href="{{ item.link }}" class="has-dropdown"  data-toggle="dropdown">
             {{ item.name }} {{ current_link}}
           </a>
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });

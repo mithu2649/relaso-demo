@@ -1,0 +1,16 @@
+team:
+  - name: "Angsuman Chakraborty"
+    title: "Founder"
+    image: "/assets/images/people/angshuman.png"
+
+  - name: "Dipankar Das"
+    title: "Director - QA"
+    image: "/assets/images/people/dipankar.png"
+
+  - name: "Abhishek Pandey"
+    title: "Product"
+    image: "/assets/images/people/abhishek.png"
+
+  - name: "Sabyasachi Ghosh"
+    title: "Sales"
+    image: "/assets/images/people/sabhyasachi.png"

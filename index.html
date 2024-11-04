@@ -225,15 +225,15 @@ permalink: '/'
         repeat: 5, // Shake back and forth 5 times
       });
 
-      illustrationVideoAnimate.to(".hero-illustration", {
-        y: -13, // Move the button 10px horizontally
-        scale: 1.02,
-        rotate: -4,
-        duration: 0.1, // Short duration for each shake movement
-        ease: "power1.inOut", // Smooth transition
-        yoyo: true, // Move back to original position
-        repeat: 4, // Shake back and forth 5 times
-      });
+      // illustrationVideoAnimate.to(".hero-illustration", {
+      //   y: -13, // Move the button 10px horizontally
+      //   scale: 1.02,
+      //   rotate: -4,
+      //   duration: 0.1, // Short duration for each shake movement
+      //   ease: "power1.inOut", // Smooth transition
+      //   yoyo: true, // Move back to original position
+      //   repeat: 4, // Shake back and forth 5 times
+      // });
     }
   });
 
@@ -245,7 +245,7 @@ permalink: '/'
    const slides = {{ site.data.hero_slides | jsonify }};
 
    // Debugging output to make sure slides data is loaded correctly
-   console.log("Slides data:", slides);
+  //  console.log("Slides data:", slides);
 
     if (slides && slides.length > 0) {
       // Selecting the relevant elements
@@ -330,3 +330,4 @@ permalink: '/'
 </script>
 
 <script src="assets/js/videoModalOpenClose.js" defer></script>
+

@@ -7,51 +7,151 @@
   display: flex;
   flex-direction: column;
 
+  @include breakpoints.for-tablet-landscape-down{
+    gap: 0.2rem;
+    margin: -1rem 0 0 0 !important;
+
+    .post-category {
+      .gradient-text{
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .categories {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    align-items: center;
+  
+    h3 {
+      border-right: 1px solid black;
+      padding-right: 2rem;
+    }
+  
+    ul.categories-container {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      
+  
+      li {
+        border: 2px solid colors.$accent-color-lighter;
+        background-color: colors.$accent-color-lightest;
+        text-wrap: nowrap;
+        padding: 0.3rem 1rem;
+        border-radius: 8rem;
+      }
+    }
+  }
+
+  .tags-container{
+    display: flex;
+    flex-wrap: wrap;
+    .tag {
+      border-width: 2px;
+      a{
+        text-wrap: nowrap;
+      }
+    }
+    @include breakpoints.for-tablet-landscape-down{
+      flex-wrap: nowrap;
+      overflow: scroll;
+      scrollbar-width: none;     /* Firefox */
+      padding: 0rem 0 1rem 0;
+      width: calc(100vw - 4rem);
+
+      .tag {
+        background: rgba(255, 255, 255, 0.712);
+        border: 1px solid black !important;
+        a {
+          padding: 0rem 1rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    
+    
+  }
+
+
   @include breakpoints.for-tablet-landscape-down {
-    padding: 0;
-    margin: 0;
-    ul {
+    ul.posts-container {
       height: auto !important;
       padding: 0;
       overflow: scroll !important;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+      // scrollbar-width: none;     /* Firefox */
+      scroll-snap-type: x mandatory; // Enable horizontal scroll snap
+      scroll-behavior: smooth; // Smooth scrolling effect
+      gap: 1rem !important;
+      flex-wrap: nowrap;
+    
+      a {
+        flex-basis: 15rem !important;
+      }
+
+      .card{
+        min-height: 27rem;
+        scroll-snap-align: start; 
+        padding: 0.6rem !important;
+        
+        .article-container{
+          .post-poster{
+            height: 9rem !important;
+          }
+          .post-title {
+            font-size: 1.2rem;
+          }
+          .post-excerpt{
+            font-size: 1rem;
+          }
+        }
+
+      }
     }
     .categories {
       display: flex;
       flex-direction: column;
-      justify-content: left;
-      align-items: baseline;
+      justify-content: flex-start;
+      align-items: flex-start;
       padding-top: 0;
+      overflow: scroll;
+      scrollbar-width: none;     /* Firefox */
+      
+      .categories-container{
+        padding-bottom: 1rem;
+        display: flex;
+        overflow: scroll !important;
+        width: calc(100vw - 2rem);
+        scrollbar-width: none;     /* Firefox */
+
+
+      }
+
       h3 {
         border: none;
       }
     }
-    .scroll-btns-container {
-      display: none;
-    }
   }
 
-  ul {
-    padding: 1rem 0 3rem 2rem;
+  ul.posts-container {
+    padding: 1rem 0 1.2rem 2rem;
     list-style: none;
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     gap: 1.2rem;
-    flex-basis: 1;
-    flex-grow: 0;
     overflow: hidden;
-    // flex-wrap: wrap;
+
     @include breakpoints.for-tablet-landscape-down {
       padding-left: 0;
       li.card {
-        height: 100%;
+        height: auto;
       }
     }
 
     a {
       color: colors.$accent-color;
-      // max-width: 20rem;
       flex-shrink: 0;
       flex-basis: 20rem;
     }
@@ -59,9 +159,7 @@
     li.card {
       background-color: colors.$background-light-alpha;
       gap: 0.6rem !important;
-      padding: 2rem;
       border-radius: 1rem;
-      padding: 1rem;
       height: 32rem;
       overflow: hidden;
 
@@ -70,10 +168,8 @@
         height: auto;
       }
 
-      &:hover {
-        .post-title {
-          color: colors.$accent-color;
-        }
+      &:hover .post-title {
+        color: colors.$accent-color;
       }
 
       img.post-poster {
@@ -89,61 +185,34 @@
         font-weight: bold;
         color: black;
       }
-      .post-excerpt {
-        font-weight: 300;
 
+      .post-excerpt {
         font-weight: 300;
         color: black !important;
       }
-      .post-date {
-        color: gray;
-        font-size: 1rem;
-      }
 
+      .post-date,
       .post-author-text {
         color: gray;
+        font-size: 1rem;
       }
     }
   }
 }
 
 .posts-container {
-  position: relative; // Required for absolute positioning of the pseudo-element
-  overflow: hidden; // Hide overflow to maintain a clean edge
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  // Optional styling for the posts container
-  // padding: 20px; // Adjust as necessary
-  // background-color: white; // Background color
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  // background: linear-gradient(
-  //   to right,
-  //   rgba(255, 255, 255, 0) 0%,
-  //   rgb(0, 0, 0) 100%
-  // );
-  background-attachment: scroll; // Ensure the background scrolls with the content
-  background-size: 100% 100%; // Cover the entire container
-  background-position: bottom; // Position the gradient at the bottom
+  background-attachment: scroll;
+  background-size: 100% 100%;
+  background-position: bottom;
 }
-.categories {
-  display: flex;
-  // flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 2rem;
-  h3 {
-    border-right: 1px solid black;
-    padding: 0 2rem 0 0;
-  }
-  ul {
-    padding: 0;
-    li {
-      border: 2px solid colors.$accent-color-light;
-      padding: 0.3rem 1rem;
-      border-radius: 8rem;
-    }
-  }
-}
+
+
+
 .post-category {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 
@@ -156,11 +225,10 @@
       border-radius: 4rem;
       height: 2.6rem;
       width: 3.4rem;
-
       font-size: 0.9rem;
-      outline: none;
       cursor: pointer;
       text-align: center;
+  
       &:hover {
         background: colors.$accent-color-lighter;
         box-shadow: 0px 0px 4px colors.$accent-color-light;
@@ -173,53 +241,27 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 0.3rem 2rem 0.3rem 2rem;
+  padding: 0.3rem 2rem;
+  width: 96%;
 
   .chip {
     padding: 0.3rem 0.6rem;
-    border: 1px solid transparent;
+    border: 2px solid rgb(211, 199, 216);
+
     cursor: pointer;
-    // line-height: 2rem;
-    flex-shrink: 0;
     font-size: 0.8rem;
     border-radius: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    // font-weight: bold;
     opacity: 1;
     box-sizing: border-box;
     transition: 0.1s ease;
 
-    &:hover {
+    &:hover{ 
       font-weight: bold;
-      letter-spacing: 0.03px;
+      letter-spacing: 0.04px;
+      border: 2px solid black;
     }
-  }
-}
-
-/* Back to Top Button Styles */
-.back-to-top {
-  position: fixed;
-  bottom: 5rem;
-  right: 5rem;
-  height: 65px;
-  width: 65px;
-  display: none;
-  background-color: colors.$accent-color-dark;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 1.2rem;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 1000;
-  outline: none;
-  line-height: 0px;
-  box-shadow: 2px 2px 10px colors.$accent-color;
-
-  &:hover {
-    background-color: colors.$accent-color;
-    color: white;
   }
 }

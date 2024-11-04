@@ -2,16 +2,15 @@
 layout: default
 title: Relaso Blogs
 permalink: "/blog/"
-
 ---
 
 <div class="blogs-container cards-container">
   <div class="categories">
     <h3>Categories</h3>
-    <ul>
-      <li><a class="page-link" href="#recommended">Recommended Posts</a></li>
-      <li><a class="page-link" href="#latest">Latest Posts</a></li>
-      <li><a class="page-link" href="#editorial">Relaso Editorial</a></li>
+    <ul class="categories-container">
+      <li><a class="page-link" href="#recommended">Recommended</a></li>
+      <li><a class="page-link" href="#latest">Latest</a></li>
+      <li><a class="page-link" href="#editorial"> Editorial</a></li>
     </ul>
   </div>
   <h4>All Tags:</h4>
@@ -132,9 +131,9 @@ permalink: "/blog/"
 
   <div class="categories">
     <h3>Categories</h3>
-    <ul>
-      <li><a class="page-link" href="#recommended">Recommended Posts</a></li>
-      <li><a class="page-link" href="#latest">Latest Posts</a></li>
+    <ul class="categories-container">
+      <li><a class="page-link" href="#recommended">Recommended</a></li>
+      <li><a class="page-link" href="#latest">Latest</a></li>
       <li><a class="page-link" href="#editorial">Relaso Editorial</a></li>
     </ul>
   </div>
@@ -153,9 +152,6 @@ permalink: "/blog/"
   </div>
 </div>
 
-<button id="backToTop" class="back-to-top">
-  <i class="fa-solid fa-chevron-up"></i>
-</button>
 
 <script src="/assets/js/scroller.js" defer></script>
 <script defer>
@@ -165,7 +161,7 @@ permalink: "/blog/"
   });
 </script>
 
-<script src="/assets/js/smoothScroll.js"></script>
+
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
     // Usage examples
@@ -198,38 +194,37 @@ permalink: "/blog/"
 </script>
 
 <script defer>
-  // Function to generate a random color in hexadecimal format
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
+ // Function to generate a random dark color in hexadecimal format
+function getRandomDarkColor() {
+  const letters = "0123456789ABCDEF";
+  let color;
+  do {
+    color = "#";
     for (let i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
-    return color;
-  }
+  } while (isLightColor(color)); // Repeat until a dark color is generated
+  return color;
+}
 
-  // Function to determine if a color is light or dark
-  function isLightColor(color) {
-    // Convert hex color to RGB
-    const r = parseInt(color.slice(1, 3), 16);
-    const g = parseInt(color.slice(3, 5), 16);
-    const b = parseInt(color.slice(5, 7), 16);
-    // Calculate luminance
-    const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-    return luminance > 150;
-  }
+// Function to determine if a color is light or dark
+function isLightColor(color) {
+  const r = parseInt(color.slice(1, 3), 16);
+  const g = parseInt(color.slice(3, 5), 16);
+  const b = parseInt(color.slice(5, 7), 16);
+  const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+  return luminance > 150;
+}
 
-  // Function to apply random background and appropriate text color to each chip
-  function applyRandomColorsToChips() {
-    const chips = document.querySelectorAll(".tags-container .chip");
-    chips.forEach((chip) => {
-      const randomColor = getRandomColor();
-      const textColor = isLightColor(randomColor) ? "#000000" : "#FFFFFF";
-      chip.style.borderColor = randomColor;
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", applyRandomColorsToChips);
+// // Function to apply random dark border color to each chip
+// function applyRandomColorsToChips() {
+//   const chips = document.querySelectorAll(".tags-container .chip");
+//   chips.forEach((chip) => {
+//     const randomDarkColor = getRandomDarkColor();
+//     chip.style.borderColor = randomDarkColor;
+//   });
+// }
+// document.addEventListener("DOMContentLoaded", applyRandomColorsToChips);
 
 </script>
 

@@ -1,0 +1,39 @@
+- title: Lead & Opportunity Management
+  icon_path: 
+  fa_icon_class: fa-solid fa-bullseye
+  description: Track, manage, and nurture leads effortlessly, helping you convert opportunities into successful deals with organized pipelines.
+
+- title: Customer Relationship Management
+  icon_path: 
+  fa_icon_class: fa-solid fa-users
+  description: Build and maintain strong customer relationships with a centralized system for tracking interactions, preferences, and support history.
+
+- title: Inventory and Order Management
+  icon_path: 
+  fa_icon_class: fa-solid fa-boxes
+  description: Efficiently manage your inventory and orders, keeping stock levels optimized and ensuring timely order fulfillment.
+
+- title: Quotation & Contract Management
+  icon_path: 
+  fa_icon_class: fa-solid fa-file-signature
+  description: Simplify the creation, approval, and tracking of quotes and contracts to streamline your sales and legal workflows.
+
+- title: After Sales Service & Support Management
+  icon_path: 
+  fa_icon_class: fa-solid fa-headset
+  description: Provide exceptional post-sales support, managing service requests and tracking resolutions to improve customer satisfaction.
+
+- title: Compliance & Regulatory Tracking
+  icon_path: 
+  fa_icon_class: fa-solid fa-shield-alt
+  description: Ensure regulatory compliance with automated tracking and documentation, reducing risks and maintaining standards.
+
+- title: Analytics & Customizable Reporting
+  icon_path: 
+  fa_icon_class: fa-solid fa-chart-line
+  description: Gain insights into your business performance with powerful analytics and customizable reports that support data-driven decisions.
+
+- title: Easy Integration with ERP/Financial Systems
+  icon_path: 
+  fa_icon_class: fa-solid fa-plug
+  description: Seamlessly integrate with ERP and financial systems to unify data and streamline workflows across departments.

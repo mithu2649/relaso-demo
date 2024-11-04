@@ -53,7 +53,7 @@
         
           <!-- Parent link for dropdown -->
 
-          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+          <a href="/products" class="has-dropdown"  data-toggle="dropdown">
             Products 
           </a>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -298,7 +298,6 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- <button id="download-pdf" onclick="window.print()">Print Document</button> -->
   </div>
 </div>
-<button id="backToTop" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
 
 
 <style>
@@ -402,9 +401,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 </script>
 
-<script src="/assets/js/smoothScroll.js"></script>
 <script defer>
-  document.addEventListener('DOMContentLoaded', ()=>{
+  document.addEventListener('DOMContentLoaded', ()=> {
       // Usage examples
     smoothScroll('a.page-link', '.navbar'); // Initialize smooth scrolling
     backToTop('backToTop'); // Initialize back to top button functionality
@@ -535,8 +533,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <a type="submit" href="#" class="filled-btn">Subscribe</a>
     </form>
   </div>
-</footer>
 
+  <button id="backToTop" title="Back to top" class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+    backToTop("backToTop");
+</script>
 
   </body>
 </html>

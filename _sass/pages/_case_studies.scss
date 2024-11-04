@@ -6,7 +6,7 @@ $margin-between-items: 20px; // Space between company items
 $padding-between-logo-text: 5rem; // Space between logo and text
 
 .companies-container {
-  padding: 5rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
 
@@ -16,7 +16,7 @@ $padding-between-logo-text: 5rem; // Space between logo and text
 
 
   h1 {
-    padding: 0rem 0rem 2rem 0rem;
+    padding: 0rem 0rem 1rem 0rem;
 
   }
   
@@ -64,11 +64,9 @@ $padding-between-logo-text: 5rem; // Space between logo and text
         padding: 0;
       }
       p {
-        font-family: "Libre Baskerville", serif;
-        font-style: italic;
         padding-left: 2.5rem;
         line-height: 2rem;
-        font-size: 0.9rem;
+        // font-size: 0.9rem;
       }
     }
   }

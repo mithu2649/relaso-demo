@@ -53,7 +53,7 @@
         
           <!-- Parent link for dropdown -->
 
-          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+          <a href="/products" class="has-dropdown"  data-toggle="dropdown">
             Products 
           </a>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -380,36 +380,63 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div class="feature-summary">
       <p class="header-sub-para">
-        Relaso offers a seamless all-in-one solution, enabling effortless
-        pipeline management, efficient deal management, and relationship
-        nurturing—all from an intuitive platform. <br />Key features include:
+        RELASO CRM designed specifically for healthcare equipment suppliers and
+      distributors, offers a comprehensive, industry-focused solution that
+      addresses the unique challenges of the HospiTech sector. By combining
+      advanced CRM features with deep industry insights, RELASO empowers
+      businesses to manage complex sales cycles, customer relationships, and
+      inventory, while driving operational efficiency and growth <br><br>Key features include:
       </p>
     </div>
   </div>
   <div class="feature-cards cards-container">
     
     <div class="card">
-      <div class="card-icon"><i class="fa-solid fa-link"></i></div>
-      <div class="card-title"><h4>Easy Integration</h4></div>
-      <div class="card-description"><p>Seamlessly connect Relaso with your existing tools and platforms, ensuring a smooth workflow without disruption to your current processes.</p></div>
+      <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <div class="card-title"><h4>Lead & Opportunity Management</h4></div>
+      <div class="card-description"><p>Track, manage, and nurture leads effortlessly, helping you convert opportunities into successful deals with organized pipelines.</p></div>
     </div>
     
     <div class="card">
-      <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-      <div class="card-title"><h4>Automated Workflows</h4></div>
-      <div class="card-description"><p>Automate repetitive tasks to save valuable time, boosting efficiency and allowing you to focus on more important aspects of your business.</p></div>
+      <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+      <div class="card-title"><h4>Customer Relationship Management</h4></div>
+      <div class="card-description"><p>Build and maintain strong customer relationships with a centralized system for tracking interactions, preferences, and support history.</p></div>
     </div>
     
     <div class="card">
-      <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
-      <div class="card-title"><h4>Customizable Dashboard</h4></div>
-      <div class="card-description"><p>Personalize your dashboard to align with your specific workflow and business needs, allowing you to manage key insights and tasks more efficiently.</p></div>
+      <div class="card-icon"><i class="fa-solid fa-boxes"></i></div>
+      <div class="card-title"><h4>Inventory and Order Management</h4></div>
+      <div class="card-description"><p>Efficiently manage your inventory and orders, keeping stock levels optimized and ensuring timely order fulfillment.</p></div>
     </div>
     
     <div class="card">
-      <div class="card-icon"><i class="fa-regular fa-bar-chart"></i></div>
-      <div class="card-title"><h4>Advanced Analytics</h4></div>
-      <div class="card-description"><p>Access in-depth reporting and analytics tools that offer powerful insights into your business performance, helping you make informed decisions.</p></div>
+      <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
+      <div class="card-title"><h4>Quotation & Contract Management</h4></div>
+      <div class="card-description"><p>Simplify the creation, approval, and tracking of quotes and contracts to streamline your sales and legal workflows.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-headset"></i></div>
+      <div class="card-title"><h4>After Sales Service & Support Management</h4></div>
+      <div class="card-description"><p>Provide exceptional post-sales support, managing service requests and tracking resolutions to improve customer satisfaction.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-shield-alt"></i></div>
+      <div class="card-title"><h4>Compliance & Regulatory Tracking</h4></div>
+      <div class="card-description"><p>Ensure regulatory compliance with automated tracking and documentation, reducing risks and maintaining standards.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="card-title"><h4>Analytics & Customizable Reporting</h4></div>
+      <div class="card-description"><p>Gain insights into your business performance with powerful analytics and customizable reports that support data-driven decisions.</p></div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+      <div class="card-title"><h4>Easy Integration with ERP/Financial Systems</h4></div>
+      <div class="card-description"><p>Seamlessly integrate with ERP and financial systems to unify data and streamline workflows across departments.</p></div>
     </div>
     
   </div>
@@ -609,8 +636,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <a type="submit" href="#" class="filled-btn">Subscribe</a>
     </form>
   </div>
-</footer>
 
+  <button id="backToTop" title="Back to top" class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+    backToTop("backToTop");
+</script>
 
   </body>
 </html>

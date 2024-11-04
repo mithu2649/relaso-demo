@@ -22,7 +22,7 @@ footer {
     flex-wrap: wrap;
 
     @include breakpoints.for-big-desktop-down {
-      gap: 0.2rem;
+      gap: 2rem;
     }
 
     @include breakpoints.for-desktop-down {

@@ -53,7 +53,7 @@
         
           <!-- Parent link for dropdown -->
 
-          <a href="/products" class="has-dropdown  data-toggle="dropdown">
+          <a href="/products" class="has-dropdown"  data-toggle="dropdown">
             Products 
           </a>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdownToggles.forEach(function (toggle) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
-          var dropdownMenu = this.nextElementSibling;
+      var dropdownMenu = this.nextElementSibling;
       dropdownMenu.classList.toggle('active');
     });
   });
@@ -602,15 +602,15 @@ document.addEventListener('DOMContentLoaded', function () {
         repeat: 5, // Shake back and forth 5 times
       });
 
-      illustrationVideoAnimate.to(".hero-illustration", {
-        y: -13, // Move the button 10px horizontally
-        scale: 1.02,
-        rotate: -4,
-        duration: 0.1, // Short duration for each shake movement
-        ease: "power1.inOut", // Smooth transition
-        yoyo: true, // Move back to original position
-        repeat: 4, // Shake back and forth 5 times
-      });
+      // illustrationVideoAnimate.to(".hero-illustration", {
+      //   y: -13, // Move the button 10px horizontally
+      //   scale: 1.02,
+      //   rotate: -4,
+      //   duration: 0.1, // Short duration for each shake movement
+      //   ease: "power1.inOut", // Smooth transition
+      //   yoyo: true, // Move back to original position
+      //   repeat: 4, // Shake back and forth 5 times
+      // });
     }
   });
 
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const slides = [{"title":"The CRM Software <br>that's <span class=\"gradient-text flexible-text-animate\">flexible</span>, not frustrating.","subtitle":"Our all-in-one platform empowers you to effortlessly organize customer data, streamline communication, and nurture relationships—all from one easy-to-use hub. Say goodbye to chaos and hello to clarity.","illustration_img":"assets/images/undraw_add_information_j2wg.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"},{"title":"Hospital equipment distribution with <span class=\"gradient-text flexible-text-animate\"> Relaso Hospitech</span>","subtitle":"Tailored specifically for empowering healthcare equipment distributors with seamless lead management, automated workflows, and real-time insights. ","illustration_img":"assets/images/hospitech_illustration.svg","video_url":"https://www.youtube.com/embed/cyLzBbunZbo","pricing_link":"/pricing/pricingPage?product=relasoHospitech"},{"title":"Empower Your Clinic Management with <span class=\"gradient-text flexible-text-animate\">Relaso Clinic</span>","subtitle":"Our clinic-focused CRM allows you to track appointments, manage patient data, and improve follow-ups effortlessly. Experience a healthier workflow and elevate patient satisfaction with our intuitive platform.","illustration_img":"assets/images/clinics_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"},{"title":"Streamline Your Support Systems with <span class=\"gradient-text flexible-text-animate\">Relaso Helpdesk</span>","subtitle":"Our Relaso Helpdesk CRM enables your support team to handle inquiries with ease, ensuring no question goes unanswered. Delight your customers with fast responses and robust solutions—all in one powerful platform.","illustration_img":"assets/images/helpdesk_illustration.svg","video_url":"https://www.youtube.com/embed/cMIZ35_mOXg?si=3NzWuYNkzrlmWjj4","pricing_link":"/pricing/pricingPage?product=relasoGeneral"}];
 
    // Debugging output to make sure slides data is loaded correctly
-   console.log("Slides data:", slides);
+  //  console.log("Slides data:", slides);
 
     if (slides && slides.length > 0) {
       // Selecting the relevant elements
@@ -707,6 +707,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script src="assets/js/videoModalOpenClose.js" defer></script>
+
  <footer>
   <div class="footer-container">
     <div class="footer-column fc-1">
@@ -815,8 +816,15 @@ document.addEventListener('DOMContentLoaded', function () {
       <a type="submit" href="#" class="filled-btn">Subscribe</a>
     </form>
   </div>
-</footer>
 
+  <button id="backToTop" title="Back to top" class="back-to-top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</footer>
+<script src="/assets/js/smoothScroll.js"></script>
+<script defer>
+    backToTop("backToTop");
+</script>
 
   </body>
 </html>
