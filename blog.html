@@ -36,7 +36,7 @@ permalink: "/blog/"
   <ul class="posts-container" id="recommended-posts">
     {% assign recommended_posts = site.posts | where: "tags", "recommended" |
     sort: "rand" %} {% for post in recommended_posts %}
-    <a href="{{ site.baseurl }}{{ post.url }}">
+    <a href="{% comment %} url {%endcomment%}{{ post.url }}">
       <li class="card card-container">
         <div
           class="article-container"
@@ -70,7 +70,7 @@ permalink: "/blog/"
   <ul class="posts-container">
     {% assign sorted_posts = site.posts | sort: 'date' | reverse %} {% for post
     in sorted_posts %}
-    <a href="{{ site.baseurl }}{{ post.url }}">
+    <a href="{% comment %} url {%endcomment%}{{ post.url }}">
       <li class="card card-container">
         <div
           class="article-container"
@@ -105,7 +105,7 @@ permalink: "/blog/"
   </div>
   <ul class="posts-container">
     {% for post in site.posts %} {% if post.path contains 'relaso-editorial/' %}
-    <a href="{{ site.baseurl }}{{ post.url }}">
+    <a href="{% comment %} url {%endcomment%}{{ post.url }}">
       <li class="card card-container">
         <div
           class="article-container"
@@ -153,7 +153,7 @@ permalink: "/blog/"
 </div>
 
 
-<script src="{{ site.baseurl }}/assets/js/scroller.js" defer></script>
+<script src="{% comment %} url {%endcomment%}/assets/js/scroller.js" defer></script>
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
     setupScroller(".next", "next");

@@ -3,6 +3,7 @@ layout: post
 title: Privacy Policy
 date: 29/10/2024
 author: relaso.com
+permalink: "/privacy/"
 ---
 
 ![privacy policy](assets/images/privacy-image-wide.png)

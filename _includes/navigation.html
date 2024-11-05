@@ -1,5 +1,6 @@
 <nav class="main-navbar">
-  <div class="logo-container"><a href="{{ site.baseurl }}/">
+  <div class="logo-container">
+  <a href="{{ site.baseurl }}/">
     <img loading="lazy" src="{{ site.baseurl }}/assets/images/relaso-logo-full.png" alt="Relaso Logo">
     <!-- <h4 class="gradien-text">elaso</h4> -->
       <!-- <h4><span class="logo-start">Rela</span><span class="logo-end">so</span></h4> -->
@@ -12,7 +13,7 @@
         {% if item.dropdown == 'true' %}
           <!-- Parent link for dropdown -->
 
-          <a href="{{ site.baseurl }}{{ item.link }}" class="has-dropdown"  data-toggle="dropdown">
+          <a href="{{ item.link }}" class="has-dropdown"  data-toggle="dropdown">
             {{ item.name }} {{ current_link}}
           </a>
 
@@ -20,7 +21,7 @@
           <ul class="dropdown-menu">
             {% for subitem in site.data[item.data] %}
               <li>
-                <a href="{{ site.baseurl }}{{ subitem.site_link }}">
+                <a href="{{ subitem.site_link }}">
                   {{ subitem.title }}
                 </a>
               </li>
@@ -29,7 +30,7 @@
 
         {% else %}
           <!-- Regular link without dropdown -->
-          <a href="{{ site.baseurl }}{{ item.link }}" >
+          <a href="{{ item.link }}" >
             {{ item.name }}
           </a>
         {% endif %}
@@ -40,7 +41,7 @@
 
 
   <div class="try-free-btn">
-    <a href="{{ site.baseurl }}/pricing" class="filled-btn">Try for free</a>
+    <a href="pricing" class="filled-btn">Try for free</a>
   </div>
 </nav>
 
@@ -48,7 +49,7 @@
   <div class="navbar">
     <div class="logo-container">
       <a href="{{ site.baseurl }}/">
-          <img loading="lazy" src="{{ site.baseurl }}{{ assets/images/relaso-logo-full.png}}" alt="Relaso Logo">
+          <img loading="lazy" src="{{ site.baseurl }}/assets/images/relaso-logo-full.png" alt="Relaso Logo">
       </a>
     </div>
     
@@ -62,7 +63,7 @@
       <ul class="nav-links-container">
         {% for item in site.data.navigation %}
         <li>
-          <a href="{{ site.baseurl }}{{ item.link }}" >
+          <a href="{{ item.link }}" >
             {{ item.name }}
           </a>
         </li>
